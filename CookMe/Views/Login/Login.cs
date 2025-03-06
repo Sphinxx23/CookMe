@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CookMe.Views.Login
+{
+    public partial class Login : Form
+    {
+        private Form parent;
+        public Login(Form parent)
+        {
+            InitializeComponent();
+            this.parent = parent;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            string prueba = new Logica.Controles.UsuarioControl().ProbarConexion();
+            MessageBox.Show(prueba);
+        }
+
+        private void btBorrarCamposLogin_Click(object sender, EventArgs e)
+        {
+            tbEmailLogin.ResetText();
+            tbContrasenaLogin.ResetText();
+            lbErrorCredenciales.ResetText();
+        }
+
+        private void botonImagen1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.parent.Visible = true;
+        }
+
+        private void btAccederLogin_Click(object sender, EventArgs e)
+        {
+            if (tbEmailLogin.Text.Equals("")|| tbEmailLogin.Text==null)
+            {
+                lbErrorCredenciales.Text = "El campo EMAIL no puede estar vacío";
+                lbErrorCredenciales.ForeColor = Color.Red;
+            }else if (tbContrasenaLogin.Text.Equals("") || tbContrasenaLogin.Text == null)
+            {
+                lbErrorCredenciales.Text = "El campo CONTRASEÑA no puede estar vacío";
+                lbErrorCredenciales.ForeColor = Color.Red;
+            }
+            else
+            {
+                Datos.Modelos.Usuario usu = new Logica.Controles.UsuarioControl().ObtenerUsuarioPorEmail(tbEmailLogin.Text);
+                if (usu != null)
+                {
+                    if (Hasher.VerifyPassword(tbContrasenaLogin.Text, usu.Contrasena))
+                    {
+                        if (usu.Rol.Equals("administrador"))
+                        {
+                            Views.Landing.LandingAdmin landingAdmin = new Views.Landing.LandingAdmin(parent, usu);
+                            landingAdmin.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            Views.Landing.LandingUsuario landingUsu = new Views.Landing.LandingUsuario(parent, usu);
+                            landingUsu.Show();
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        lbErrorCredenciales.Text = "Credenciales incorrectas";
+                        lbErrorCredenciales.ForeColor = Color.Red;
+                    }
+
+                }
+                else
+                {
+                    lbErrorCredenciales.Text = "Usuario no existe";
+                    lbErrorCredenciales.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        
+    }
+}
