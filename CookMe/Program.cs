@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CookMe.Views.Landing;
+using Datos.Security;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +16,36 @@ namespace CookMe
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var credentials = CredentialsManager.LoadCredentials();
+            if (credentials != null)
+            {
+                Datos.Modelos.Usuario usu = new Logica.Controles.UsuarioControl().ObtenerUsuarioPorEmail(credentials.Email);
+                if (usu != null)
+                {
+                    if (usu.Rol.Equals("administrador"))
+                    {
+                        Application.Run(new LandingAdmin(new Form1(), usu));
+                    }
+                    else
+                    {
+                        Application.Run(new LandingUsuario(new Form1(), usu));
+                    }
+                }
+
+            }
+            else
+            {
+                Application.Run(new Form1());
+            }
+
+
+
+
+
         }
     }
 }

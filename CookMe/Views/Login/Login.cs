@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using Datos.Security;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +10,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CookMe.Views.Login
 {
@@ -20,12 +23,12 @@ namespace CookMe.Views.Login
             this.parent = parent;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        //private void button1_Click(object sender, EventArgs e)
+        //{
 
-            string prueba = new Logica.Controles.UsuarioControl().ProbarConexion();
-            MessageBox.Show(prueba);
-        }
+        //    string prueba = new Logica.Controles.UsuarioControl().ProbarConexion();
+        //    MessageBox.Show(prueba);
+        //}
 
         private void btBorrarCamposLogin_Click(object sender, EventArgs e)
         {
@@ -42,11 +45,12 @@ namespace CookMe.Views.Login
 
         private void btAccederLogin_Click(object sender, EventArgs e)
         {
-            if (tbEmailLogin.Text.Equals("")|| tbEmailLogin.Text==null)
+            if (tbEmailLogin.Text.Equals("") || tbEmailLogin.Text == null)
             {
                 lbErrorCredenciales.Text = "El campo EMAIL no puede estar vacío";
                 lbErrorCredenciales.ForeColor = Color.Red;
-            }else if (tbContrasenaLogin.Text.Equals("") || tbContrasenaLogin.Text == null)
+            }
+            else if (tbContrasenaLogin.Text.Equals("") || tbContrasenaLogin.Text == null)
             {
                 lbErrorCredenciales.Text = "El campo CONTRASEÑA no puede estar vacío";
                 lbErrorCredenciales.ForeColor = Color.Red;
@@ -61,12 +65,14 @@ namespace CookMe.Views.Login
                         if (usu.Rol.Equals("administrador"))
                         {
                             Views.Landing.LandingAdmin landingAdmin = new Views.Landing.LandingAdmin(parent, usu);
+                            CredentialsManager.SaveCredentials(usu.Email, usu.Contrasena);
                             landingAdmin.Show();
                             this.Close();
                         }
                         else
                         {
                             Views.Landing.LandingUsuario landingUsu = new Views.Landing.LandingUsuario(parent, usu);
+                            CredentialsManager.SaveCredentials(usu.Email, usu.Contrasena);
                             landingUsu.Show();
                             this.Close();
                         }
@@ -86,6 +92,6 @@ namespace CookMe.Views.Login
             }
         }
 
-        
+
     }
 }

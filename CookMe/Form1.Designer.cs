@@ -74,7 +74,6 @@
             this.Controls.Add(this.btRG);
             this.Controls.Add(this.btIS);
             this.Name = "Form1";
-            this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
