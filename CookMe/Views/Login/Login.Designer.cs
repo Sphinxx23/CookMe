@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btAccederLogin = new System.Windows.Forms.Button();
             this.btBorrarCamposLogin = new System.Windows.Forms.Button();
             this.tbEmailLogin = new System.Windows.Forms.TextBox();
@@ -36,6 +35,7 @@
             this.lbInfoEmail = new System.Windows.Forms.Label();
             this.lbInfoContrasena = new System.Windows.Forms.Label();
             this.lbErrorCredenciales = new System.Windows.Forms.Label();
+            this.botonImagen2 = new CookMe.ControlesPersonalizados.BotonImagen();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.botonImagen1 = new CookMe.ControlesPersonalizados.BotonImagen();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -43,7 +43,7 @@
             // 
             // btAccederLogin
             // 
-            this.btAccederLogin.Location = new System.Drawing.Point(352, 407);
+            this.btAccederLogin.Location = new System.Drawing.Point(312, 382);
             this.btAccederLogin.Name = "btAccederLogin";
             this.btAccederLogin.Size = new System.Drawing.Size(75, 23);
             this.btAccederLogin.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             // btBorrarCamposLogin
             // 
-            this.btBorrarCamposLogin.Location = new System.Drawing.Point(123, 407);
+            this.btBorrarCamposLogin.Location = new System.Drawing.Point(160, 382);
             this.btBorrarCamposLogin.Name = "btBorrarCamposLogin";
             this.btBorrarCamposLogin.Size = new System.Drawing.Size(75, 23);
             this.btBorrarCamposLogin.TabIndex = 1;
@@ -72,6 +72,7 @@
             // 
             this.tbContrasenaLogin.Location = new System.Drawing.Point(183, 314);
             this.tbContrasenaLogin.Name = "tbContrasenaLogin";
+            this.tbContrasenaLogin.PasswordChar = '*';
             this.tbContrasenaLogin.Size = new System.Drawing.Size(220, 22);
             this.tbContrasenaLogin.TabIndex = 3;
             // 
@@ -101,9 +102,21 @@
             this.lbErrorCredenciales.Size = new System.Drawing.Size(0, 16);
             this.lbErrorCredenciales.TabIndex = 6;
             // 
+            // botonImagen2
+            // 
+            this.botonImagen2.ButtonImage = global::CookMe.Properties.Resources.ojo1;
+            this.botonImagen2.CornerRadius = 20;
+            this.botonImagen2.Location = new System.Drawing.Point(427, 314);
+            this.botonImagen2.Name = "botonImagen2";
+            this.botonImagen2.Size = new System.Drawing.Size(75, 23);
+            this.botonImagen2.TabIndex = 10;
+            this.botonImagen2.Text = "botonImagen2";
+            this.botonImagen2.UseVisualStyleBackColor = true;
+            this.botonImagen2.Click += new System.EventHandler(this.botonImagen2_Click);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::CookMe.Properties.Resources.CookMe;
             this.pictureBox1.Location = new System.Drawing.Point(92, -22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(366, 244);
@@ -112,7 +125,7 @@
             // 
             // botonImagen1
             // 
-            this.botonImagen1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("botonImagen1.ButtonImage")));
+            this.botonImagen1.ButtonImage = global::CookMe.Properties.Resources.atras;
             this.botonImagen1.CornerRadius = 20;
             this.botonImagen1.Location = new System.Drawing.Point(12, 41);
             this.botonImagen1.Name = "botonImagen1";
@@ -127,6 +140,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(514, 456);
+            this.Controls.Add(this.botonImagen2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.botonImagen1);
             this.Controls.Add(this.lbErrorCredenciales);
@@ -136,7 +150,10 @@
             this.Controls.Add(this.tbEmailLogin);
             this.Controls.Add(this.btBorrarCamposLogin);
             this.Controls.Add(this.btAccederLogin);
+            this.MaximumSize = new System.Drawing.Size(532, 503);
+            this.MinimumSize = new System.Drawing.Size(532, 503);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -155,5 +172,6 @@
         private System.Windows.Forms.Label lbErrorCredenciales;
         private ControlesPersonalizados.BotonImagen botonImagen1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private ControlesPersonalizados.BotonImagen botonImagen2;
     }
 }

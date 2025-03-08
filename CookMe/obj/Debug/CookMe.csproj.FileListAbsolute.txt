@@ -86,3 +86,5 @@ D:\2DAM\CookMe\CookMe\obj\Debug\CookMe.csproj.CoreCompileInputs.cache
 D:\2DAM\CookMe\CookMe\obj\Debug\CookMe.csproj.Up2Date
 D:\2DAM\CookMe\CookMe\obj\Debug\CookMe.exe
 D:\2DAM\CookMe\CookMe\obj\Debug\CookMe.pdb
+C:\Users\PcBox\Desktop\CookMe\CookMe\bin\Debug\Newtonsoft.Json.dll
+C:\Users\PcBox\Desktop\CookMe\CookMe\bin\Debug\Newtonsoft.Json.xml

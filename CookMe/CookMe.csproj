@@ -129,6 +129,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\Landing\LandingAdmin.resx">
       <DependentUpon>LandingAdmin.cs</DependentUpon>
@@ -166,6 +167,20 @@
       <Name>Logica</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\ojo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CookMe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anonimo - copia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invisible.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

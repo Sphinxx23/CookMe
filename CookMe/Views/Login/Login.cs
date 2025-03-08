@@ -10,6 +10,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace CookMe.Views.Login
@@ -92,6 +93,22 @@ namespace CookMe.Views.Login
             }
         }
 
+        private void botonImagen2_Click(object sender, EventArgs e)
+        {
+            
 
+                if (tbContrasenaLogin.PasswordChar == '*')
+                {
+                tbContrasenaLogin.PasswordChar = '\0';
+                    botonImagen2.ButtonImage = Properties.Resources.invisible;
+
+                }
+                else
+                {
+                tbContrasenaLogin.PasswordChar = '*';
+                    botonImagen2.ButtonImage = Properties.Resources.ojo1;
+                }
+            
+        }
     }
 }

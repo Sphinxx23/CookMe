@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,67 +21,180 @@ namespace CookMe.Views.Login
             this.parent = parent;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string ctrHas = Hasher.HashPassword("raul1");
-            
-            Datos.Modelos.Usuario usu;
-            usu = new Usuario
-            (
-                "raulote147@gmail.com",
-                "raul",
-                "oteizza",
-                "duqeus de najera 5",
-                ctrHas,
-                "perfil.jpg",
-                "usuario",
-                true);
-
-            bool cierto = new Logica.Controles.UsuarioControl().InsertarUsuario(usu);
-
-
-            if (cierto)
-            {
-                Views.Login.Login log = new Views.Login.Login(parent);
-                log.Show();
-                this.Close();
-
-            }
-
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string ctrHas = Hasher.HashPassword("admin2");
-            Datos.Modelos.Usuario usu;
-            usu = new Usuario
-            (
-                "segundoadmin@gmail.com",
-                "el segundo",
-                "aaadmin",
-                "calle calle",
-                ctrHas,
-                "perfil.jpg",
-                "administrador",
-                false);
-
-            bool cierto = new Logica.Controles.UsuarioControl().InsertarUsuario(usu);
-
-
-            if (cierto)
-            {
-                Views.Login.Login log = new Views.Login.Login(parent);
-                log.Show();
-                this.Close();
-
-            }
-        }
-
+               
         private void botonImagen1_Click(object sender, EventArgs e)
         {
             this.Close();
             this.parent.Visible = true;
+        }
+
+        private void btVaciarCampos_Click(object sender, EventArgs e)
+        {
+            tbEmailRegis.ResetText();
+            tbNombreRegis.ResetText();
+            tbApellidosregis.ResetText();
+            tbDireccionRegis.ResetText();
+            tbCtraRegis1.ResetText();
+            tbCtraRegis2.ResetText();
+            chbProfesor.Checked = false;           
+            lbError.ResetText();
+        }
+
+        private void btRegistrar_Click(object sender, EventArgs e)
+        {
+
+            if (!ComprobarCampos())
+            {
+                lbError.Text = " No puedes dejar campos sin rellenar";
+                lbError.BackColor = Color.Red;
+            } else if (!ValidateGmail(tbEmailRegis.Text)) {
+
+                lbError.Text = "Formato de GMAIL inválido, solo se acepta @gmail.com";
+                lbError.BackColor = Color.Red;
+
+            } else if (ComprobarExistenciaEmail())
+            {
+                lbError.Text = " Ya existe una cuenta asociada a este Email, inicie sesión en ella";
+                lbError.BackColor = Color.Blue;
+
+            } else if (!ValidatePassword(tbCtraRegis1.Text)) {
+
+                lbError.Text = "Formato de Contraseña inválido, mínimo 6 caracteres y un número";
+                lbError.BackColor = Color.Red;
+
+            } else if (!ComprobarConcordanciaContrasenas())
+            {
+                lbError.Text = " Las contraseñas no coinciden";
+                lbError.BackColor = Color.Red;
+            }
+            else
+            {
+                Datos.Modelos.Usuario usu = CrearUsuario();
+                bool cierto = new Logica.Controles.UsuarioControl().InsertarUsuario(usu);
+                if (cierto)
+                {
+                    Views.Login.Login land = new Views.Login.Login(parent);
+                    land.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error de creación de usuario");
+                }
+            }
+
+
+        }
+
+        private Usuario CrearUsuario()
+        {
+            Datos.Modelos.Usuario usuu = new Datos.Modelos.Usuario();
+
+            usuu.Email=tbEmailRegis.Text;
+            usuu.Nombre=tbNombreRegis.Text; 
+            usuu.Apellido=tbApellidosregis.Text;
+            usuu.Direccion=tbDireccionRegis.Text;
+            usuu.Contrasena=  Hasher.HashPassword(tbCtraRegis1.Text);
+            usuu.Rol = "usuario";
+            usuu.Foto = "nada de momento.jpg";
+            usuu.Profesor = chbProfesor.Checked;
+            
+
+            return usuu;
+        }
+
+        private bool ComprobarConcordanciaContrasenas()
+        {
+            bool concuerdanContrasenas = tbCtraRegis1.Text.Equals(tbCtraRegis2.Text) ? true : false;
+            return concuerdanContrasenas;
+        }
+
+
+      //Devuelve true si ya existe en bbdd  
+        private bool ComprobarExistenciaEmail()
+        {
+            Datos.Modelos.Usuario usu = new Logica.Controles.UsuarioControl().ObtenerUsuarioPorEmail(tbEmailRegis.Text);
+
+            bool existeUsuario = usu != null ? true : false;
+            return existeUsuario;
+        }
+
+        private bool ComprobarCampos()
+        {
+            if (tbEmailRegis.Text.Equals("")||tbEmailRegis.Text == null)
+            {
+                return false;
+            }
+
+            if (tbNombreRegis.Text.Equals("") || tbNombreRegis.Text == null)
+            {
+                return false;
+            }
+
+            if (tbApellidosregis.Text.Equals("") || tbApellidosregis.Text == null)
+            {
+                return false;
+            }
+
+            if (tbDireccionRegis.Text.Equals("") || tbDireccionRegis.Text == null)
+            {
+                return false;
+            }
+
+            if (tbCtraRegis1.Text.Equals("") || tbCtraRegis1.Text == null)
+            {
+                return false;
+            }
+
+            if (tbCtraRegis2.Text.Equals("") || tbCtraRegis2.Text == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidateGmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9._%+-]+@gmail\.com$";
+            return Regex.IsMatch(email, pattern);
+        }
+
+        private bool ValidatePassword(string password)
+        {
+            string pattern = @"^(?=.*\d).{6,}$";
+            return Regex.IsMatch(password, pattern);
+        }
+
+        private void botonImagen2_Click(object sender, EventArgs e)
+        {
+
+            if (tbCtraRegis1.PasswordChar == '*')
+            {
+                tbCtraRegis1.PasswordChar = '\0';
+                botonImagen2.ButtonImage = Properties.Resources.invisible;
+
+            }
+            else
+            {
+                tbCtraRegis1.PasswordChar = '*';
+                botonImagen2.ButtonImage = Properties.Resources.ojo1;
+            }
+        }
+
+        private void botonImagen3_Click(object sender, EventArgs e)
+        {
+            if (tbCtraRegis2.PasswordChar == '*')
+            {
+                tbCtraRegis2.PasswordChar = '\0';
+                botonImagen3.ButtonImage = Properties.Resources.invisible;
+
+            }
+            else
+            {
+                tbCtraRegis2.PasswordChar = '*';
+                botonImagen3.ButtonImage = Properties.Resources.ojo1;
+            }
         }
     }
 }

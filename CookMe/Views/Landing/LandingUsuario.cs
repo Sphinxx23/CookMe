@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos.Security;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,13 @@ namespace CookMe.Views.Landing
             this.parent = parent;
             this.usuarioSesion = usu;
             lbBienvenidaUsuario.Text = "BIENVENIDO  " + usuarioSesion.Nombre + "  " + usuarioSesion.Apellido;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CredentialsManager.DeleteCredentials();
+
+            this.Close();
         }
     }
 }

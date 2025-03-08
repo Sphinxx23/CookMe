@@ -48,6 +48,8 @@
             // btRG
             // 
             this.btRG.Location = new System.Drawing.Point(102, 355);
+            this.btRG.MaximumSize = new System.Drawing.Size(174, 34);
+            this.btRG.MinimumSize = new System.Drawing.Size(174, 34);
             this.btRG.Name = "btRG";
             this.btRG.Size = new System.Drawing.Size(174, 34);
             this.btRG.TabIndex = 1;
@@ -73,7 +75,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btRG);
             this.Controls.Add(this.btIS);
+            this.MaximumSize = new System.Drawing.Size(413, 498);
+            this.MinimumSize = new System.Drawing.Size(413, 498);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
