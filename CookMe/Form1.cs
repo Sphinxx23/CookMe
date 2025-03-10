@@ -15,16 +15,18 @@ namespace CookMe
         public Form1()
         {
             InitializeComponent();
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Image = CookMe.Properties.Resources.CookMeG;
         }
 
-        private void btIS_Click(object sender, EventArgs e)
+        private void btIS_Click_1(object sender, EventArgs e)
         {
             Views.Login.Login log = new Views.Login.Login(this);
             log.Show();
             this.Visible = false;
         }
 
-        private void btRG_Click(object sender, EventArgs e)
+        private void btRG_Click_1(object sender, EventArgs e)
         {
             Views.Login.Register reg = new Views.Login.Register(this);
             reg.Show();

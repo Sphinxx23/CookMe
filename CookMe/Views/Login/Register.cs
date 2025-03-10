@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -18,6 +19,8 @@ namespace CookMe.Views.Login
         public Register(Form parent)
         {
             InitializeComponent();
+            pbFotoPerfil.SizeMode=PictureBoxSizeMode.StretchImage;  
+            pbFotoPerfil.Image = CookMe.Properties.Resources.anonimoG;
             this.parent = parent;
         }
 
@@ -28,64 +31,7 @@ namespace CookMe.Views.Login
             this.parent.Visible = true;
         }
 
-        private void btVaciarCampos_Click(object sender, EventArgs e)
-        {
-            tbEmailRegis.ResetText();
-            tbNombreRegis.ResetText();
-            tbApellidosregis.ResetText();
-            tbDireccionRegis.ResetText();
-            tbCtraRegis1.ResetText();
-            tbCtraRegis2.ResetText();
-            chbProfesor.Checked = false;           
-            lbError.ResetText();
-        }
-
-        private void btRegistrar_Click(object sender, EventArgs e)
-        {
-
-            if (!ComprobarCampos())
-            {
-                lbError.Text = " No puedes dejar campos sin rellenar";
-                lbError.BackColor = Color.Red;
-            } else if (!ValidateGmail(tbEmailRegis.Text)) {
-
-                lbError.Text = "Formato de GMAIL inválido, solo se acepta @gmail.com";
-                lbError.BackColor = Color.Red;
-
-            } else if (ComprobarExistenciaEmail())
-            {
-                lbError.Text = " Ya existe una cuenta asociada a este Email, inicie sesión en ella";
-                lbError.BackColor = Color.Blue;
-
-            } else if (!ValidatePassword(tbCtraRegis1.Text)) {
-
-                lbError.Text = "Formato de Contraseña inválido, mínimo 6 caracteres y un número";
-                lbError.BackColor = Color.Red;
-
-            } else if (!ComprobarConcordanciaContrasenas())
-            {
-                lbError.Text = " Las contraseñas no coinciden";
-                lbError.BackColor = Color.Red;
-            }
-            else
-            {
-                Datos.Modelos.Usuario usu = CrearUsuario();
-                bool cierto = new Logica.Controles.UsuarioControl().InsertarUsuario(usu);
-                if (cierto)
-                {
-                    Views.Login.Login land = new Views.Login.Login(parent);
-                    land.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Error de creación de usuario");
-                }
-            }
-
-
-        }
-
+        
         private Usuario CrearUsuario()
         {
             Datos.Modelos.Usuario usuu = new Datos.Modelos.Usuario();
@@ -96,9 +42,13 @@ namespace CookMe.Views.Login
             usuu.Direccion=tbDireccionRegis.Text;
             usuu.Contrasena=  Hasher.HashPassword(tbCtraRegis1.Text);
             usuu.Rol = "usuario";
-            usuu.Foto = "nada de momento.jpg";
             usuu.Profesor = chbProfesor.Checked;
-            
+
+            if (pbFotoPerfil.Image != null)
+            {
+                usuu.Foto = CookMe.MetodosImages.MetImages.ConvertImageToBytes(pbFotoPerfil.Image);
+            }
+
 
             return usuu;
         }
@@ -194,6 +144,80 @@ namespace CookMe.Views.Login
             {
                 tbCtraRegis2.PasswordChar = '*';
                 botonImagen3.ButtonImage = Properties.Resources.ojo1;
+            }
+        }
+
+        
+
+        private void btSeleccion_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog(); ;
+            ofd.Filter = "Images (*.png;*.jpg)|*.png;*.jpg";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                pbFotoPerfil.SizeMode = PictureBoxSizeMode.StretchImage;
+                pbFotoPerfil.Image = Image.FromFile(ofd.FileName);
+            }
+        }
+
+        private void btVaciarCampos1_Click(object sender, EventArgs e)
+        {
+            tbEmailRegis.ResetText();
+            tbNombreRegis.ResetText();
+            tbApellidosregis.ResetText();
+            tbDireccionRegis.ResetText();
+            tbCtraRegis1.ResetText();
+            tbCtraRegis2.ResetText();
+            chbProfesor.Checked = false;
+            lbError.ResetText();
+        }
+
+        private void btRegistrar_Click(object sender, EventArgs e)
+        {
+            if (!ComprobarCampos())
+            {
+                lbError.Text = " No puedes dejar campos sin rellenar";
+                lbError.BackColor = Color.Red;
+            }
+            else if (!ValidateGmail(tbEmailRegis.Text))
+            {
+
+                lbError.Text = "Formato de GMAIL inválido, solo se acepta @gmail.com";
+                lbError.BackColor = Color.Red;
+
+            }
+            else if (ComprobarExistenciaEmail())
+            {
+                lbError.Text = " Ya existe una cuenta asociada a este Email, inicie sesión en ella";
+                lbError.BackColor = Color.Blue;
+
+            }
+            else if (!ValidatePassword(tbCtraRegis1.Text))
+            {
+
+                lbError.Text = "Formato de Contraseña inválido, mínimo 6 caracteres y un número";
+                lbError.BackColor = Color.Red;
+
+            }
+            else if (!ComprobarConcordanciaContrasenas())
+            {
+                lbError.Text = " Las contraseñas no coinciden";
+                lbError.BackColor = Color.Red;
+            }
+            else
+            {
+                Datos.Modelos.Usuario usu = CrearUsuario();
+                bool cierto = new Logica.Controles.UsuarioControl().InsertarUsuario(usu);
+                if (cierto)
+                {
+                    Views.Login.Login land = new Views.Login.Login(parent);
+                    land.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error de creación de usuario");
+                }
             }
         }
     }

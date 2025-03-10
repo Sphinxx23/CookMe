@@ -9,7 +9,7 @@ namespace Datos.Modelos
     public class Usuario
     {
         public Usuario() { }
-        public Usuario(string Email, string Nombre, string Apellido, string Direccion, string Contrasena, string Foto, string Rol, bool Profesor)
+        public Usuario(string Email, string Nombre, string Apellido, string Direccion, string Contrasena, byte[] Foto, string Rol, bool Profesor)
         {
             this.Email = Email;
             this.Nombre = Nombre;
@@ -26,7 +26,7 @@ namespace Datos.Modelos
         public string Apellido { get; set; }
         public string Direccion { get; set; }
         public string Contrasena { get; set; }
-        public string Foto { get; set; }
+        public byte[] Foto { get; set; }
         public string Rol { get; set; }
         public bool Profesor { get; set; }
 

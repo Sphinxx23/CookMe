@@ -10,7 +10,7 @@ namespace Datos.Modelos
     {
         public Receta() { }
 
-        public Receta(int Id, string Titulo, string DescripcionBreve, string Ingrediente, string Pasos, string Foto, string EmailUsuario)
+        public Receta(int Id, string Titulo, string DescripcionBreve, string Ingrediente, string Pasos, byte[] Foto, string EmailUsuario)
         {
             this.Id = Id;
             this.Titulo = Titulo;
@@ -26,7 +26,7 @@ namespace Datos.Modelos
         public string DescripcionBreve { get; set; }
         public string Ingrediente { get; set; }
         public string Pasos { get; set; }
-        public string Foto { get; set; }
+        public byte[] Foto { get; set; }
         public string EmailUsuario { get; set; }
 
         public override string ToString()

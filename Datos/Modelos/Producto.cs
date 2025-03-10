@@ -11,7 +11,7 @@ namespace Datos.Modelos
     {
         public Producto() { }
 
-        public Producto(int Id, string Nombre, string Descripcion, int Stock, decimal Precio, string Categoria, string Foto1, string Foto2)
+        public Producto(int Id, string Nombre, string Descripcion, int Stock, decimal Precio, string Categoria, byte[] Foto1, byte[] Foto2)
         {
             this.Id = Id;
             this.Nombre = Nombre;
@@ -29,8 +29,8 @@ namespace Datos.Modelos
         public int Stock { get; set; }
         public decimal Precio { get; set; }
         public string Categoria { get; set; }
-        public string Foto1 { get; set; }
-        public string Foto2 { get; set; }
+        public byte[] Foto1 { get; set; }
+        public byte[] Foto2 { get; set; }
 
         public override string ToString()
         {

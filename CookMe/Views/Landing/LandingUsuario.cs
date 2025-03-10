@@ -28,6 +28,7 @@ namespace CookMe.Views.Landing
             CredentialsManager.DeleteCredentials();
 
             this.Close();
+            parent.Show();
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Datos.Repositories
                                     Apellido = reader["apellido"] as string ?? string.Empty,
                                     Direccion = reader["direccion"] as string ?? string.Empty,
                                     Contrasena = reader["contrasena"] as string ?? string.Empty,
-                                    Foto = reader["foto"] as string ?? string.Empty,
+                                    Foto = reader["foto"] as byte[],
                                     Rol = reader["rol"] as string ?? string.Empty,
                                     Profesor = reader["profesor"] != DBNull.Value && Convert.ToBoolean(reader["profesor"])
                                 };
@@ -70,7 +70,7 @@ namespace Datos.Repositories
                         cmd.Parameters.AddWithValue("@Apellido", string.IsNullOrEmpty(usuario.Apellido) ? (object)DBNull.Value : usuario.Apellido);
                         cmd.Parameters.AddWithValue("@Direccion", string.IsNullOrEmpty(usuario.Direccion) ? (object)DBNull.Value : usuario.Direccion);
                         cmd.Parameters.AddWithValue("@Contrasena", string.IsNullOrEmpty(usuario.Contrasena) ? (object)DBNull.Value : usuario.Contrasena);
-                        cmd.Parameters.AddWithValue("@Foto", string.IsNullOrEmpty(usuario.Foto) ? (object)DBNull.Value : usuario.Foto);
+                        cmd.Parameters.AddWithValue("@Foto", usuario.Foto == null || usuario.Foto.Length == 0 ? (object)DBNull.Value : usuario.Foto);
                         cmd.Parameters.AddWithValue("@Rol", string.IsNullOrEmpty(usuario.Rol) ? (object)DBNull.Value : usuario.Rol);
                         cmd.Parameters.AddWithValue("@Profesor", usuario.Profesor);
 

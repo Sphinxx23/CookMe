@@ -63,9 +63,9 @@ namespace CookMe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap anonimo___copia {
+        internal static System.Drawing.Bitmap anonimoG {
             get {
-                object obj = ResourceManager.GetObject("anonimo - copia", resourceCulture);
+                object obj = ResourceManager.GetObject("anonimoG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace CookMe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CookMe {
+        internal static System.Drawing.Bitmap CookMeG {
             get {
-                object obj = ResourceManager.GetObject("CookMe", resourceCulture);
+                object obj = ResourceManager.GetObject("CookMeG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

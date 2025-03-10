@@ -86,12 +86,16 @@
     <Compile Include="ControlesPersonalizados\BotonImagen.Designer.cs">
       <DependentUpon>BotonImagen.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlesPersonalizados\CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MetodosImages\MetImages.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Landing\LandingAdmin.cs">
@@ -105,6 +109,18 @@
     </Compile>
     <Compile Include="Views\Landing\LandingUsuario.Designer.cs">
       <DependentUpon>LandingUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\UCGestionProductos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\UCGestionProductos.Designer.cs">
+      <DependentUpon>UCGestionProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\UCGestionUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\UCGestionUsuarios.Designer.cs">
+      <DependentUpon>UCGestionUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login\Login.cs">
       <SubType>Form</SubType>
@@ -136,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Landing\LandingUsuario.resx">
       <DependentUpon>LandingUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Landing\UserContAdmin\UCGestionProductos.resx">
+      <DependentUpon>UCGestionProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Landing\UserContAdmin\UCGestionUsuarios.resx">
+      <DependentUpon>UCGestionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -171,16 +193,16 @@
     <None Include="Resources\ojo1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CookMe.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\atras.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\anonimo - copia.jpg" />
+    <None Include="Resources\invisible.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\invisible.png" />
+    <None Include="Resources\CookMeG.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anonimoG.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,7 +10,7 @@ namespace Datos.Modelos
     {
         public Clase() { }
 
-        public Clase(int Id, int PlazaTotal, int PlazaOcupada, string Descripcion, DateTime Fecha, string FotoTematica, decimal ValoracionMedia, string FotoProfesor, string EmailProfesor)
+        public Clase(int Id, int PlazaTotal, int PlazaOcupada, string Descripcion, DateTime Fecha, byte[] FotoTematica, decimal ValoracionMedia, byte[] FotoProfesor, string EmailProfesor)
         {
             this.Id = Id;
             this.PlazaTotal = PlazaTotal;
@@ -28,9 +28,9 @@ namespace Datos.Modelos
         public int PlazaOcupada { get; set; }
         public string Descripcion { get; set; }
         public DateTime Fecha { get; set; }
-        public string FotoTematica { get; set; }
+        public byte[] FotoTematica { get; set; }
         public decimal ValoracionMedia { get; set; }
-        public string FotoProfesor { get; set; }
+        public byte[] FotoProfesor { get; set; }
         public string EmailProfesor { get; set; }
 
         public override string ToString()

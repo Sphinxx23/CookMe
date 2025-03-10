@@ -21,6 +21,8 @@ namespace CookMe.Views.Login
         public Login(Form parent)
         {
             InitializeComponent();
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Image = CookMe.Properties.Resources.CookMeG;
             this.parent = parent;
         }
 
@@ -31,12 +33,7 @@ namespace CookMe.Views.Login
         //    MessageBox.Show(prueba);
         //}
 
-        private void btBorrarCamposLogin_Click(object sender, EventArgs e)
-        {
-            tbEmailLogin.ResetText();
-            tbContrasenaLogin.ResetText();
-            lbErrorCredenciales.ResetText();
-        }
+        
 
         private void botonImagen1_Click(object sender, EventArgs e)
         {
@@ -44,7 +41,33 @@ namespace CookMe.Views.Login
             this.parent.Visible = true;
         }
 
-        private void btAccederLogin_Click(object sender, EventArgs e)
+
+        private void botonImagen2_Click(object sender, EventArgs e)
+        {
+            
+
+                if (tbContrasenaLogin.PasswordChar == '*')
+                {
+                tbContrasenaLogin.PasswordChar = '\0';
+                    botonImagen2.ButtonImage = Properties.Resources.invisible;
+
+                }
+                else
+                {
+                tbContrasenaLogin.PasswordChar = '*';
+                    botonImagen2.ButtonImage = Properties.Resources.ojo1;
+                }
+            
+        }
+
+        private void btBorrarCamposLogin1_Click(object sender, EventArgs e)
+        {
+            tbEmailLogin.ResetText();
+            tbContrasenaLogin.ResetText();
+            lbErrorCredenciales.ResetText();
+        }
+
+        private void btAccederLogin1_Click(object sender, EventArgs e)
         {
             if (tbEmailLogin.Text.Equals("") || tbEmailLogin.Text == null)
             {
@@ -91,24 +114,6 @@ namespace CookMe.Views.Login
                     lbErrorCredenciales.ForeColor = Color.Red;
                 }
             }
-        }
-
-        private void botonImagen2_Click(object sender, EventArgs e)
-        {
-            
-
-                if (tbContrasenaLogin.PasswordChar == '*')
-                {
-                tbContrasenaLogin.PasswordChar = '\0';
-                    botonImagen2.ButtonImage = Properties.Resources.invisible;
-
-                }
-                else
-                {
-                tbContrasenaLogin.PasswordChar = '*';
-                    botonImagen2.ButtonImage = Properties.Resources.ojo1;
-                }
-            
         }
     }
 }
