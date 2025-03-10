@@ -255,7 +255,7 @@
             this.btVaciarCampos1.ForeColor = System.Drawing.Color.Black;
             this.btVaciarCampos1.Location = new System.Drawing.Point(127, 625);
             this.btVaciarCampos1.Name = "btVaciarCampos1";
-            this.btVaciarCampos1.Size = new System.Drawing.Size(120, 40);
+            this.btVaciarCampos1.Size = new System.Drawing.Size(135, 40);
             this.btVaciarCampos1.TabIndex = 25;
             this.btVaciarCampos1.Text = "Borrar Todo";
             this.btVaciarCampos1.UseVisualStyleBackColor = false;
@@ -266,9 +266,9 @@
             this.btRegistrar.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btRegistrar.ForeColor = System.Drawing.Color.Black;
-            this.btRegistrar.Location = new System.Drawing.Point(336, 625);
+            this.btRegistrar.Location = new System.Drawing.Point(324, 625);
             this.btRegistrar.Name = "btRegistrar";
-            this.btRegistrar.Size = new System.Drawing.Size(120, 40);
+            this.btRegistrar.Size = new System.Drawing.Size(132, 40);
             this.btRegistrar.TabIndex = 26;
             this.btRegistrar.Text = "Registrarse";
             this.btRegistrar.UseVisualStyleBackColor = false;
