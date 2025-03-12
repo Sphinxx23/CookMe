@@ -2,9 +2,12 @@
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Datos.Repositories
 {
@@ -88,6 +91,71 @@ namespace Datos.Repositories
                 return false;
             }
         }
+
+
+        public List<Usuario> ObtenerTodosUsuarios()
+        {
+            try
+            {
+                List<string> listaCorreos = new List<string>();
+                List<Usuario> listaUsuarios = new List<Usuario>();
+
+                using (var conexion = Conexion.Conexion.EstablecerConexion())
+                {
+                    using (var cmd = new NpgsqlCommand("SELECT email FROM usuario WHERE rol='usuario'", conexion))
+                    {
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                listaCorreos.Add(reader["email"] as string ?? string.Empty);
+                            }
+                        }
+                    }
+                }
+
+                foreach (string correo in listaCorreos)
+                {
+                    listaUsuarios.Add(ObtenerUsuarioPorEmail(correo));
+                }
+
+                return listaUsuarios;
+            }
+            catch (Exception ex)
+            {
+                
+                return null;
+            }
+        }
+
+        public bool EliminarUsuarioPorEmail(string email)
+        {
+            try
+            {
+                using (var conexion = Conexion.Conexion.EstablecerConexion())
+                {
+                    using (var cmd = new NpgsqlCommand("DELETE FROM usuario WHERE email = @email", conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@email", email);
+
+                        // Ejecutamos el comando y verificamos si se eliminaron filas
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        // Si se eliminaron filas, devolvemos true
+                        return filasAfectadas > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Si ocurre algún error, devolvemos false
+                return false;
+            }
+        }
+
+
+
+
 
 
         public string ProbarConexion()

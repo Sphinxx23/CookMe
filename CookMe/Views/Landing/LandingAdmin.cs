@@ -28,11 +28,9 @@ namespace CookMe.Views.Landing
 
         private void LoadUserControl(UserControl userControl)
         {
-            // Limpiar cualquier control previamente cargado en el panel derecho
+           
             panel2.Controls.Clear();
-
-            // Establecer el nuevo UserControl en el panel derecho
-            userControl.Dock = DockStyle.Fill; // Esto hace que el UserControl ocupe todo el espacio del panel
+            userControl.Dock = DockStyle.Fill; 
             panel2.Controls.Add(userControl);
         }
 
@@ -52,7 +50,7 @@ namespace CookMe.Views.Landing
 
         private void customButton5_Click(object sender, EventArgs e)
         {
-            LoadUserControl(new UCGestionUsuarios());
+            LoadUserControl(new UCGestionUsuarios());          
         }
     }
 }

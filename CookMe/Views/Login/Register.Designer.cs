@@ -45,12 +45,12 @@
             this.chbProfesor = new System.Windows.Forms.CheckBox();
             this.lbError = new System.Windows.Forms.Label();
             this.pbFotoPerfil = new System.Windows.Forms.PictureBox();
+            this.btRegistrar = new CustomButton();
+            this.btVaciarCampos1 = new CustomButton();
             this.btSeleccion = new CustomButton();
             this.botonImagen3 = new CookMe.ControlesPersonalizados.BotonImagen();
             this.botonImagen2 = new CookMe.ControlesPersonalizados.BotonImagen();
             this.botonImagen1 = new CookMe.ControlesPersonalizados.BotonImagen();
-            this.btVaciarCampos1 = new CustomButton();
-            this.btRegistrar = new CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoPerfil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,6 +200,32 @@
             this.pbFotoPerfil.TabIndex = 3;
             this.pbFotoPerfil.TabStop = false;
             // 
+            // btRegistrar
+            // 
+            this.btRegistrar.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btRegistrar.ForeColor = System.Drawing.Color.Black;
+            this.btRegistrar.Location = new System.Drawing.Point(324, 625);
+            this.btRegistrar.Name = "btRegistrar";
+            this.btRegistrar.Size = new System.Drawing.Size(132, 40);
+            this.btRegistrar.TabIndex = 26;
+            this.btRegistrar.Text = "Registrarse";
+            this.btRegistrar.UseVisualStyleBackColor = false;
+            this.btRegistrar.Click += new System.EventHandler(this.btRegistrar_Click);
+            // 
+            // btVaciarCampos1
+            // 
+            this.btVaciarCampos1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btVaciarCampos1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btVaciarCampos1.ForeColor = System.Drawing.Color.Black;
+            this.btVaciarCampos1.Location = new System.Drawing.Point(127, 625);
+            this.btVaciarCampos1.Name = "btVaciarCampos1";
+            this.btVaciarCampos1.Size = new System.Drawing.Size(135, 40);
+            this.btVaciarCampos1.TabIndex = 25;
+            this.btVaciarCampos1.Text = "Borrar Todo";
+            this.btVaciarCampos1.UseVisualStyleBackColor = false;
+            this.btVaciarCampos1.Click += new System.EventHandler(this.btVaciarCampos1_Click);
+            // 
             // btSeleccion
             // 
             this.btSeleccion.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -247,32 +273,6 @@
             this.botonImagen1.TabIndex = 2;
             this.botonImagen1.UseVisualStyleBackColor = true;
             this.botonImagen1.Click += new System.EventHandler(this.botonImagen1_Click);
-            // 
-            // btVaciarCampos1
-            // 
-            this.btVaciarCampos1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btVaciarCampos1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btVaciarCampos1.ForeColor = System.Drawing.Color.Black;
-            this.btVaciarCampos1.Location = new System.Drawing.Point(127, 625);
-            this.btVaciarCampos1.Name = "btVaciarCampos1";
-            this.btVaciarCampos1.Size = new System.Drawing.Size(135, 40);
-            this.btVaciarCampos1.TabIndex = 25;
-            this.btVaciarCampos1.Text = "Borrar Todo";
-            this.btVaciarCampos1.UseVisualStyleBackColor = false;
-            this.btVaciarCampos1.Click += new System.EventHandler(this.btVaciarCampos1_Click);
-            // 
-            // btRegistrar
-            // 
-            this.btRegistrar.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btRegistrar.ForeColor = System.Drawing.Color.Black;
-            this.btRegistrar.Location = new System.Drawing.Point(324, 625);
-            this.btRegistrar.Name = "btRegistrar";
-            this.btRegistrar.Size = new System.Drawing.Size(132, 40);
-            this.btRegistrar.TabIndex = 26;
-            this.btRegistrar.Text = "Registrarse";
-            this.btRegistrar.UseVisualStyleBackColor = false;
-            this.btRegistrar.Click += new System.EventHandler(this.btRegistrar_Click);
             // 
             // Register
             // 

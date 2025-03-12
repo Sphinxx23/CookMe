@@ -22,13 +22,22 @@ namespace Logica.Controles
             
         }
 
+        public bool EliminarUsuarioPorEmail(string email)
+        {
+            return new Datos.Repositories.UsuarioRepo().EliminarUsuarioPorEmail(email);
+
+        }
+
 
         public string ProbarConexion()
         {
             return new Datos.Repositories.UsuarioRepo().ProbarConexion();
         }
 
-
+        public List<Usuario> ObtenerTodosUsuarios()
+        {
+            return new Datos.Repositories.UsuarioRepo().ObtenerTodosUsuarios();
+        }
 
 
 

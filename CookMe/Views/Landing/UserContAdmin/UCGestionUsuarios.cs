@@ -10,11 +10,62 @@ using System.Windows.Forms;
 
 namespace CookMe.Views.Landing.UserContAdmin
 {
+
     public partial class UCGestionUsuarios : UserControl
     {
+        private Panel panelUsuarios;
+        
+
         public UCGestionUsuarios()
         {
-            InitializeComponent();
+            InitializeComponents();
+            
+            List<Datos.Modelos.Usuario> usuarios = new Logica.Controles.UsuarioControl().ObtenerTodosUsuarios();
+            LoadUsers(usuarios);
+        }
+
+        private void InitializeComponents()
+        {
+            this.Size = new Size(450, 600);
+
+            panelUsuarios = new Panel()
+            {
+                Dock = DockStyle.Fill,
+                AutoScroll = true,
+                BorderStyle = BorderStyle.FixedSingle
+            };
+
+            this.Controls.Add(panelUsuarios);
+        }
+
+        public void LoadUsers(List<Datos.Modelos.Usuario> usuarios)
+        {
+            panelUsuarios.Controls.Clear();
+            int distanciaVertical = 5;
+
+            foreach (var user in usuarios)
+            {
+                UserItemControl userControl = new UserItemControl();
+                Image img = CookMe.MetodosImages.MetImages.ConvertBytesToImage(user.Foto);
+                userControl.AsignarDatosLabels(user.Nombre, user.Apellido ,user.Email, img);
+                userControl.Location = new Point(5, distanciaVertical);
+                userControl.DeleteClicked += (s, e) => RemoveUser(userControl);
+
+                panelUsuarios.Controls.Add(userControl);
+                distanciaVertical += userControl.Height + 5;
+            }
+        }
+
+        private void RemoveUser(UserItemControl userControl)
+        {
+            panelUsuarios.Controls.Remove(userControl);
+            panelUsuarios.Controls.Clear();
+
+            List<Datos.Modelos.Usuario> usuarios = new Logica.Controles.UsuarioControl().ObtenerTodosUsuarios();
+            LoadUsers(usuarios);
+
+
         }
     }
+
 }

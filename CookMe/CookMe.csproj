@@ -89,6 +89,12 @@
     <Compile Include="ControlesPersonalizados\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ControlesPersonalizados\TextBoxRedondeado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesPersonalizados\TextBoxRedondeado.Designer.cs">
+      <DependentUpon>TextBoxRedondeado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,12 @@
     </Compile>
     <Compile Include="Views\Landing\UserContAdmin\UCGestionUsuarios.Designer.cs">
       <DependentUpon>UCGestionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\UserItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\UserItemControl.Designer.cs">
+      <DependentUpon>UserItemControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Login\Login.cs">
       <SubType>Form</SubType>
@@ -203,6 +215,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\anonimoG.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\papelera.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
