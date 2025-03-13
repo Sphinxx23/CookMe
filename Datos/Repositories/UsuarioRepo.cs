@@ -138,17 +138,17 @@ namespace Datos.Repositories
                     {
                         cmd.Parameters.AddWithValue("@email", email);
 
-                        // Ejecutamos el comando y verificamos si se eliminaron filas
+                        
                         int filasAfectadas = cmd.ExecuteNonQuery();
 
-                        // Si se eliminaron filas, devolvemos true
+                        
                         return filasAfectadas > 0;
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Si ocurre algún error, devolvemos false
+                
                 return false;
             }
         }

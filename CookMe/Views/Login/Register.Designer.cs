@@ -36,12 +36,6 @@
             this.lbContra1 = new System.Windows.Forms.Label();
             this.lbContra2 = new System.Windows.Forms.Label();
             this.lbProfesor = new System.Windows.Forms.Label();
-            this.tbEmailRegis = new System.Windows.Forms.TextBox();
-            this.tbNombreRegis = new System.Windows.Forms.TextBox();
-            this.tbApellidosregis = new System.Windows.Forms.TextBox();
-            this.tbDireccionRegis = new System.Windows.Forms.TextBox();
-            this.tbCtraRegis1 = new System.Windows.Forms.TextBox();
-            this.tbCtraRegis2 = new System.Windows.Forms.TextBox();
             this.chbProfesor = new System.Windows.Forms.CheckBox();
             this.lbError = new System.Windows.Forms.Label();
             this.pbFotoPerfil = new System.Windows.Forms.PictureBox();
@@ -51,6 +45,12 @@
             this.botonImagen3 = new CookMe.ControlesPersonalizados.BotonImagen();
             this.botonImagen2 = new CookMe.ControlesPersonalizados.BotonImagen();
             this.botonImagen1 = new CookMe.ControlesPersonalizados.BotonImagen();
+            this.tbEmailRegis = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
+            this.tbNombreRegis = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
+            this.tbApellidosregis = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
+            this.tbDireccionRegis = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
+            this.tbCtraRegis1 = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
+            this.tbCtraRegis2 = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoPerfil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,54 +131,10 @@
             this.lbProfesor.TabIndex = 10;
             this.lbProfesor.Text = "¿ERES PROFESOR?";
             // 
-            // tbEmailRegis
-            // 
-            this.tbEmailRegis.Location = new System.Drawing.Point(249, 268);
-            this.tbEmailRegis.Name = "tbEmailRegis";
-            this.tbEmailRegis.Size = new System.Drawing.Size(199, 22);
-            this.tbEmailRegis.TabIndex = 13;
-            // 
-            // tbNombreRegis
-            // 
-            this.tbNombreRegis.Location = new System.Drawing.Point(249, 319);
-            this.tbNombreRegis.Name = "tbNombreRegis";
-            this.tbNombreRegis.Size = new System.Drawing.Size(199, 22);
-            this.tbNombreRegis.TabIndex = 14;
-            // 
-            // tbApellidosregis
-            // 
-            this.tbApellidosregis.Location = new System.Drawing.Point(249, 373);
-            this.tbApellidosregis.Name = "tbApellidosregis";
-            this.tbApellidosregis.Size = new System.Drawing.Size(199, 22);
-            this.tbApellidosregis.TabIndex = 15;
-            // 
-            // tbDireccionRegis
-            // 
-            this.tbDireccionRegis.Location = new System.Drawing.Point(249, 419);
-            this.tbDireccionRegis.Name = "tbDireccionRegis";
-            this.tbDireccionRegis.Size = new System.Drawing.Size(199, 22);
-            this.tbDireccionRegis.TabIndex = 16;
-            // 
-            // tbCtraRegis1
-            // 
-            this.tbCtraRegis1.Location = new System.Drawing.Point(249, 471);
-            this.tbCtraRegis1.Name = "tbCtraRegis1";
-            this.tbCtraRegis1.PasswordChar = '*';
-            this.tbCtraRegis1.Size = new System.Drawing.Size(199, 22);
-            this.tbCtraRegis1.TabIndex = 17;
-            // 
-            // tbCtraRegis2
-            // 
-            this.tbCtraRegis2.Location = new System.Drawing.Point(249, 521);
-            this.tbCtraRegis2.Name = "tbCtraRegis2";
-            this.tbCtraRegis2.PasswordChar = '*';
-            this.tbCtraRegis2.Size = new System.Drawing.Size(199, 22);
-            this.tbCtraRegis2.TabIndex = 18;
-            // 
             // chbProfesor
             // 
             this.chbProfesor.AutoSize = true;
-            this.chbProfesor.Location = new System.Drawing.Point(284, 568);
+            this.chbProfesor.Location = new System.Drawing.Point(287, 564);
             this.chbProfesor.Name = "chbProfesor";
             this.chbProfesor.Size = new System.Drawing.Size(18, 17);
             this.chbProfesor.TabIndex = 19;
@@ -274,12 +230,84 @@
             this.botonImagen1.UseVisualStyleBackColor = true;
             this.botonImagen1.Click += new System.EventHandler(this.botonImagen1_Click);
             // 
+            // tbEmailRegis
+            // 
+            this.tbEmailRegis.BorderColor = System.Drawing.Color.Blue;
+            this.tbEmailRegis.BorderRadius = 15;
+            this.tbEmailRegis.Location = new System.Drawing.Point(249, 258);
+            this.tbEmailRegis.Name = "tbEmailRegis";
+            this.tbEmailRegis.Padding = new System.Windows.Forms.Padding(10);
+            this.tbEmailRegis.PasswordChar = '\0';
+            this.tbEmailRegis.Size = new System.Drawing.Size(199, 30);
+            this.tbEmailRegis.TabIndex = 27;
+            // 
+            // tbNombreRegis
+            // 
+            this.tbNombreRegis.BorderColor = System.Drawing.Color.Blue;
+            this.tbNombreRegis.BorderRadius = 15;
+            this.tbNombreRegis.Location = new System.Drawing.Point(249, 320);
+            this.tbNombreRegis.Name = "tbNombreRegis";
+            this.tbNombreRegis.Padding = new System.Windows.Forms.Padding(10);
+            this.tbNombreRegis.PasswordChar = '\0';
+            this.tbNombreRegis.Size = new System.Drawing.Size(199, 30);
+            this.tbNombreRegis.TabIndex = 28;
+            // 
+            // tbApellidosregis
+            // 
+            this.tbApellidosregis.BorderColor = System.Drawing.Color.Blue;
+            this.tbApellidosregis.BorderRadius = 15;
+            this.tbApellidosregis.Location = new System.Drawing.Point(249, 374);
+            this.tbApellidosregis.Name = "tbApellidosregis";
+            this.tbApellidosregis.Padding = new System.Windows.Forms.Padding(10);
+            this.tbApellidosregis.PasswordChar = '\0';
+            this.tbApellidosregis.Size = new System.Drawing.Size(199, 30);
+            this.tbApellidosregis.TabIndex = 29;
+            // 
+            // tbDireccionRegis
+            // 
+            this.tbDireccionRegis.BorderColor = System.Drawing.Color.Blue;
+            this.tbDireccionRegis.BorderRadius = 15;
+            this.tbDireccionRegis.Location = new System.Drawing.Point(249, 419);
+            this.tbDireccionRegis.Name = "tbDireccionRegis";
+            this.tbDireccionRegis.Padding = new System.Windows.Forms.Padding(10);
+            this.tbDireccionRegis.PasswordChar = '\0';
+            this.tbDireccionRegis.Size = new System.Drawing.Size(199, 31);
+            this.tbDireccionRegis.TabIndex = 30;
+            // 
+            // tbCtraRegis1
+            // 
+            this.tbCtraRegis1.BorderColor = System.Drawing.Color.Blue;
+            this.tbCtraRegis1.BorderRadius = 15;
+            this.tbCtraRegis1.Location = new System.Drawing.Point(249, 469);
+            this.tbCtraRegis1.Name = "tbCtraRegis1";
+            this.tbCtraRegis1.Padding = new System.Windows.Forms.Padding(10);
+            this.tbCtraRegis1.PasswordChar = '*';
+            this.tbCtraRegis1.Size = new System.Drawing.Size(199, 30);
+            this.tbCtraRegis1.TabIndex = 31;
+            // 
+            // tbCtraRegis2
+            // 
+            this.tbCtraRegis2.BorderColor = System.Drawing.Color.Blue;
+            this.tbCtraRegis2.BorderRadius = 15;
+            this.tbCtraRegis2.Location = new System.Drawing.Point(249, 518);
+            this.tbCtraRegis2.Name = "tbCtraRegis2";
+            this.tbCtraRegis2.Padding = new System.Windows.Forms.Padding(10);
+            this.tbCtraRegis2.PasswordChar = '*';
+            this.tbCtraRegis2.Size = new System.Drawing.Size(199, 30);
+            this.tbCtraRegis2.TabIndex = 32;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(576, 687);
+            this.Controls.Add(this.tbCtraRegis2);
+            this.Controls.Add(this.tbCtraRegis1);
+            this.Controls.Add(this.tbDireccionRegis);
+            this.Controls.Add(this.tbApellidosregis);
+            this.Controls.Add(this.tbNombreRegis);
+            this.Controls.Add(this.tbEmailRegis);
             this.Controls.Add(this.btRegistrar);
             this.Controls.Add(this.btVaciarCampos1);
             this.Controls.Add(this.btSeleccion);
@@ -287,12 +315,6 @@
             this.Controls.Add(this.botonImagen2);
             this.Controls.Add(this.lbError);
             this.Controls.Add(this.chbProfesor);
-            this.Controls.Add(this.tbCtraRegis2);
-            this.Controls.Add(this.tbCtraRegis1);
-            this.Controls.Add(this.tbDireccionRegis);
-            this.Controls.Add(this.tbApellidosregis);
-            this.Controls.Add(this.tbNombreRegis);
-            this.Controls.Add(this.tbEmailRegis);
             this.Controls.Add(this.lbProfesor);
             this.Controls.Add(this.lbContra2);
             this.Controls.Add(this.lbContra1);
@@ -323,12 +345,6 @@
         private System.Windows.Forms.Label lbContra1;
         private System.Windows.Forms.Label lbContra2;
         private System.Windows.Forms.Label lbProfesor;
-        private System.Windows.Forms.TextBox tbEmailRegis;
-        private System.Windows.Forms.TextBox tbNombreRegis;
-        private System.Windows.Forms.TextBox tbApellidosregis;
-        private System.Windows.Forms.TextBox tbDireccionRegis;
-        private System.Windows.Forms.TextBox tbCtraRegis1;
-        private System.Windows.Forms.TextBox tbCtraRegis2;
         private System.Windows.Forms.CheckBox chbProfesor;
         private System.Windows.Forms.Label lbError;
         private ControlesPersonalizados.BotonImagen botonImagen2;
@@ -336,5 +352,11 @@
         private CustomButton btSeleccion;
         private CustomButton btVaciarCampos1;
         private CustomButton btRegistrar;
+        private ControlesPersonalizados.TextBoxRedondeado tbEmailRegis;
+        private ControlesPersonalizados.TextBoxRedondeado tbNombreRegis;
+        private ControlesPersonalizados.TextBoxRedondeado tbApellidosregis;
+        private ControlesPersonalizados.TextBoxRedondeado tbDireccionRegis;
+        private ControlesPersonalizados.TextBoxRedondeado tbCtraRegis1;
+        private ControlesPersonalizados.TextBoxRedondeado tbCtraRegis2;
     }
 }

@@ -116,11 +116,23 @@
     <Compile Include="Views\Landing\LandingUsuario.Designer.cs">
       <DependentUpon>LandingUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\RecetaItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\RecetaItemControl.Designer.cs">
+      <DependentUpon>RecetaItemControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Landing\UserContAdmin\UCGestionProductos.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Landing\UserContAdmin\UCGestionProductos.Designer.cs">
       <DependentUpon>UCGestionProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\UCGestionRecetas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\UCGestionRecetas.Designer.cs">
+      <DependentUpon>UCGestionRecetas.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Landing\UserContAdmin\UCGestionUsuarios.cs">
       <SubType>UserControl</SubType>
@@ -218,6 +230,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\papelera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lapiz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engranajes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

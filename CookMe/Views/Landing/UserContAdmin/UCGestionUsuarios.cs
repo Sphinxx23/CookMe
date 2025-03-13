@@ -58,11 +58,34 @@ namespace CookMe.Views.Landing.UserContAdmin
 
         private void RemoveUser(UserItemControl userControl)
         {
-            panelUsuarios.Controls.Remove(userControl);
-            panelUsuarios.Controls.Clear();
+            
+            DialogResult result = MessageBox.Show(
+                "¿Está seguro de que desea eliminar este usuario?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
 
-            List<Datos.Modelos.Usuario> usuarios = new Logica.Controles.UsuarioControl().ObtenerTodosUsuarios();
-            LoadUsers(usuarios);
+            if (result == DialogResult.Yes)
+            {
+                bool eliminado = new Logica.Controles.UsuarioControl().EliminarUsuarioPorEmail(userControl.lblCorreo.Text);
+
+                if (eliminado)
+                {
+                    MessageBox.Show("Usuario eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    panelUsuarios.Controls.Remove(userControl);
+                    panelUsuarios.Controls.Clear();
+
+                    List<Datos.Modelos.Usuario> usuarios = new Logica.Controles.UsuarioControl().ObtenerTodosUsuarios();
+                    LoadUsers(usuarios);
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
 
 
         }

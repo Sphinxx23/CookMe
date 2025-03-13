@@ -1,0 +1,98 @@
+﻿using CookMe.Properties;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CookMe.Views.Landing.UserContAdmin
+{
+    public partial class UCGestionRecetas : UserControl
+    {
+        private Panel panelRecetas;
+
+        public UCGestionRecetas()
+        {
+            InitializeComponents();
+            List<Datos.Modelos.Receta> recetas = new Logica.Controles.RecetaControl().ObtenerTodasLasRecetas();
+            LoadRecipes(recetas);
+        }
+
+        private void InitializeComponents()
+        {
+            this.Size = new Size(750, 600);
+
+            panelRecetas = new Panel()
+            {
+                Dock = DockStyle.Fill,
+                AutoScroll = true,
+                BorderStyle = BorderStyle.FixedSingle
+            };
+
+            this.Controls.Add(panelRecetas);
+        }
+
+        public void LoadRecipes(List<Datos.Modelos.Receta> recetas)
+        {
+            panelRecetas.Controls.Clear();
+            int distanciaVertical = 5;
+
+            foreach (var receta in recetas)
+            {
+                RecetaItemControl recetaControl = new RecetaItemControl();
+                //Image img = CookMe.MetodosImages.MetImages.ConvertBytesToImage(receta.Foto);
+                //Cambiar el resources.ccokme... por img
+                recetaControl.AsignarDatosReceta(receta.Id,receta.Titulo, receta.DescripcionBreve, receta.EmailUsuario, Resources.CookMeG);
+                recetaControl.Location = new Point(5, distanciaVertical);
+                recetaControl.DeleteClicked += (s, e) => RemoveRecipe(recetaControl);
+                recetaControl.EditClicked += (s, e) => EditRecipe(receta);
+
+                panelRecetas.Controls.Add(recetaControl);
+                distanciaVertical += recetaControl.Height + 5;
+            }
+        }
+
+        private void RemoveRecipe(RecetaItemControl recetaControl)
+        {
+
+            DialogResult result = MessageBox.Show(
+                "¿Está seguro de que desea eliminar esta receta?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                bool eliminado = new Logica.Controles.RecetaControl().EliminarRecetaPorId(recetaControl.id);
+
+                if (eliminado)
+                {
+                    MessageBox.Show("Receta eliminada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    panelRecetas.Controls.Remove(recetaControl);
+                    panelRecetas.Controls.Clear();
+
+                    List<Datos.Modelos.Receta> recetas = new Logica.Controles.RecetaControl().ObtenerTodasLasRecetas();
+                    LoadRecipes(recetas);
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar la receta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void EditRecipe(Datos.Modelos.Receta receta)
+        {
+            //FormEditarReceta formEditar = new FormEditarReceta(receta);
+            //formEditar.ShowDialog();
+
+            MessageBox.Show("abrir formulario edicion con los datos de ese recetaitemcontrol");
+            
+        }
+    }
+}

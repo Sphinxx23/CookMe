@@ -19,7 +19,7 @@ namespace CookMe.Views.Landing.UserContAdmin
         private PictureBox picFoto;
         private Label lblNombre;
         private Label lblApellido;
-        private Label lblCorreo;
+        public Label lblCorreo;
         private Button btnEliminar;
 
         private Label nom;
@@ -91,13 +91,12 @@ namespace CookMe.Views.Landing.UserContAdmin
             btnEliminar = new Button()
             {
                 Size = new Size(38, 38),
-                Location = new Point(650, 11),
+                Location = new Point(650, 9),
                 FlatStyle = FlatStyle.Flat,
                 BackColor = Color.White
             };
 
-            btnEliminar.FlatAppearance.BorderSize = 0;
-            btnEliminar.BackColor = Color.SkyBlue;            
+            btnEliminar.FlatAppearance.BorderSize = 0;;            
             btnEliminar.Image = Resources.papelera; 
             btnEliminar.Click += BtnEliminar_Click;
 
@@ -114,12 +113,7 @@ namespace CookMe.Views.Landing.UserContAdmin
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             DeleteClicked?.Invoke(this, EventArgs.Empty);
-            bool cierto = new Logica.Controles.UsuarioControl().EliminarUsuarioPorEmail(lblCorreo.Text);
-
-            if (cierto)
-            {
-                MessageBox.Show("Eliminado correctamente");
-            }
+            
         }
 
         public void AsignarDatosLabels(string nombre, string apellido ,string correo,Image foto)
