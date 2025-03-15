@@ -153,7 +153,40 @@ namespace Datos.Repositories
             }
         }
 
+        public List<Usuario> ObtenerTodosProfesores()
+        {
+            try
+            {
+                List<string> listaCorreos = new List<string>();
+                List<Usuario> listaUsuarios = new List<Usuario>();
 
+                using (var conexion = Conexion.Conexion.EstablecerConexion())
+                {
+                    using (var cmd = new NpgsqlCommand("SELECT email FROM usuario WHERE profesor = true", conexion))
+                    {
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                listaCorreos.Add(reader["email"] as string ?? string.Empty);
+                            }
+                        }
+                    }
+                }
+
+                foreach (string correo in listaCorreos)
+                {
+                    listaUsuarios.Add(ObtenerUsuarioPorEmail(correo));
+                }
+
+                return listaUsuarios;
+            }
+            catch (Exception ex)
+            {
+
+                return null;
+            }
+        }
 
 
 

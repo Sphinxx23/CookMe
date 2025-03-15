@@ -75,6 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controles\ClaseControl.cs" />
     <Compile Include="Controles\RecetaControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controles\UsuarioControl.cs" />

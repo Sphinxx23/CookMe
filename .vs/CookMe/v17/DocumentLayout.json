@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\PcBox\\Desktop\\CookMe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|C:\\Users\\PcBox\\Desktop\\CookMe\\cookme\\views\\login\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|solutionrelative:cookme\\views\\login\\register.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|c:\\users\\pcbox\\desktop\\cookme\\cookme\\views\\landing\\usercontadmin\\claseitemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|solutionrelative:cookme\\views\\landing\\usercontadmin\\claseitemcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|c:\\users\\pcbox\\desktop\\cookme\\cookme\\views\\login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|solutionrelative:cookme\\views\\login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|c:\\users\\pcbox\\desktop\\cookme\\cookme\\views\\landing\\usercontadmin\\ucgestionrecetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|solutionrelative:cookme\\views\\landing\\usercontadmin\\ucgestionrecetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|c:\\users\\pcbox\\desktop\\cookme\\cookme\\views\\landing\\landingadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|solutionrelative:cookme\\views\\landing\\landingadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|c:\\users\\pcbox\\desktop\\cookme\\cookme\\views\\landing\\landingadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|solutionrelative:cookme\\views\\landing\\landingadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B55A4A6-C639-4395-AA97-7063B9DC3763}|Datos\\Datos.csproj|c:\\users\\pcbox\\desktop\\cookme\\datos\\repositories\\claserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B55A4A6-C639-4395-AA97-7063B9DC3763}|Datos\\Datos.csproj|solutionrelative:datos\\repositories\\claserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B55A4A6-C639-4395-AA97-7063B9DC3763}|Datos\\Datos.csproj|c:\\users\\pcbox\\desktop\\cookme\\datos\\repositories\\recetarepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B55A4A6-C639-4395-AA97-7063B9DC3763}|Datos\\Datos.csproj|solutionrelative:datos\\repositories\\recetarepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|c:\\users\\pcbox\\desktop\\cookme\\cookme\\views\\landing\\usercontadmin\\ucgestionclases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|solutionrelative:cookme\\views\\landing\\usercontadmin\\ucgestionclases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0431FD1A-0BBD-4804-B363-6A1A463ACA5F}|Logica\\Logica.csproj|c:\\users\\pcbox\\desktop\\cookme\\logica\\controles\\clasecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0431FD1A-0BBD-4804-B363-6A1A463ACA5F}|Logica\\Logica.csproj|solutionrelative:logica\\controles\\clasecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +42,110 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Login\\Login.cs",
-              "RelativeDocumentMoniker": "CookMe\\Views\\Login\\Login.cs",
-              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Login\\Login.cs",
-              "RelativeToolTip": "CookMe\\Views\\Login\\Login.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAMwEcAAAAMAAAA",
+              "DocumentIndex": 2,
+              "Title": "LandingAdmin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Landing\\LandingAdmin.cs",
+              "RelativeDocumentMoniker": "CookMe\\Views\\Landing\\LandingAdmin.cs",
+              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Landing\\LandingAdmin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CookMe\\Views\\Landing\\LandingAdmin.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T17:51:16.318Z",
+              "WhenOpened": "2025-03-15T17:41:21.974Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RecetaRepo.cs",
+              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\Datos\\Repositories\\RecetaRepo.cs",
+              "RelativeDocumentMoniker": "Datos\\Repositories\\RecetaRepo.cs",
+              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\Datos\\Repositories\\RecetaRepo.cs",
+              "RelativeToolTip": "Datos\\Repositories\\RecetaRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T17:18:40.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UCGestionRecetas.cs",
+              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Landing\\UserContAdmin\\UCGestionRecetas.cs",
+              "RelativeDocumentMoniker": "CookMe\\Views\\Landing\\UserContAdmin\\UCGestionRecetas.cs",
+              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Landing\\UserContAdmin\\UCGestionRecetas.cs",
+              "RelativeToolTip": "CookMe\\Views\\Landing\\UserContAdmin\\UCGestionRecetas.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAAC8AAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T17:11:37.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ClaseRepo.cs",
+              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\Datos\\Repositories\\ClaseRepo.cs",
+              "RelativeDocumentMoniker": "Datos\\Repositories\\ClaseRepo.cs",
+              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\Datos\\Repositories\\ClaseRepo.cs",
+              "RelativeToolTip": "Datos\\Repositories\\ClaseRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T16:37:08.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClaseControl.cs",
+              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\Logica\\Controles\\ClaseControl.cs",
+              "RelativeDocumentMoniker": "Logica\\Controles\\ClaseControl.cs",
+              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\Logica\\Controles\\ClaseControl.cs",
+              "RelativeToolTip": "Logica\\Controles\\ClaseControl.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T16:36:32.259Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Register.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Login\\Register.cs",
-              "RelativeDocumentMoniker": "CookMe\\Views\\Login\\Register.cs",
-              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Login\\Register.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CookMe\\Views\\Login\\Register.cs [Dise\u00F1o]",
+              "Title": "ClaseItemControl.cs",
+              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Landing\\UserContAdmin\\ClaseItemControl.cs",
+              "RelativeDocumentMoniker": "CookMe\\Views\\Landing\\UserContAdmin\\ClaseItemControl.cs",
+              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Landing\\UserContAdmin\\ClaseItemControl.cs",
+              "RelativeToolTip": "CookMe\\Views\\Landing\\UserContAdmin\\ClaseItemControl.cs",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAAAFYAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T17:48:34.447Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-03-15T16:34:19.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UCGestionClases.cs",
+              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Landing\\UserContAdmin\\UCGestionClases.cs",
+              "RelativeDocumentMoniker": "CookMe\\Views\\Landing\\UserContAdmin\\UCGestionClases.cs",
+              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Landing\\UserContAdmin\\UCGestionClases.cs",
+              "RelativeToolTip": "CookMe\\Views\\Landing\\UserContAdmin\\UCGestionClases.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAAAEgAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T16:17:06.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LandingAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Landing\\LandingAdmin.cs",
+              "RelativeDocumentMoniker": "CookMe\\Views\\Landing\\LandingAdmin.cs",
+              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Landing\\LandingAdmin.cs",
+              "RelativeToolTip": "CookMe\\Views\\Landing\\LandingAdmin.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAIAywDsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T16:16:10.505Z",
+              "EditorCaption": ""
             }
           ]
         }

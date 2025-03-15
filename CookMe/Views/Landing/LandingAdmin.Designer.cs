@@ -167,6 +167,7 @@
             this.customButton3.TabIndex = 9;
             this.customButton3.Text = "Gestión Clases";
             this.customButton3.UseVisualStyleBackColor = false;
+            this.customButton3.Click += new System.EventHandler(this.customButton3_Click);
             // 
             // panel2
             // 

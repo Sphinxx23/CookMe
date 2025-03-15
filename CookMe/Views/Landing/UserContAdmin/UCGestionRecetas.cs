@@ -45,7 +45,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             {
                 RecetaItemControl recetaControl = new RecetaItemControl();
                 //Image img = CookMe.MetodosImages.MetImages.ConvertBytesToImage(receta.Foto);
-                //Cambiar el resources.ccokme... por img
+                //Cambiar el resources.ccokme... por img en la linea 49
                 recetaControl.AsignarDatosReceta(receta.Id,receta.Titulo, receta.DescripcionBreve, receta.EmailUsuario, Resources.CookMeG);
                 recetaControl.Location = new Point(5, distanciaVertical);
                 recetaControl.DeleteClicked += (s, e) => RemoveRecipe(recetaControl);

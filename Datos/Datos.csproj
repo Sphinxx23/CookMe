@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\Conexion.cs" />
+    <Compile Include="Repositories\ClaseRepo.cs" />
     <Compile Include="Repositories\RecetaRepo.cs" />
     <Compile Include="Repositories\UsuarioRepo.cs" />
     <Compile Include="Security\CredentialsManager.cs" />

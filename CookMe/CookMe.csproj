@@ -116,11 +116,23 @@
     <Compile Include="Views\Landing\LandingUsuario.Designer.cs">
       <DependentUpon>LandingUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\ClaseItemControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\ClaseItemControl.Designer.cs">
+      <DependentUpon>ClaseItemControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Landing\UserContAdmin\RecetaItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Landing\UserContAdmin\RecetaItemControl.Designer.cs">
       <DependentUpon>RecetaItemControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\UCGestionClases.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContAdmin\UCGestionClases.Designer.cs">
+      <DependentUpon>UCGestionClases.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Landing\UserContAdmin\UCGestionProductos.cs">
       <SubType>UserControl</SubType>

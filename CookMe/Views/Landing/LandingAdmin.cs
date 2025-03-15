@@ -58,5 +58,9 @@ namespace CookMe.Views.Landing
             LoadUserControl(new UCGestionRecetas());
         }
 
+        private void customButton3_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new UCGestionClases());
+        }
     }
 }
