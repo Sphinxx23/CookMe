@@ -83,6 +83,26 @@ namespace CookMe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clase2 {
+            get {
+                object obj = ResourceManager.GetObject("clase2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clase21 {
+            get {
+                object obj = ResourceManager.GetObject("clase21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CookMeG {
             get {
                 object obj = ResourceManager.GetObject("CookMeG", resourceCulture);
@@ -116,6 +136,16 @@ namespace CookMe.Properties {
         internal static System.Drawing.Bitmap lapiz {
             get {
                 object obj = ResourceManager.GetObject("lapiz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mas {
+            get {
+                object obj = ResourceManager.GetObject("mas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

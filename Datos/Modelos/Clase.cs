@@ -10,7 +10,7 @@ namespace Datos.Modelos
     {
         public Clase() { }
 
-        public Clase(int Id, string Titulo ,int PlazaTotal, int PlazaOcupada, string Descripcion, DateTime Fecha, byte[] FotoTematica, decimal ValoracionMedia, byte[] FotoProfesor, string EmailProfesor)
+        public Clase(int Id, string Titulo ,int PlazaTotal, int PlazaOcupada, string Descripcion, string Fecha, byte[] FotoTematica, decimal ValoracionMedia, byte[] FotoProfesor, string EmailProfesor)
         {
             this.Id = Id;
             this.Titulo = Titulo;
@@ -29,7 +29,7 @@ namespace Datos.Modelos
         public int PlazaTotal { get; set; }
         public int PlazaOcupada { get; set; }
         public string Descripcion { get; set; }
-        public DateTime Fecha { get; set; }
+        public string Fecha { get; set; }
         public byte[] FotoTematica { get; set; }
         public decimal ValoracionMedia { get; set; }
         public byte[] FotoProfesor { get; set; }
@@ -37,7 +37,7 @@ namespace Datos.Modelos
 
         public override string ToString()
         {
-            return $"Clase: {Descripcion}, Fecha: {Fecha.ToShortDateString()}, Profesor: {EmailProfesor}, Valoración Media: {ValoracionMedia}, Plaza Total: {PlazaTotal}, Plaza Ocupada: {PlazaOcupada}";
+            return $"Clase: {Descripcion}, Fecha: {Fecha}, Profesor: {EmailProfesor}, Valoración Media: {ValoracionMedia}, Plaza Total: {PlazaTotal}, Plaza Ocupada: {PlazaOcupada}";
         }
     }
 }

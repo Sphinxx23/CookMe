@@ -33,7 +33,7 @@ namespace CookMe.Views.Landing.UserContAdmin
                 Location = new Point((this.Width - 50) / 2, 10),
                 FlatStyle = FlatStyle.Flat,
                 BackColor = Color.White,
-                Image = Properties.Resources.atras, // poner una imagen de un + para que se vea que es agregar clase
+                Image = Properties.Resources.mas, 
                 Anchor = AnchorStyles.Top
             };
             btnAgregarClase.FlatAppearance.BorderSize = 0;
@@ -42,7 +42,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             panelClases = new Panel()
             {
                 Location = new Point(0, 70),
-                Size = new Size(750, 530),
+                Size = new Size(750, 370),
                 AutoScroll = true,
                 BorderStyle = BorderStyle.FixedSingle
             };
@@ -59,9 +59,8 @@ namespace CookMe.Views.Landing.UserContAdmin
             foreach (var clase in clases)
             {
                 ClaseItemControl claseControl = new ClaseItemControl();
-                //Image imgTematica = CookMe.MetodosImages.MetImages.ConvertBytesToImage(clase.FotoTematica);
-                //Image imgProfe = CookMe.MetodosImages.MetImages.ConvertBytesToImage(clase.FotoProfesor);
-                //cambiar la linea 71 y 72 por 71-imgTematica y 72-imgProfe
+                Image imgTematica = CookMe.MetodosImages.MetImages.ConvertBytesToImage(clase.FotoTematica);
+                Image imgProfe = CookMe.MetodosImages.MetImages.ConvertBytesToImage(clase.FotoProfesor);
                 claseControl.AsignarDatosClase(
                     clase.Id,
                     clase.Titulo,
@@ -69,12 +68,12 @@ namespace CookMe.Views.Landing.UserContAdmin
                     clase.Fecha,
                     (clase.PlazaTotal-clase.PlazaOcupada),
                     clase.EmailProfesor,
-                    Resources.CookMeG,
-                    Resources.CookMeG
+                    imgTematica,
+                    imgProfe
                 );
                 claseControl.Location = new Point(5, distanciaVertical);
                 claseControl.DeleteClicked += (s, e) => RemoveClase(claseControl);
-                claseControl.EditClicked += (s, e) => EditClase(clase);
+                claseControl.EditClicked += (s, e) => EditClase(claseControl);
 
                 panelClases.Controls.Add(claseControl);
                 distanciaVertical += claseControl.Height + 5;
@@ -106,16 +105,21 @@ namespace CookMe.Views.Landing.UserContAdmin
             }
         }
 
-        private void EditClase(Datos.Modelos.Clase clase)
+        private void EditClase(ClaseItemControl claseControl)
         {
-            MessageBox.Show("Abrir formulario de edición con los datos de esta clase.");
-            // form de edicion de clases
+            Views.VistasClase.CrearEditarClase crearClase = new Views.VistasClase.CrearEditarClase(this, claseControl.id);
+            this.Visible = false;
+            crearClase.Show();
+
+            //Intentar encontrar la forma de recargar la pagina para que se muestren los cambios, como al eliminar uno
         }
 
         private void BtnAgregarClase_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Abrir formulario de creación de una nueva clase.");
-            // form de crear clase
+            Views.VistasClase.CrearEditarClase crearClase = new Views.VistasClase.CrearEditarClase(this, -1);
+            this.Visible = false;
+            crearClase.Show();
+            //Intentar encontrar la forma de recargar la pagina para que se muestren los cambios, como al eliminar uno
         }
     }
 }

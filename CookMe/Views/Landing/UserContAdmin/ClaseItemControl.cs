@@ -131,7 +131,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             EditClicked?.Invoke(this, EventArgs.Empty);
         }
 
-        public void AsignarDatosClase(int id, string titulo, string descripcion, DateTime fecha, int plazas, string emailProfesor, Image fotoClase, Image fotoProfesor)
+        public void AsignarDatosClase(int id, string titulo, string descripcion, string fecha, int plazas, string emailProfesor, Image fotoClase, Image fotoProfesor)
         {
             this.id = id;
             lblTitulo.Text = titulo;

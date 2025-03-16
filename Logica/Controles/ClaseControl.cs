@@ -26,5 +26,18 @@ namespace Logica.Controles
             return new Datos.Repositories.ClaseRepo().EliminarClasePorId(id);
 
         }
+
+        public bool InsertarClase(Clase clase)
+        {
+            return new Datos.Repositories.ClaseRepo().InsertarClase(clase);
+
+        }
+
+        public bool EditarClase(int id, Clase clase)
+        {
+            return new Datos.Repositories.ClaseRepo().EditarClase(id, clase);
+
+        }
+
     }
 }

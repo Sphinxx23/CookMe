@@ -153,7 +153,7 @@ namespace Datos.Repositories
             }
         }
 
-        public List<Usuario> ObtenerTodosProfesores()
+        public List<Usuario> ObtenerProfesores()
         {
             try
             {

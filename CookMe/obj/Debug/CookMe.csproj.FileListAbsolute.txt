@@ -90,3 +90,4 @@ C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.exe
 C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.pdb
 C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.Landing.UserContAdmin.UCGestionProductos.resources
 C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.Landing.UserContAdmin.UCGestionUsuarios.resources
+C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistasClase.CrearEditarClase.resources

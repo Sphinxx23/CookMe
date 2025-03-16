@@ -28,15 +28,14 @@ namespace Logica.Controles
 
         }
 
-
-        public string ProbarConexion()
-        {
-            return new Datos.Repositories.UsuarioRepo().ProbarConexion();
-        }
-
         public List<Usuario> ObtenerTodosUsuarios()
         {
             return new Datos.Repositories.UsuarioRepo().ObtenerTodosUsuarios();
+        }
+
+        public List<Usuario> ObtenerProfesores()
+        {
+            return new Datos.Repositories.UsuarioRepo().ObtenerProfesores();
         }
 
 

@@ -32,10 +32,10 @@ namespace Datos.Repositories
                                     PlazaTotal = Convert.ToInt32(reader["plaza_total"]),
                                     PlazaOcupada = Convert.ToInt32(reader["plaza_ocupada"]),
                                     Descripcion = reader["descripcion"] as string ?? string.Empty,
-                                    Fecha = Convert.ToDateTime(reader["fecha"]),
-                                    //FotoTematica = reader["foto_tematica"] as byte[],
+                                    Fecha =reader["fecha"] as string ?? string.Empty,
+                                    FotoTematica = reader["foto_tematica"] as byte[],
                                     ValoracionMedia = Convert.ToDecimal(reader["valoracion_media"]),
-                                    //FotoProfesor = reader["foto_profesor"] as byte[],
+                                    FotoProfesor = reader["foto_profesor"] as byte[],
                                     EmailProfesor = reader["email_profesor"] as string ?? string.Empty
                                 };
 
@@ -59,12 +59,11 @@ namespace Datos.Repositories
         {
             try
             {
+                Usuario usuProfesor = new Datos.Repositories.UsuarioRepo().ObtenerUsuarioPorEmail(clase.EmailProfesor);
+
                 using (var conexion = Conexion.Conexion.EstablecerConexion())
                 {
-
-                    Usuario usuProfesor = new Datos.Repositories.UsuarioRepo().ObtenerUsuarioPorEmail(clase.EmailProfesor);
-
-
+                    
                     using (var cmd = new NpgsqlCommand(@"
                         INSERT INTO clase (titulo, plaza_total, plaza_ocupada, descripcion, fecha, foto_tematica, valoracion_media, foto_profesor, email_profesor)
                         VALUES (@Titulo, @PlazaTotal, @PlazaOcupada, @Descripcion, @Fecha, @FotoTematica, @ValoracionMedia, @FotoProfesor, @EmailProfesor)", conexion))
@@ -150,6 +149,52 @@ namespace Datos.Repositories
                 return false;
             }
         }
+
+        public bool EditarClase(int idClase, Clase clase)
+        {
+            try
+            {
+                using (var conexion = Conexion.Conexion.EstablecerConexion())
+                {
+                    Usuario usuProfesor = new Datos.Repositories.UsuarioRepo().ObtenerUsuarioPorEmail(clase.EmailProfesor);
+
+                    using (var cmd = new NpgsqlCommand(@"
+                        UPDATE clase 
+                        SET titulo = @Titulo,
+                            plaza_total = @PlazaTotal,
+                            plaza_ocupada = @PlazaOcupada,
+                            descripcion = @Descripcion,
+                            fecha = @Fecha,
+                            foto_tematica = @FotoTematica,
+                            valoracion_media = @ValoracionMedia,
+                            foto_profesor = @FotoProfesor,
+                            email_profesor = @EmailProfesor
+                        WHERE id = @IdClase", conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@IdClase", idClase);
+                        cmd.Parameters.AddWithValue("@Titulo", string.IsNullOrEmpty(clase.Titulo) ? (object)DBNull.Value : clase.Titulo);
+                        cmd.Parameters.AddWithValue("@PlazaTotal", clase.PlazaTotal);
+                        cmd.Parameters.AddWithValue("@PlazaOcupada", clase.PlazaOcupada);
+                        cmd.Parameters.AddWithValue("@Descripcion", string.IsNullOrEmpty(clase.Descripcion) ? (object)DBNull.Value : clase.Descripcion);
+                        cmd.Parameters.AddWithValue("@Fecha", clase.Fecha);
+                        cmd.Parameters.AddWithValue("@FotoTematica", clase.FotoTematica == null || clase.FotoTematica.Length == 0 ? (object)DBNull.Value : clase.FotoTematica);
+                        cmd.Parameters.AddWithValue("@ValoracionMedia", clase.ValoracionMedia != null ? (object)clase.ValoracionMedia : DBNull.Value);
+                        cmd.Parameters.AddWithValue("@FotoProfesor", usuProfesor.Foto == null || usuProfesor.Foto.Length == 0 ? (object)DBNull.Value : usuProfesor.Foto);
+                        cmd.Parameters.AddWithValue("@EmailProfesor", string.IsNullOrEmpty(clase.EmailProfesor) ? (object)DBNull.Value : clase.EmailProfesor);
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+                        return filasAfectadas > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                return false;
+            }
+        }
+
+
     }
 
 }
