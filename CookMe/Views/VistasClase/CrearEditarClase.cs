@@ -227,7 +227,6 @@ namespace CookMe.Views.VistasClase
 
             return true;
 
-
         }
     }
 }

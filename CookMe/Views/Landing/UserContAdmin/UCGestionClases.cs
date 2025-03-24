@@ -42,7 +42,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             panelClases = new Panel()
             {
                 Location = new Point(0, 70),
-                Size = new Size(750, 370),
+                Size = new Size(765, 370),
                 AutoScroll = true,
                 BorderStyle = BorderStyle.FixedSingle
             };

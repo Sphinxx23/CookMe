@@ -1,6 +1,6 @@
 ﻿namespace CookMe.Views.Landing.UserContAdmin
 {
-    partial class UCGestionProductos
+    partial class ProductoItemControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,16 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // UCGestionProductos
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "UCGestionProductos";
-            this.Size = new System.Drawing.Size(1025, 519);
-            this.ResumeLayout(false);
-
         }
 
         #endregion
