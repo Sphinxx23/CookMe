@@ -188,6 +188,12 @@
     <Compile Include="Views\VistasProducto\CrearEditarProducto.Designer.cs">
       <DependentUpon>CrearEditarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\VistasReceta\CrearEditarReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VistasReceta\CrearEditarReceta.Designer.cs">
+      <DependentUpon>CrearEditarReceta.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VistasProducto\CrearEditarProducto.resx">
       <DependentUpon>CrearEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VistasReceta\CrearEditarReceta.resx">
+      <DependentUpon>CrearEditarReceta.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

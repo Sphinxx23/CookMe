@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\PcBox\\Desktop\\CookMe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|c:\\users\\pcbox\\desktop\\cookme\\cookme\\views\\vistasproducto\\creareditarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|solutionrelative:cookme\\views\\vistasproducto\\creareditarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|c:\\users\\pcbox\\desktop\\cookme\\cookme\\views\\vistasproducto\\creareditarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|solutionrelative:cookme\\views\\vistasproducto\\creareditarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9B55A4A6-C639-4395-AA97-7063B9DC3763}|Datos\\Datos.csproj|c:\\users\\pcbox\\desktop\\cookme\\datos\\repositories\\claserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B55A4A6-C639-4395-AA97-7063B9DC3763}|Datos\\Datos.csproj|solutionrelative:datos\\repositories\\claserepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9B55A4A6-C639-4395-AA97-7063B9DC3763}|Datos\\Datos.csproj|c:\\users\\pcbox\\desktop\\cookme\\datos\\repositories\\productorepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B55A4A6-C639-4395-AA97-7063B9DC3763}|Datos\\Datos.csproj|solutionrelative:datos\\repositories\\productorepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9B55A4A6-C639-4395-AA97-7063B9DC3763}|Datos\\Datos.csproj|c:\\users\\pcbox\\desktop\\cookme\\datos\\modelos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B55A4A6-C639-4395-AA97-7063B9DC3763}|Datos\\Datos.csproj|solutionrelative:datos\\modelos\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|c:\\users\\pcbox\\desktop\\cookme\\cookme\\views\\landing\\landingusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B40C0D96-DFF5-4812-8A1C-C0348388ED76}|CookMe\\CookMe.csproj|solutionrelative:cookme\\views\\landing\\landingusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,70 +14,18 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClaseRepo.cs",
-              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\Datos\\Repositories\\ClaseRepo.cs",
-              "RelativeDocumentMoniker": "Datos\\Repositories\\ClaseRepo.cs",
-              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\Datos\\Repositories\\ClaseRepo.cs",
-              "RelativeToolTip": "Datos\\Repositories\\ClaseRepo.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAAAFAAAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T18:01:47.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Producto.cs",
-              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\Datos\\Modelos\\Producto.cs",
-              "RelativeDocumentMoniker": "Datos\\Modelos\\Producto.cs",
-              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\Datos\\Modelos\\Producto.cs",
-              "RelativeToolTip": "Datos\\Modelos\\Producto.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T18:01:07.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductoRepo.cs",
-              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\Datos\\Repositories\\ProductoRepo.cs",
-              "RelativeDocumentMoniker": "Datos\\Repositories\\ProductoRepo.cs",
-              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\Datos\\Repositories\\ProductoRepo.cs",
-              "RelativeToolTip": "Datos\\Repositories\\ProductoRepo.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T18:07:37.924Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CrearEditarProducto.cs",
-              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\VistasProducto\\CrearEditarProducto.cs",
-              "RelativeDocumentMoniker": "CookMe\\Views\\VistasProducto\\CrearEditarProducto.cs",
-              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\VistasProducto\\CrearEditarProducto.cs",
-              "RelativeToolTip": "CookMe\\Views\\VistasProducto\\CrearEditarProducto.cs",
-              "ViewState": "AQIAAI0AAAAAAAAAAAAAAI8AAAAvAAAA",
+              "Title": "LandingUsuario.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Landing\\LandingUsuario.cs",
+              "RelativeDocumentMoniker": "CookMe\\Views\\Landing\\LandingUsuario.cs",
+              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\Landing\\LandingUsuario.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CookMe\\Views\\Landing\\LandingUsuario.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T18:09:27.266Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CrearEditarProducto.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\VistasProducto\\CrearEditarProducto.cs",
-              "RelativeDocumentMoniker": "CookMe\\Views\\VistasProducto\\CrearEditarProducto.cs",
-              "ToolTip": "C:\\Users\\PcBox\\Desktop\\CookMe\\CookMe\\Views\\VistasProducto\\CrearEditarProducto.cs [Dise\u00F1o]",
-              "RelativeToolTip": "CookMe\\Views\\VistasProducto\\CrearEditarProducto.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T16:44:39.848Z",
+              "WhenOpened": "2025-03-25T17:51:36.133Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

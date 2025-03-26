@@ -49,7 +49,7 @@ namespace CookMe.Views.Landing.UserContAdmin
                 recetaControl.AsignarDatosReceta(receta.Id,receta.Titulo, receta.DescripcionBreve, receta.EmailUsuario, Resources.CookMeG);
                 recetaControl.Location = new Point(5, distanciaVertical);
                 recetaControl.DeleteClicked += (s, e) => RemoveRecipe(recetaControl);
-                recetaControl.EditClicked += (s, e) => EditRecipe(receta);
+                recetaControl.EditClicked += (s, e) => EditRecipe(recetaControl);
 
                 panelRecetas.Controls.Add(recetaControl);
                 distanciaVertical += recetaControl.Height + 5;
@@ -86,13 +86,12 @@ namespace CookMe.Views.Landing.UserContAdmin
             }
         }
 
-        private void EditRecipe(Datos.Modelos.Receta receta)
+        private void EditRecipe(RecetaItemControl item)
         {
-            //FormEditarReceta formEditar = new FormEditarReceta(receta);
-            //formEditar.ShowDialog();
+            Views.VistasReceta.CrearEditarReceta editarReceta = new Views.VistasReceta.CrearEditarReceta(this, item.id, "");
+            this.Visible = false;
+            editarReceta.Show();
 
-            MessageBox.Show("abrir formulario edicion con los datos de ese recetaitemcontrol");
-            
         }
     }
 }

@@ -32,15 +32,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbBienvenidaAdmin = new System.Windows.Forms.Label();
-            this.customButton5 = new CustomButton();
-            this.customButton2 = new CustomButton();
-            this.customButton4 = new CustomButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.customButton3 = new CustomButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.customButton5 = new CustomButton();
+            this.customButton2 = new CustomButton();
+            this.customButton4 = new CustomButton();
+            this.customButton3 = new CustomButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,6 +94,58 @@
             this.lbBienvenidaAdmin.Size = new System.Drawing.Size(0, 18);
             this.lbBienvenidaAdmin.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightCoral;
+            this.button1.Location = new System.Drawing.Point(12, 449);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 49);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "CERRAR SESION";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(230, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1025, 519);
+            this.panel2.TabIndex = 13;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Location = new System.Drawing.Point(145, 95);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(743, 348);
+            this.panel4.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("DejaVu Math TeX Gyre", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(197, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(327, 119);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ADMINISTRACIÓN";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CookMe.Properties.Resources.engranajes;
+            this.pictureBox2.Location = new System.Drawing.Point(280, 148);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(181, 165);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // customButton5
             // 
             this.customButton5.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -142,17 +194,6 @@
             this.customButton4.UseVisualStyleBackColor = false;
             this.customButton4.Click += new System.EventHandler(this.customButton4_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightCoral;
-            this.button1.Location = new System.Drawing.Point(12, 449);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 49);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "CERRAR SESION";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // customButton3
             // 
             this.customButton3.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -169,47 +210,6 @@
             this.customButton3.UseVisualStyleBackColor = false;
             this.customButton3.Click += new System.EventHandler(this.customButton3_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(230, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1025, 519);
-            this.panel2.TabIndex = 13;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(145, 95);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(743, 348);
-            this.panel4.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("DejaVu Math TeX Gyre", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(197, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(327, 119);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ADMINISTRACIÓN";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::CookMe.Properties.Resources.engranajes;
-            this.pictureBox2.Location = new System.Drawing.Point(280, 148);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(181, 165);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // LandingAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -218,8 +218,8 @@
             this.ClientSize = new System.Drawing.Size(1255, 519);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(1273, 566);
-            this.MinimumSize = new System.Drawing.Size(1273, 566);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LandingAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LandingAdmin";

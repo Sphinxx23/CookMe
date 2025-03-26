@@ -28,5 +28,15 @@ namespace Logica.Controles
 
         }
 
+        public bool InsertarReceta(Receta rec)
+        {
+            return new Datos.Repositories.RecetaRepo().InsertarReceta(rec);
+        }
+
+        public bool EditarReceta(int idRec, Receta rec)
+        {
+            return new Datos.Repositories.RecetaRepo().EditarReceta(idRec,rec);
+        }
+
     }
 }

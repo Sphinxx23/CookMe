@@ -20,6 +20,7 @@ namespace CookMe.Views.Login
         private Form parent;
         public Login(Form parent)
         {
+            this.FormBorderStyle = FormBorderStyle.None;
             InitializeComponent();
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Image = CookMe.Properties.Resources.CookMeG;

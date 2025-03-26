@@ -14,6 +14,7 @@ namespace CookMe
     {
         public Form1()
         {
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             InitializeComponent();
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Image = CookMe.Properties.Resources.CookMeG;

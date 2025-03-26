@@ -43,6 +43,12 @@ namespace CookMe.ControlesPersonalizados
             set => textBox.PasswordChar = value;
         }
 
+        public bool Multiline
+        {
+            get => textBox.Multiline;
+            set => textBox.Multiline = true;
+        }
+
         public TextBoxRedondeado()
         {
             textBox.BorderStyle = BorderStyle.None;

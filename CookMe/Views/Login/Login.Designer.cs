@@ -46,7 +46,7 @@
             this.lbInfoEmail.AutoSize = true;
             this.lbInfoEmail.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoEmail.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbInfoEmail.Location = new System.Drawing.Point(69, 278);
+            this.lbInfoEmail.Location = new System.Drawing.Point(71, 290);
             this.lbInfoEmail.Name = "lbInfoEmail";
             this.lbInfoEmail.Size = new System.Drawing.Size(59, 21);
             this.lbInfoEmail.TabIndex = 4;
@@ -57,7 +57,7 @@
             this.lbInfoContrasena.AutoSize = true;
             this.lbInfoContrasena.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoContrasena.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbInfoContrasena.Location = new System.Drawing.Point(49, 340);
+            this.lbInfoContrasena.Location = new System.Drawing.Point(51, 352);
             this.lbInfoContrasena.Name = "lbInfoContrasena";
             this.lbInfoContrasena.Size = new System.Drawing.Size(116, 21);
             this.lbInfoContrasena.TabIndex = 5;
@@ -66,14 +66,14 @@
             // lbErrorCredenciales
             // 
             this.lbErrorCredenciales.AutoSize = true;
-            this.lbErrorCredenciales.Location = new System.Drawing.Point(128, 373);
+            this.lbErrorCredenciales.Location = new System.Drawing.Point(130, 385);
             this.lbErrorCredenciales.Name = "lbErrorCredenciales";
             this.lbErrorCredenciales.Size = new System.Drawing.Size(0, 16);
             this.lbErrorCredenciales.TabIndex = 6;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(120, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(122, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(257, 222);
             this.pictureBox1.TabIndex = 9;
@@ -84,7 +84,7 @@
             this.btAccederLogin1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btAccederLogin1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btAccederLogin1.ForeColor = System.Drawing.Color.Black;
-            this.btAccederLogin1.Location = new System.Drawing.Point(292, 407);
+            this.btAccederLogin1.Location = new System.Drawing.Point(294, 419);
             this.btAccederLogin1.Name = "btAccederLogin1";
             this.btAccederLogin1.Size = new System.Drawing.Size(120, 40);
             this.btAccederLogin1.TabIndex = 16;
@@ -97,7 +97,7 @@
             this.btBorrarCamposLogin1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btBorrarCamposLogin1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btBorrarCamposLogin1.ForeColor = System.Drawing.Color.Black;
-            this.btBorrarCamposLogin1.Location = new System.Drawing.Point(120, 407);
+            this.btBorrarCamposLogin1.Location = new System.Drawing.Point(122, 419);
             this.btBorrarCamposLogin1.Name = "btBorrarCamposLogin1";
             this.btBorrarCamposLogin1.Size = new System.Drawing.Size(120, 40);
             this.btBorrarCamposLogin1.TabIndex = 15;
@@ -109,7 +109,7 @@
             // 
             this.botonImagen2.ButtonImage = global::CookMe.Properties.Resources.ojo1;
             this.botonImagen2.CornerRadius = 20;
-            this.botonImagen2.Location = new System.Drawing.Point(395, 331);
+            this.botonImagen2.Location = new System.Drawing.Point(397, 343);
             this.botonImagen2.Name = "botonImagen2";
             this.botonImagen2.Size = new System.Drawing.Size(77, 30);
             this.botonImagen2.TabIndex = 10;
@@ -121,7 +121,7 @@
             // 
             this.botonImagen1.ButtonImage = global::CookMe.Properties.Resources.atras;
             this.botonImagen1.CornerRadius = 20;
-            this.botonImagen1.Location = new System.Drawing.Point(12, 22);
+            this.botonImagen1.Location = new System.Drawing.Point(14, 34);
             this.botonImagen1.Name = "botonImagen1";
             this.botonImagen1.Size = new System.Drawing.Size(61, 42);
             this.botonImagen1.TabIndex = 8;
@@ -132,22 +132,24 @@
             // 
             this.tbEmailLogin.BorderColor = System.Drawing.Color.Blue;
             this.tbEmailLogin.BorderRadius = 15;
-            this.tbEmailLogin.Location = new System.Drawing.Point(184, 278);
+            this.tbEmailLogin.Location = new System.Drawing.Point(186, 280);
+            this.tbEmailLogin.Multiline = true;
             this.tbEmailLogin.Name = "tbEmailLogin";
             this.tbEmailLogin.Padding = new System.Windows.Forms.Padding(10);
             this.tbEmailLogin.PasswordChar = '\0';
-            this.tbEmailLogin.Size = new System.Drawing.Size(183, 30);
+            this.tbEmailLogin.Size = new System.Drawing.Size(183, 45);
             this.tbEmailLogin.TabIndex = 23;
             // 
             // tbContrasenaLogin
             // 
             this.tbContrasenaLogin.BorderColor = System.Drawing.Color.Blue;
             this.tbContrasenaLogin.BorderRadius = 15;
-            this.tbContrasenaLogin.Location = new System.Drawing.Point(184, 331);
+            this.tbContrasenaLogin.Location = new System.Drawing.Point(186, 343);
+            this.tbContrasenaLogin.Multiline = true;
             this.tbContrasenaLogin.Name = "tbContrasenaLogin";
             this.tbContrasenaLogin.Padding = new System.Windows.Forms.Padding(10);
             this.tbContrasenaLogin.PasswordChar = '*';
-            this.tbContrasenaLogin.Size = new System.Drawing.Size(183, 30);
+            this.tbContrasenaLogin.Size = new System.Drawing.Size(183, 43);
             this.tbContrasenaLogin.TabIndex = 24;
             // 
             // Login

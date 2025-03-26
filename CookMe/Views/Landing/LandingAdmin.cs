@@ -18,6 +18,7 @@ namespace CookMe.Views.Landing
         private Datos.Modelos.Usuario usuarioSesion;
         public LandingAdmin(Form parent, Datos.Modelos.Usuario usu)
         {
+            this.FormBorderStyle = FormBorderStyle.None;
             InitializeComponent();
             this.parent = parent;
             this.usuarioSesion = usu;

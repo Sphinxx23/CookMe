@@ -92,3 +92,4 @@ C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.Landing.UserContAdmi
 C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.Landing.UserContAdmin.UCGestionUsuarios.resources
 C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistasClase.CrearEditarClase.resources
 C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistasProducto.CrearEditarProducto.resources
+C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistasReceta.CrearEditarReceta.resources

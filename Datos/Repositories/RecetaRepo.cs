@@ -142,6 +142,40 @@ namespace Datos.Repositories
                 return false;
             }
         }
+        public bool EditarReceta(int idReceta, Receta receta)
+        {
+            try
+            {
+                using (var conexion = Conexion.Conexion.EstablecerConexion())
+                {
+                    using (var cmd = new NpgsqlCommand(@"
+                UPDATE receta
+                SET titulo = @Titulo,
+                    descripcion_breve = @DescripcionBreve,
+                    ingrediente = @Ingrediente,
+                    pasos = @Pasos,
+                    foto = @Foto,
+                    email_usuario = @EmailUsuario
+                WHERE id = @IdReceta", conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@IdReceta", idReceta);
+                        cmd.Parameters.AddWithValue("@Titulo", receta.Titulo ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@DescripcionBreve", receta.DescripcionBreve ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Ingrediente", receta.Ingrediente ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Pasos", receta.Pasos ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Foto", receta.Foto ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@EmailUsuario", receta.EmailUsuario ?? (object)DBNull.Value);
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+                        return filasAfectadas > 0;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
 
 

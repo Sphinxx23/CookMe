@@ -18,6 +18,7 @@ namespace CookMe.Views.Login
         private Form parent;
         public Register(Form parent)
         {
+            this.FormBorderStyle = FormBorderStyle.None;
             InitializeComponent();
             pbFotoPerfil.SizeMode=PictureBoxSizeMode.StretchImage;  
             pbFotoPerfil.Image = CookMe.Properties.Resources.anonimoG;

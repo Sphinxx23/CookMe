@@ -20,6 +20,7 @@ namespace CookMe.Views.VistasClase
         List<Datos.Modelos.Usuario> profesoresGeneral;
         public CrearEditarClase(UserControl parent, int idClase)
         {
+            this.FormBorderStyle = FormBorderStyle.None;
             this.idClase = idClase;
             InitializeComponent();
             this.parent = parent;
@@ -133,13 +134,14 @@ namespace CookMe.Views.VistasClase
                     bool cierto = new Logica.Controles.ClaseControl().InsertarClase(clase);
                     if (cierto)
                     {
-                        MessageBox.Show("Clase añadida correctamente");
+                        MessageBox.Show("Clase creada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         this.Close();
                         parent.Visible = true;
                     }
                     else 
                     {
-                        MessageBox.Show("Error de creación de la clase");
+                        MessageBox.Show("Error al crear la clase.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else// Si hay que editar una ya existente
@@ -148,13 +150,14 @@ namespace CookMe.Views.VistasClase
                     bool cierto = new Logica.Controles.ClaseControl().EditarClase(idClase, clase);
                     if (cierto)
                     {
-                        MessageBox.Show("Clase editada correctamente");
+                        MessageBox.Show("Clase editada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         this.Close();
                         parent.Visible = true;
                     }
                     else
                     {
-                        MessageBox.Show("Error de edición de la clase");
+                        MessageBox.Show("Error al editar la clase.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

@@ -51,7 +51,7 @@
             // btBorrarTodo
             // 
             this.btBorrarTodo.BackColor = System.Drawing.Color.LightCoral;
-            this.btBorrarTodo.Location = new System.Drawing.Point(875, 423);
+            this.btBorrarTodo.Location = new System.Drawing.Point(884, 448);
             this.btBorrarTodo.Name = "btBorrarTodo";
             this.btBorrarTodo.Size = new System.Drawing.Size(121, 40);
             this.btBorrarTodo.TabIndex = 1;
@@ -64,7 +64,7 @@
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbTitulo.Location = new System.Drawing.Point(105, 417);
+            this.lbTitulo.Location = new System.Drawing.Point(114, 442);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(79, 24);
             this.lbTitulo.TabIndex = 2;
@@ -75,7 +75,7 @@
             this.lbDescripcion.AutoSize = true;
             this.lbDescripcion.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDescripcion.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbDescripcion.Location = new System.Drawing.Point(594, 73);
+            this.lbDescripcion.Location = new System.Drawing.Point(603, 98);
             this.lbDescripcion.Name = "lbDescripcion";
             this.lbDescripcion.Size = new System.Drawing.Size(191, 24);
             this.lbDescripcion.TabIndex = 3;
@@ -86,7 +86,7 @@
             this.lbFecha.AutoSize = true;
             this.lbFecha.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFecha.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbFecha.Location = new System.Drawing.Point(603, 290);
+            this.lbFecha.Location = new System.Drawing.Point(638, 315);
             this.lbFecha.Name = "lbFecha";
             this.lbFecha.Size = new System.Drawing.Size(66, 24);
             this.lbFecha.TabIndex = 4;
@@ -97,7 +97,7 @@
             this.lbPlazas.AutoSize = true;
             this.lbPlazas.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPlazas.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbPlazas.Location = new System.Drawing.Point(594, 357);
+            this.lbPlazas.Location = new System.Drawing.Point(603, 382);
             this.lbPlazas.Name = "lbPlazas";
             this.lbPlazas.Size = new System.Drawing.Size(163, 24);
             this.lbPlazas.TabIndex = 5;
@@ -108,7 +108,7 @@
             this.lbProfesor.AutoSize = true;
             this.lbProfesor.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProfesor.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbProfesor.Location = new System.Drawing.Point(604, 193);
+            this.lbProfesor.Location = new System.Drawing.Point(627, 218);
             this.lbProfesor.Name = "lbProfesor";
             this.lbProfesor.Size = new System.Drawing.Size(102, 24);
             this.lbProfesor.TabIndex = 6;
@@ -121,7 +121,7 @@
             0,
             0,
             0});
-            this.numPlaza.Location = new System.Drawing.Point(816, 358);
+            this.numPlaza.Location = new System.Drawing.Point(825, 383);
             this.numPlaza.Maximum = new decimal(new int[] {
             25,
             0,
@@ -133,7 +133,7 @@
             // 
             // pbImagenTematica
             // 
-            this.pbImagenTematica.Location = new System.Drawing.Point(113, 33);
+            this.pbImagenTematica.Location = new System.Drawing.Point(122, 58);
             this.pbImagenTematica.Name = "pbImagenTematica";
             this.pbImagenTematica.Size = new System.Drawing.Size(353, 292);
             this.pbImagenTematica.TabIndex = 26;
@@ -142,14 +142,14 @@
             // cboxProfesor
             // 
             this.cboxProfesor.FormattingEnabled = true;
-            this.cboxProfesor.Location = new System.Drawing.Point(737, 193);
+            this.cboxProfesor.Location = new System.Drawing.Point(825, 218);
             this.cboxProfesor.Name = "cboxProfesor";
             this.cboxProfesor.Size = new System.Drawing.Size(231, 24);
             this.cboxProfesor.TabIndex = 28;
             // 
             // tbFecha
             // 
-            this.tbFecha.Location = new System.Drawing.Point(737, 290);
+            this.tbFecha.Location = new System.Drawing.Point(825, 315);
             this.tbFecha.Mask = "0000-00-00 00:00:00";
             this.tbFecha.Name = "tbFecha";
             this.tbFecha.Size = new System.Drawing.Size(152, 22);
@@ -159,7 +159,7 @@
             // 
             this.botonImagen1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("botonImagen1.ButtonImage")));
             this.botonImagen1.CornerRadius = 20;
-            this.botonImagen1.Location = new System.Drawing.Point(12, 33);
+            this.botonImagen1.Location = new System.Drawing.Point(21, 58);
             this.botonImagen1.Name = "botonImagen1";
             this.botonImagen1.Size = new System.Drawing.Size(61, 42);
             this.botonImagen1.TabIndex = 27;
@@ -171,7 +171,7 @@
             this.btSeleccionTematica.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btSeleccionTematica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btSeleccionTematica.ForeColor = System.Drawing.Color.Black;
-            this.btSeleccionTematica.Location = new System.Drawing.Point(197, 331);
+            this.btSeleccionTematica.Location = new System.Drawing.Point(206, 356);
             this.btSeleccionTematica.Name = "btSeleccionTematica";
             this.btSeleccionTematica.Size = new System.Drawing.Size(161, 37);
             this.btSeleccionTematica.TabIndex = 25;
@@ -183,7 +183,8 @@
             // 
             this.tbDescripcion.BorderColor = System.Drawing.Color.Blue;
             this.tbDescripcion.BorderRadius = 15;
-            this.tbDescripcion.Location = new System.Drawing.Point(816, 64);
+            this.tbDescripcion.Location = new System.Drawing.Point(825, 89);
+            this.tbDescripcion.Multiline = true;
             this.tbDescripcion.Name = "tbDescripcion";
             this.tbDescripcion.Padding = new System.Windows.Forms.Padding(10);
             this.tbDescripcion.PasswordChar = '\0';
@@ -194,11 +195,12 @@
             // 
             this.tbTitulo.BorderColor = System.Drawing.Color.Blue;
             this.tbTitulo.BorderRadius = 15;
-            this.tbTitulo.Location = new System.Drawing.Point(210, 417);
+            this.tbTitulo.Location = new System.Drawing.Point(219, 434);
+            this.tbTitulo.Multiline = true;
             this.tbTitulo.Name = "tbTitulo";
             this.tbTitulo.Padding = new System.Windows.Forms.Padding(10);
             this.tbTitulo.PasswordChar = '\0';
-            this.tbTitulo.Size = new System.Drawing.Size(243, 33);
+            this.tbTitulo.Size = new System.Drawing.Size(243, 46);
             this.tbTitulo.TabIndex = 7;
             // 
             // btCrearClase
@@ -206,7 +208,7 @@
             this.btCrearClase.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btCrearClase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btCrearClase.ForeColor = System.Drawing.Color.Black;
-            this.btCrearClase.Location = new System.Drawing.Point(1067, 423);
+            this.btCrearClase.Location = new System.Drawing.Point(1076, 448);
             this.btCrearClase.Name = "btCrearClase";
             this.btCrearClase.Size = new System.Drawing.Size(120, 40);
             this.btCrearClase.TabIndex = 0;

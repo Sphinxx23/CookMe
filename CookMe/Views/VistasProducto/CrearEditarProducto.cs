@@ -19,6 +19,7 @@ namespace CookMe.Views.VistasProducto
         private int idProd;
         public CrearEditarProducto(UserControl parent, int idProd)
         {
+            this.FormBorderStyle = FormBorderStyle.None;
             this.idProd = idProd;
             InitializeComponent();
             this.parent = parent;
@@ -112,13 +113,14 @@ namespace CookMe.Views.VistasProducto
                     bool cierto = new Logica.Controles.ProductoControl().InsertarProducto(producto);
                     if (cierto)
                     {
-                        MessageBox.Show("Producto añadido correctamente");
+                        MessageBox.Show("Producto creado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         this.Close();
                         parent.Visible = true;
                     }
                     else
                     {
-                        MessageBox.Show("Error de creación del producto");
+                        MessageBox.Show("Error al crear el producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else// Si hay que editar uno ya existente
@@ -127,13 +129,14 @@ namespace CookMe.Views.VistasProducto
                     bool cierto = new Logica.Controles.ProductoControl().EditarProducto(idProd, producto);
                     if (cierto)
                     {
-                        MessageBox.Show("Producto editado correctamente");
+                        MessageBox.Show("Producto editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         this.Close();
                         parent.Visible = true;
                     }
                     else
                     {
-                        MessageBox.Show("Error de edición del producto");
+                        MessageBox.Show("Error al editar el producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
