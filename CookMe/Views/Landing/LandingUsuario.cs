@@ -20,7 +20,10 @@ namespace CookMe.Views.Landing
             InitializeComponent();
             this.parent = parent;
             this.usuarioSesion = usu;
-            lbBienvenidaUsuario.Text = "BIENVENIDO  " + usuarioSesion.Nombre + "  " + usuarioSesion.Apellido;
+
+            lbBienvenidaAdmin.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Image = CookMe.MetodosImages.MetImages.ConvertBytesToImage(usuarioSesion.Foto);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,6 +32,17 @@ namespace CookMe.Views.Landing
 
             this.Close();
             parent.Show();
+        }
+
+        private void btnMisClases_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btEliminarCuenta_Click(object sender, EventArgs e)
+        {
+            Views.VistaEliminacion.Eliminacion elim = new Views.VistaEliminacion.Eliminacion(this, usuarioSesion);
+            elim.Show();
         }
     }
 }

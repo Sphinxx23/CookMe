@@ -63,5 +63,6 @@ namespace CookMe.Views.Landing
         {
             LoadUserControl(new UCGestionClases());
         }
+
     }
 }
