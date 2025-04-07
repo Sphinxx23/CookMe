@@ -36,10 +36,10 @@
             this.btnCerrarSesionUsu = new System.Windows.Forms.Button();
             this.panelSup = new System.Windows.Forms.Panel();
             this.panelCentral = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRecetas = new CustomButton();
             this.btnClases = new CustomButton();
             this.btnTienda = new CustomButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMisRecetas = new CustomButton();
             this.btnEditarPerfil = new CustomButton();
             this.btnMisClases = new CustomButton();
@@ -140,14 +140,6 @@
             this.panelCentral.Size = new System.Drawing.Size(1202, 747);
             this.panelCentral.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(24, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 221);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnRecetas
             // 
             this.btnRecetas.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -193,6 +185,14 @@
             this.btnTienda.Text = "TIENDA";
             this.btnTienda.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(24, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(205, 221);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnMisRecetas
             // 
             this.btnMisRecetas.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -222,6 +222,7 @@
             this.btnEditarPerfil.TabIndex = 15;
             this.btnEditarPerfil.Text = "Editar Perfil";
             this.btnEditarPerfil.UseVisualStyleBackColor = false;
+            this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
             // 
             // btnMisClases
             // 

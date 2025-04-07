@@ -44,5 +44,11 @@ namespace CookMe.Views.Landing
             Views.VistaEliminacion.Eliminacion elim = new Views.VistaEliminacion.Eliminacion(this, usuarioSesion);
             elim.Show();
         }
+
+        private void btnEditarPerfil_Click(object sender, EventArgs e)
+        {
+            Views.VistaUsuario.EditarUsuario edit = new Views.VistaUsuario.EditarUsuario(this, usuarioSesion.Email);
+            edit.Show();
+        }
     }
 }

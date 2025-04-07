@@ -49,14 +49,14 @@ namespace CookMe.Views.Landing.UserContAdmin
                 Image img = CookMe.MetodosImages.MetImages.ConvertBytesToImage(user.Foto);
                 userControl.AsignarDatosLabels(user.Nombre, user.Apellido ,user.Email, img);
                 userControl.Location = new Point(5, distanciaVertical);
-                userControl.DeleteClicked += (s, e) => RemoveUser(userControl);
+                userControl.DeleteClicked += (s, e) => EliminarUser(userControl);
 
                 panelUsuarios.Controls.Add(userControl);
                 distanciaVertical += userControl.Height + 5;
             }
         }
 
-        private void RemoveUser(UserItemControl userControl)
+        private void EliminarUser(UserItemControl userControl)
         {
             
             DialogResult result = MessageBox.Show(

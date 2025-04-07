@@ -188,35 +188,40 @@ namespace Datos.Repositories
             }
         }
 
-
-
-
-        public string ProbarConexion()
+        public bool EditarUsuario(string email, Usuario usuario)
         {
             try
             {
-                var conexion = Conexion.Conexion.EstablecerConexion();
-
-                // Intentar abrir la conexión
-                if (conexion.State == System.Data.ConnectionState.Open)
+                using (var conexion = Conexion.Conexion.EstablecerConexion())
                 {
-                    return "Conexión exitosa!";
+                    using (var cmd = new NpgsqlCommand(@"
+                        UPDATE usuario
+                        SET nombre = @Nombre,
+                            apellido = @Apellido,
+                            direccion = @Direccion,
+                            profesor = @Profesor,
+                            foto = @Foto
+                        WHERE email = @Email", conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@Nombre", usuario.Nombre ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Apellido", usuario.Apellido ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Direccion", usuario.Direccion ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Profesor", usuario.Profesor);
+                        cmd.Parameters.AddWithValue("@Foto", usuario.Foto ?? (object)DBNull.Value);
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+                        return filasAfectadas > 0;
+                    }
                 }
-
-
-                return "wtf";
             }
-            catch (NpgsqlException npgEx)
+            catch (Exception)
             {
-
-                return $"Error de conexión con PostgreSQL: {npgEx.Message}";
-            }
-            catch (Exception ex)
-            {
-
-                return $"Error general: {ex.Message}";
+                return false;
             }
         }
+
+
 
     }
 }

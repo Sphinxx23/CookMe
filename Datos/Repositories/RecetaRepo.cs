@@ -149,14 +149,14 @@ namespace Datos.Repositories
                 using (var conexion = Conexion.Conexion.EstablecerConexion())
                 {
                     using (var cmd = new NpgsqlCommand(@"
-                UPDATE receta
-                SET titulo = @Titulo,
-                    descripcion_breve = @DescripcionBreve,
-                    ingrediente = @Ingrediente,
-                    pasos = @Pasos,
-                    foto = @Foto,
-                    email_usuario = @EmailUsuario
-                WHERE id = @IdReceta", conexion))
+                        UPDATE receta
+                        SET titulo = @Titulo,
+                            descripcion_breve = @DescripcionBreve,
+                            ingrediente = @Ingrediente,
+                            pasos = @Pasos,
+                            foto = @Foto,
+                            email_usuario = @EmailUsuario
+                        WHERE id = @IdReceta", conexion))
                     {
                         cmd.Parameters.AddWithValue("@IdReceta", idReceta);
                         cmd.Parameters.AddWithValue("@Titulo", receta.Titulo ?? (object)DBNull.Value);

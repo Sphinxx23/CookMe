@@ -21,7 +21,11 @@ namespace Logica.Controles
             return new Datos.Repositories.UsuarioRepo().InsertarUsuario(usuario);
             
         }
+        public bool EditarUsuario(string emailViejo, Usuario usuario)
+        {
+            return new Datos.Repositories.UsuarioRepo().EditarUsuario(emailViejo, usuario);
 
+        }
         public bool EliminarUsuarioPorEmail(string email)
         {
             return new Datos.Repositories.UsuarioRepo().EliminarUsuarioPorEmail(email);

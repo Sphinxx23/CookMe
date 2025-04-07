@@ -63,8 +63,8 @@ namespace CookMe.Views.Landing.UserContAdmin
                 Image imgProducto = CookMe.MetodosImages.MetImages.ConvertBytesToImage(producto.Foto1);
                 item.AsignarDatosProducto(producto.Id, producto.Nombre, producto.Precio, producto.Stock, imgProducto);
                 item.Location = new Point(x, y);
-                item.DeleteClicked += (s, e) => RemoveProducto(item);
-                item.EditClicked += (s, e) => EditProducto(item);
+                item.DeleteClicked += (s, e) => EliminarProducto(item);
+                item.EditClicked += (s, e) => EditarProducto(item);
 
                 panelProductos.Controls.Add(item);
 
@@ -81,7 +81,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             }
         }
 
-        private void RemoveProducto(ProductoItemControl item)
+        private void EliminarProducto(ProductoItemControl item)
         {
             DialogResult result = MessageBox.Show(
                 "¿Está seguro de que desea eliminar este producto?",
@@ -105,7 +105,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             }
         }
 
-        private void EditProducto(ProductoItemControl item)
+        private void EditarProducto(ProductoItemControl item)
         {
             Views.VistasProducto.CrearEditarProducto editarProducto = new Views.VistasProducto.CrearEditarProducto(this, item.id);
             this.Visible = false;
