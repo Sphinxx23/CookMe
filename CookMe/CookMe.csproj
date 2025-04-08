@@ -164,6 +164,18 @@
     <Compile Include="Views\Landing\UserContAdmin\UserItemControl.Designer.cs">
       <DependentUpon>UserItemControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\UCRecetaItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\UCRecetaItem.Designer.cs">
+      <DependentUpon>UCRecetaItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\UCRecetasUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\UCRecetasUsuario.Designer.cs">
+      <DependentUpon>UCRecetasUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,8 +330,6 @@
   <ItemGroup>
     <None Include="Resources\imgSecun.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Landing\UserContUsuario\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

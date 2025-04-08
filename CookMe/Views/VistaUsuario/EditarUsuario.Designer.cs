@@ -130,9 +130,9 @@
             // 
             // pbFotoPerfil
             // 
-            this.pbFotoPerfil.Location = new System.Drawing.Point(100, 77);
+            this.pbFotoPerfil.Location = new System.Drawing.Point(100, 33);
             this.pbFotoPerfil.Name = "pbFotoPerfil";
-            this.pbFotoPerfil.Size = new System.Drawing.Size(241, 207);
+            this.pbFotoPerfil.Size = new System.Drawing.Size(241, 256);
             this.pbFotoPerfil.TabIndex = 32;
             this.pbFotoPerfil.TabStop = false;
             // 
@@ -140,7 +140,7 @@
             // 
             this.botonImagen1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("botonImagen1.ButtonImage")));
             this.botonImagen1.CornerRadius = 20;
-            this.botonImagen1.Location = new System.Drawing.Point(26, 34);
+            this.botonImagen1.Location = new System.Drawing.Point(12, 23);
             this.botonImagen1.Name = "botonImagen1";
             this.botonImagen1.Size = new System.Drawing.Size(61, 42);
             this.botonImagen1.TabIndex = 31;

@@ -26,6 +26,14 @@ namespace CookMe.Views.Landing
             pictureBox1.Image = CookMe.MetodosImages.MetImages.ConvertBytesToImage(usuarioSesion.Foto);
         }
 
+        private void LoadUserControl(UserControl userControl)
+        {
+
+            panelCentral.Controls.Clear();
+            userControl.Dock = DockStyle.Fill;
+            panelCentral.Controls.Add(userControl);
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             CredentialsManager.DeleteCredentials();
@@ -49,6 +57,11 @@ namespace CookMe.Views.Landing
         {
             Views.VistaUsuario.EditarUsuario edit = new Views.VistaUsuario.EditarUsuario(this, usuarioSesion.Email);
             edit.Show();
+        }
+
+        private void btnMisRecetas_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new UserContUsuario.UCRecetasUsuario(usuarioSesion.Email));
         }
     }
 }

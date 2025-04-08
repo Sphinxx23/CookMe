@@ -33,7 +33,7 @@ namespace Datos.Repositories
                                     DescripcionBreve = reader["descripcion_breve"] as string ?? string.Empty,
                                     Ingrediente = reader["ingrediente"] as string ?? string.Empty,
                                     Pasos = reader["pasos"] as string ?? string.Empty,
-                                    //Foto = reader["foto"] as byte[],
+                                    Foto = reader["foto"] as byte[],
                                     EmailUsuario = reader["email_usuario"] as string ?? string.Empty
                                 };
 
@@ -177,6 +177,45 @@ namespace Datos.Repositories
             }
         }
 
+        public List<Receta> ObtenerMisRecetas(string email)
+        {
+            try
+            {
+                List<int> listaIds = new List<int>();
+                List<Receta> listaRecetas = new List<Receta>();
+
+                using (var conexion = Conexion.Conexion.EstablecerConexion())
+                {
+                    using (var cmd = new NpgsqlCommand("SELECT id FROM receta WHERE email_usuario = @email", conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@email", email);
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                listaIds.Add(Convert.ToInt32(reader["id"]));
+                            }
+                        }
+                    }
+                }
+
+                foreach (int id in listaIds)
+                {
+                    Receta receta = ObtenerRecetaPorId(id);
+                    if (receta != null)
+                    {
+                        listaRecetas.Add(receta);
+                    }
+                }
+
+                return listaRecetas;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
 
     }

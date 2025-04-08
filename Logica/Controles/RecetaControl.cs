@@ -21,6 +21,11 @@ namespace Logica.Controles
             return new Datos.Repositories.RecetaRepo().ObtenerTodasLasRecetas();
 
         }
+        public List<Receta> ObtenerMisRecetas(string email)
+        {
+            return new Datos.Repositories.RecetaRepo().ObtenerMisRecetas(email);
+
+        }
 
         public bool EliminarRecetaPorId(int id)
         {
