@@ -164,6 +164,18 @@
     <Compile Include="Views\Landing\UserContAdmin\UserItemControl.Designer.cs">
       <DependentUpon>UserItemControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\RecetaBoton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\RecetaBoton.Designer.cs">
+      <DependentUpon>RecetaBoton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\RecetaBotonContenedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\RecetaBotonContenedor.Designer.cs">
+      <DependentUpon>RecetaBotonContenedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Landing\UserContUsuario\UCRecetaItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,6 +223,12 @@
     </Compile>
     <Compile Include="Views\VistasReceta\CrearEditarReceta.Designer.cs">
       <DependentUpon>CrearEditarReceta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VistasReceta\VerReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VistasReceta\VerReceta.Designer.cs">
+      <DependentUpon>VerReceta.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\VistaUsuario\EditarUsuario.cs">
       <SubType>Form</SubType>
@@ -260,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VistasReceta\CrearEditarReceta.resx">
       <DependentUpon>CrearEditarReceta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VistasReceta\VerReceta.resx">
+      <DependentUpon>VerReceta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VistaUsuario\EditarUsuario.resx">
       <DependentUpon>EditarUsuario.cs</DependentUpon>

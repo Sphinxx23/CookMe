@@ -63,5 +63,10 @@ namespace CookMe.Views.Landing
         {
             LoadUserControl(new UserContUsuario.UCRecetasUsuario(usuarioSesion.Email));
         }
+
+        private void btnRecetas_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new UserContUsuario.RecetaBotonContenedor(usuarioSesion.Email));
+        }
     }
 }

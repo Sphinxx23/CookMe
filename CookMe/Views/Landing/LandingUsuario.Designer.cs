@@ -201,6 +201,7 @@
             this.btnRecetas.TabIndex = 22;
             this.btnRecetas.Text = "RECETAS";
             this.btnRecetas.UseVisualStyleBackColor = false;
+            this.btnRecetas.Click += new System.EventHandler(this.btnRecetas_Click);
             // 
             // btnClases
             // 
