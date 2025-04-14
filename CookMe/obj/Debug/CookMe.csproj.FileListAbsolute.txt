@@ -96,3 +96,4 @@ C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistasReceta.CrearEd
 C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistaEliminacion.Eliminacion.resources
 C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistaUsuario.EditarUsuario.resources
 C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistasReceta.VerReceta.resources
+C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistasClase.VerClase.resources

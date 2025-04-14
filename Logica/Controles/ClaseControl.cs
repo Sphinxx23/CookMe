@@ -21,6 +21,12 @@ namespace Logica.Controles
 
         }
 
+        public List<Clase> ObtenerInscripcionesPorEmail(string email)
+        {
+            return new Datos.Repositories.ClaseRepo().ObtenerInscripcionesPorEmail(email);
+
+        }
+
         public bool EliminarClasePorId(int id)
         {
             return new Datos.Repositories.ClaseRepo().EliminarClasePorId(id);

@@ -44,7 +44,7 @@ namespace CookMe.Views.Landing
 
         private void btnMisClases_Click(object sender, EventArgs e)
         {
-
+            LoadUserControl(new UserContUsuario.ClaseBotonContenedor(usuarioSesion.Email, -2));
         }
 
         private void btEliminarCuenta_Click(object sender, EventArgs e)
@@ -67,6 +67,11 @@ namespace CookMe.Views.Landing
         private void btnRecetas_Click(object sender, EventArgs e)
         {
             LoadUserControl(new UserContUsuario.RecetaBotonContenedor(usuarioSesion.Email));
+        }
+
+        private void btnClases_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new UserContUsuario.ClaseBotonContenedor(usuarioSesion.Email, 1));
         }
     }
 }

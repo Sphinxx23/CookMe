@@ -195,6 +195,49 @@ namespace Datos.Repositories
         }
 
 
+
+        public List<Clase> ObtenerInscripcionesPorEmail(string email)
+        {
+            try
+            {
+                List<int> listaIds = new List<int>();
+                List<Clase> listaClase = new List<Clase>();
+
+                using (var conexion = Conexion.Conexion.EstablecerConexion())
+                {
+                    using (var cmd = new NpgsqlCommand("SELECT id_clase FROM inscripcion WHERE email_usuario = @Email AND inscripcion_activa=TRUE", conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", email);
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                listaIds.Add(Convert.ToInt32(reader["id_clase"]));
+                            }
+                        }
+                    }
+                }
+
+                foreach (int id in listaIds)
+                {
+                    Clase clase = ObtenerClasePorId(id);
+                    if (clase != null)
+                    {
+                        listaClase.Add(clase);
+                    }
+                }
+
+                return listaClase;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+
     }
 
 }

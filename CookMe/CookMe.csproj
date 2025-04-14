@@ -164,6 +164,18 @@
     <Compile Include="Views\Landing\UserContAdmin\UserItemControl.Designer.cs">
       <DependentUpon>UserItemControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\ClaseBoton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\ClaseBoton.Designer.cs">
+      <DependentUpon>ClaseBoton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\ClaseBotonContenedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\ClaseBotonContenedor.Designer.cs">
+      <DependentUpon>ClaseBotonContenedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Landing\UserContUsuario\RecetaBoton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,6 +223,12 @@
     </Compile>
     <Compile Include="Views\VistasClase\CrearEditarClase.Designer.cs">
       <DependentUpon>CrearEditarClase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VistasClase\VerClase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VistasClase\VerClase.Designer.cs">
+      <DependentUpon>VerClase.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\VistasProducto\CrearEditarProducto.cs">
       <SubType>Form</SubType>
@@ -272,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VistasClase\CrearEditarClase.resx">
       <DependentUpon>CrearEditarClase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VistasClase\VerClase.resx">
+      <DependentUpon>VerClase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VistasProducto\CrearEditarProducto.resx">
       <DependentUpon>CrearEditarProducto.cs</DependentUpon>
