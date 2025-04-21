@@ -23,21 +23,59 @@ namespace CookMe.Views.VistasClase
 
         private void btnValorar_Click(object sender, EventArgs e)
         {
-            //Añadir funcionalidad
+            Views.VistasClase.Valorar val = new Views.VistasClase.Valorar(this.idClase, this.email, this);
+            val.Show();
         }
 
         private void btInscribir_Click(object sender, EventArgs e)
-        {
-            //Añadir funcionalidad
+        {          
+            Inscripcion inscApuntar = CrearInscripcion();
+            Inscripcion comprobarInsc = new Logica.Controles.InscripcionControl().ObtenerInscripcion(this.email, this.idClase);
 
-            if (this.idAccion==1)
+            if (comprobarInsc == null)
             {
-                //Apuntarse
+                if (this.idAccion == 1)
+                {
+                    Clase clas = new Logica.Controles.ClaseControl().ObtenerClasePorID(this.idClase);
+                    if (clas.PlazaOcupada<clas.PlazaTotal)
+                    {
+                        //Apuntarse               
+                        bool creacion = new Logica.Controles.InscripcionControl().InsertarInscripcion(inscApuntar);
+                        clas.PlazaOcupada += 1;
+                        bool edicionClase = new Logica.Controles.ClaseControl().EditarClase(clas.Id, clas);
+                        MessageBox.Show("Inscrito correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Plazas llenas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }                
+                }
             }
-            else
+            else if(comprobarInsc != null && this.idAccion == 1)
+            {
+                MessageBox.Show("No puedes volver a inscribirte a esta Clase.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if(this.idAccion != 1)
             {
                 //Borrarse
+                bool borrado = new Logica.Controles.InscripcionControl().BorrarInscripcion(inscApuntar);
+                Datos.Modelos.Clase clas = new Logica.Controles.ClaseControl().ObtenerClasePorID(this.idClase);
+                clas.PlazaOcupada -= 1;
+                bool edicionClase = new Logica.Controles.ClaseControl().EditarClase(clas.Id, clas);
+                MessageBox.Show("Borrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            this.Close();
+        }
+
+        private Inscripcion CrearInscripcion()
+        {
+            Inscripcion insc = new Inscripcion();
+            insc.EmailUsuario = this.email;
+            insc.IdClase = this.idClase;
+            insc.InscripcionActiva = true;
+            insc.Valoracion = 0;
+            return insc;
         }
 
         public VerClase(int id, string email, int accion)

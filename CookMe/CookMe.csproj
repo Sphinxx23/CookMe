@@ -224,6 +224,12 @@
     <Compile Include="Views\VistasClase\CrearEditarClase.Designer.cs">
       <DependentUpon>CrearEditarClase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\VistasClase\Valorar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VistasClase\Valorar.Designer.cs">
+      <DependentUpon>Valorar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\VistasClase\VerClase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VistasClase\CrearEditarClase.resx">
       <DependentUpon>CrearEditarClase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VistasClase\Valorar.resx">
+      <DependentUpon>Valorar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VistasClase\VerClase.resx">
       <DependentUpon>VerClase.cs</DependentUpon>
@@ -372,6 +381,11 @@
   <ItemGroup>
     <None Include="Resources\imgSecun.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\star_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star23px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

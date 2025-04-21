@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="Repositories\ClaseRepo.cs" />
+    <Compile Include="Repositories\InscripcionRepo.cs" />
     <Compile Include="Repositories\ProductoRepo.cs" />
     <Compile Include="Repositories\RecetaRepo.cs" />
     <Compile Include="Repositories\UsuarioRepo.cs" />
