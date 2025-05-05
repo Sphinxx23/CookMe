@@ -73,5 +73,10 @@ namespace CookMe.Views.Landing
         {
             LoadUserControl(new UserContUsuario.ClaseBotonContenedor(usuarioSesion.Email, 1));
         }
+
+        private void btnTienda_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new UserContUsuario.ProductoBotonContenedor(usuarioSesion.Email));
+        }
     }
 }

@@ -34,15 +34,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbBienvenidaAdmin = new System.Windows.Forms.Label();
-            this.btnCerrarSesionUsu = new System.Windows.Forms.Button();
-            this.panelSup = new System.Windows.Forms.Panel();
-            this.panelCentral = new System.Windows.Forms.Panel();
-            this.btnRecetas = new CustomButton();
-            this.btnClases = new CustomButton();
-            this.btnTienda = new CustomButton();
             this.btnMisRecetas = new CustomButton();
             this.btnEditarPerfil = new CustomButton();
             this.btnMisClases = new CustomButton();
+            this.btnCerrarSesionUsu = new System.Windows.Forms.Button();
+            this.panelSup = new System.Windows.Forms.Panel();
+            this.btnRecetas = new CustomButton();
+            this.btnClases = new CustomButton();
+            this.btnTienda = new CustomButton();
+            this.panelCentral = new System.Windows.Forms.Panel();
             this.panelIzq.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -116,85 +116,6 @@
             this.lbBienvenidaAdmin.Size = new System.Drawing.Size(0, 18);
             this.lbBienvenidaAdmin.TabIndex = 13;
             // 
-            // btnCerrarSesionUsu
-            // 
-            this.btnCerrarSesionUsu.BackColor = System.Drawing.Color.LightCoral;
-            this.btnCerrarSesionUsu.Location = new System.Drawing.Point(27, 740);
-            this.btnCerrarSesionUsu.Name = "btnCerrarSesionUsu";
-            this.btnCerrarSesionUsu.Size = new System.Drawing.Size(255, 62);
-            this.btnCerrarSesionUsu.TabIndex = 2;
-            this.btnCerrarSesionUsu.Text = "CERRAR SESION";
-            this.btnCerrarSesionUsu.UseVisualStyleBackColor = false;
-            this.btnCerrarSesionUsu.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panelSup
-            // 
-            this.panelSup.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panelSup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSup.Controls.Add(this.btnRecetas);
-            this.panelSup.Controls.Add(this.btnClases);
-            this.panelSup.Controls.Add(this.btnTienda);
-            this.panelSup.Location = new System.Drawing.Point(310, 0);
-            this.panelSup.Name = "panelSup";
-            this.panelSup.Size = new System.Drawing.Size(1202, 84);
-            this.panelSup.TabIndex = 1;
-            // 
-            // panelCentral
-            // 
-            this.panelCentral.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panelCentral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCentral.Location = new System.Drawing.Point(310, 81);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(1202, 747);
-            this.panelCentral.TabIndex = 2;
-            // 
-            // btnRecetas
-            // 
-            this.btnRecetas.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnRecetas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRecetas.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnRecetas.FlatAppearance.BorderSize = 6;
-            this.btnRecetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecetas.ForeColor = System.Drawing.Color.Black;
-            this.btnRecetas.Location = new System.Drawing.Point(774, 20);
-            this.btnRecetas.Name = "btnRecetas";
-            this.btnRecetas.Size = new System.Drawing.Size(350, 42);
-            this.btnRecetas.TabIndex = 22;
-            this.btnRecetas.Text = "RECETAS";
-            this.btnRecetas.UseVisualStyleBackColor = false;
-            this.btnRecetas.Click += new System.EventHandler(this.btnRecetas_Click);
-            // 
-            // btnClases
-            // 
-            this.btnClases.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnClases.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClases.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnClases.FlatAppearance.BorderSize = 6;
-            this.btnClases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClases.ForeColor = System.Drawing.Color.Black;
-            this.btnClases.Location = new System.Drawing.Point(424, 20);
-            this.btnClases.Name = "btnClases";
-            this.btnClases.Size = new System.Drawing.Size(350, 42);
-            this.btnClases.TabIndex = 23;
-            this.btnClases.Text = "CLASES";
-            this.btnClases.UseVisualStyleBackColor = false;
-            this.btnClases.Click += new System.EventHandler(this.btnClases_Click);
-            // 
-            // btnTienda
-            // 
-            this.btnTienda.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnTienda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTienda.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnTienda.FlatAppearance.BorderSize = 6;
-            this.btnTienda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTienda.ForeColor = System.Drawing.Color.Black;
-            this.btnTienda.Location = new System.Drawing.Point(74, 20);
-            this.btnTienda.Name = "btnTienda";
-            this.btnTienda.Size = new System.Drawing.Size(350, 42);
-            this.btnTienda.TabIndex = 24;
-            this.btnTienda.Text = "TIENDA";
-            this.btnTienda.UseVisualStyleBackColor = false;
-            // 
             // btnMisRecetas
             // 
             this.btnMisRecetas.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -242,6 +163,86 @@
             this.btnMisClases.Text = "Mis Clases";
             this.btnMisClases.UseVisualStyleBackColor = false;
             this.btnMisClases.Click += new System.EventHandler(this.btnMisClases_Click);
+            // 
+            // btnCerrarSesionUsu
+            // 
+            this.btnCerrarSesionUsu.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCerrarSesionUsu.Location = new System.Drawing.Point(27, 740);
+            this.btnCerrarSesionUsu.Name = "btnCerrarSesionUsu";
+            this.btnCerrarSesionUsu.Size = new System.Drawing.Size(255, 62);
+            this.btnCerrarSesionUsu.TabIndex = 2;
+            this.btnCerrarSesionUsu.Text = "CERRAR SESION";
+            this.btnCerrarSesionUsu.UseVisualStyleBackColor = false;
+            this.btnCerrarSesionUsu.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panelSup
+            // 
+            this.panelSup.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelSup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSup.Controls.Add(this.btnRecetas);
+            this.panelSup.Controls.Add(this.btnClases);
+            this.panelSup.Controls.Add(this.btnTienda);
+            this.panelSup.Location = new System.Drawing.Point(310, 0);
+            this.panelSup.Name = "panelSup";
+            this.panelSup.Size = new System.Drawing.Size(1202, 84);
+            this.panelSup.TabIndex = 1;
+            // 
+            // btnRecetas
+            // 
+            this.btnRecetas.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnRecetas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecetas.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnRecetas.FlatAppearance.BorderSize = 6;
+            this.btnRecetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecetas.ForeColor = System.Drawing.Color.Black;
+            this.btnRecetas.Location = new System.Drawing.Point(774, 20);
+            this.btnRecetas.Name = "btnRecetas";
+            this.btnRecetas.Size = new System.Drawing.Size(350, 42);
+            this.btnRecetas.TabIndex = 22;
+            this.btnRecetas.Text = "RECETAS";
+            this.btnRecetas.UseVisualStyleBackColor = false;
+            this.btnRecetas.Click += new System.EventHandler(this.btnRecetas_Click);
+            // 
+            // btnClases
+            // 
+            this.btnClases.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnClases.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClases.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnClases.FlatAppearance.BorderSize = 6;
+            this.btnClases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClases.ForeColor = System.Drawing.Color.Black;
+            this.btnClases.Location = new System.Drawing.Point(424, 20);
+            this.btnClases.Name = "btnClases";
+            this.btnClases.Size = new System.Drawing.Size(350, 42);
+            this.btnClases.TabIndex = 23;
+            this.btnClases.Text = "CLASES";
+            this.btnClases.UseVisualStyleBackColor = false;
+            this.btnClases.Click += new System.EventHandler(this.btnClases_Click);
+            // 
+            // btnTienda
+            // 
+            this.btnTienda.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnTienda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTienda.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnTienda.FlatAppearance.BorderSize = 6;
+            this.btnTienda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTienda.ForeColor = System.Drawing.Color.Black;
+            this.btnTienda.Location = new System.Drawing.Point(74, 20);
+            this.btnTienda.Name = "btnTienda";
+            this.btnTienda.Size = new System.Drawing.Size(350, 42);
+            this.btnTienda.TabIndex = 24;
+            this.btnTienda.Text = "TIENDA";
+            this.btnTienda.UseVisualStyleBackColor = false;
+            this.btnTienda.Click += new System.EventHandler(this.btnTienda_Click);
+            // 
+            // panelCentral
+            // 
+            this.panelCentral.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panelCentral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCentral.Location = new System.Drawing.Point(310, 81);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(1202, 747);
+            this.panelCentral.TabIndex = 2;
             // 
             // LandingUsuario
             // 

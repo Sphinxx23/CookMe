@@ -176,6 +176,18 @@
     <Compile Include="Views\Landing\UserContUsuario\ClaseBotonContenedor.Designer.cs">
       <DependentUpon>ClaseBotonContenedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\ProductoBoton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\ProductoBoton.Designer.cs">
+      <DependentUpon>ProductoBoton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\ProductoBotonContenedor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Landing\UserContUsuario\ProductoBotonContenedor.Designer.cs">
+      <DependentUpon>ProductoBotonContenedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Landing\UserContUsuario\RecetaBoton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -386,6 +398,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\star23px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupapeq.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
