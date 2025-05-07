@@ -40,7 +40,7 @@ namespace CookMe.Views.Landing
             CredentialsManager.DeleteCredentials();
 
             this.Close();
-            parent.Show();
+            parent.ShowDialog();
         }
 
         private void customButton4_Click(object sender, EventArgs e)

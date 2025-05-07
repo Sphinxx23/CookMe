@@ -109,7 +109,7 @@ namespace CookMe.Views.Landing.UserContAdmin
         {
             Views.VistasProducto.CrearEditarProducto editarProducto = new Views.VistasProducto.CrearEditarProducto(this, item.id);
             this.Visible = false;
-            editarProducto.Show();
+            editarProducto.ShowDialog();
 
         }
 
@@ -117,7 +117,7 @@ namespace CookMe.Views.Landing.UserContAdmin
         {
             Views.VistasProducto.CrearEditarProducto crearProducto = new Views.VistasProducto.CrearEditarProducto(this, -1);
             this.Visible = false;
-            crearProducto.Show();
+            crearProducto.ShowDialog();
         }
     }
 }

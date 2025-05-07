@@ -24,7 +24,7 @@ namespace CookMe.Views.VistasClase
         private void btnValorar_Click(object sender, EventArgs e)
         {
             Views.VistasClase.Valorar val = new Views.VistasClase.Valorar(this.idClase, this.email, this);
-            val.Show();
+            val.ShowDialog();
         }
 
         private void btInscribir_Click(object sender, EventArgs e)

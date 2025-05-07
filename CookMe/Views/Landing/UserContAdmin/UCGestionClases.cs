@@ -109,7 +109,7 @@ namespace CookMe.Views.Landing.UserContAdmin
         {
             Views.VistasClase.CrearEditarClase crearClase = new Views.VistasClase.CrearEditarClase(this, claseControl.id);
             this.Visible = false;
-            crearClase.Show();
+            crearClase.ShowDialog();
 
             //Intentar encontrar la forma de recargar la pagina para que se muestren los cambios, como al eliminar uno
         }
@@ -118,7 +118,7 @@ namespace CookMe.Views.Landing.UserContAdmin
         {
             Views.VistasClase.CrearEditarClase crearClase = new Views.VistasClase.CrearEditarClase(this, -1);
             this.Visible = false;
-            crearClase.Show();
+            crearClase.ShowDialog();
             //Intentar encontrar la forma de recargar la pagina para que se muestren los cambios, como al eliminar uno
         }
     }

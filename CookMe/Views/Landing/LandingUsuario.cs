@@ -39,7 +39,7 @@ namespace CookMe.Views.Landing
             CredentialsManager.DeleteCredentials();
 
             this.Close();
-            parent.Show();
+            parent.ShowDialog();
         }
 
         private void btnMisClases_Click(object sender, EventArgs e)
@@ -50,13 +50,13 @@ namespace CookMe.Views.Landing
         private void btEliminarCuenta_Click(object sender, EventArgs e)
         {
             Views.VistaEliminacion.Eliminacion elim = new Views.VistaEliminacion.Eliminacion(this, usuarioSesion);
-            elim.Show();
+            elim.ShowDialog();
         }
 
         private void btnEditarPerfil_Click(object sender, EventArgs e)
         {
             Views.VistaUsuario.EditarUsuario edit = new Views.VistaUsuario.EditarUsuario(this, usuarioSesion.Email);
-            edit.Show();
+            edit.ShowDialog();
         }
 
         private void btnMisRecetas_Click(object sender, EventArgs e)

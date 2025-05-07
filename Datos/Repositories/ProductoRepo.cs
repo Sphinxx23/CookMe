@@ -109,6 +109,46 @@ namespace Datos.Repositories
             }
         }
 
+        public List<Producto> ObtenerProductosBusqueda(string aBuscar)
+        {
+            try
+            {
+                List<Producto> listaProductos = new List<Producto>();
+                using (var conexion = Conexion.Conexion.EstablecerConexion())
+                {
+                    string query = @"
+                            SELECT id 
+                            FROM producto 
+                            WHERE LOWER(nombre) LIKE LOWER(@busqueda)";
+
+                    using (var cmd = new NpgsqlCommand(query, conexion))
+                    {
+                        
+                        cmd.Parameters.AddWithValue("@busqueda", aBuscar.ToLower() + "%");
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                int id = Convert.ToInt32(reader["id"]);
+                                Producto producto = ObtenerProductoPorId(id);
+                                if (producto != null)
+                                {
+                                    listaProductos.Add(producto);
+                                }
+                            }
+                        }
+                    }
+                }
+                return listaProductos;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
         public bool EliminarProductoPorId(int id)
         {
             try

@@ -98,3 +98,5 @@ C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistaUsuario.EditarU
 C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistasReceta.VerReceta.resources
 C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistasClase.VerClase.resources
 C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistasClase.Valorar.resources
+C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistasProducto.VerProducto.resources
+C:\Users\PcBox\Desktop\CookMe\CookMe\obj\Debug\CookMe.Views.VistasProducto.Carrito.resources

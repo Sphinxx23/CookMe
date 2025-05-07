@@ -91,14 +91,14 @@ namespace CookMe.Views.Login
                         {
                             Views.Landing.LandingAdmin landingAdmin = new Views.Landing.LandingAdmin(parent, usu);
                             CredentialsManager.SaveCredentials(usu.Email, usu.Contrasena);
-                            landingAdmin.Show();
+                            landingAdmin.ShowDialog();
                             this.Close();
                         }
                         else
                         {
                             Views.Landing.LandingUsuario landingUsu = new Views.Landing.LandingUsuario(parent, usu);
                             CredentialsManager.SaveCredentials(usu.Email, usu.Contrasena);
-                            landingUsu.Show();
+                            landingUsu.ShowDialog();
                             this.Close();
                         }
                     }

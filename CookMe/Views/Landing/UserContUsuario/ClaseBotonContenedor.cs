@@ -71,7 +71,7 @@ namespace CookMe.Views.Landing.UserContUsuario
         private void AbrirVistaClase(ClaseBoton item)
         {
             Views.VistasClase.VerClase verClase = new Views.VistasClase.VerClase(item.id, this.email, this.idAccion);
-            verClase.Show();
+            verClase.ShowDialog();
         }
     }
 }

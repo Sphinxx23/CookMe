@@ -212,7 +212,7 @@ namespace CookMe.Views.Login
                 if (cierto)
                 {
                     Views.Login.Login land = new Views.Login.Login(parent);
-                    land.Show();
+                    land.ShowDialog();
                     this.Close();
                 }
                 else

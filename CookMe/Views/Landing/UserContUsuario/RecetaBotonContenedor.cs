@@ -64,7 +64,7 @@ namespace CookMe.Views.Landing.UserContUsuario
         {
             Views.VistasReceta.CrearEditarReceta nuevaReceta = new Views.VistasReceta.CrearEditarReceta(this, -1, this.email);
             this.Visible = false;
-            nuevaReceta.Show();
+            nuevaReceta.ShowDialog();
         }
 
         public void LoadRecetas(List<Datos.Modelos.Receta> recetas)
@@ -88,7 +88,7 @@ namespace CookMe.Views.Landing.UserContUsuario
         private void AbrirVistaReceta(RecetaBoton item)
         {
             Views.VistasReceta.VerReceta verReceta = new Views.VistasReceta.VerReceta(item.id);
-            verReceta.Show();
+            verReceta.ShowDialog();
         }
     }
 }

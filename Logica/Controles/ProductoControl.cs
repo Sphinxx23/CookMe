@@ -22,6 +22,13 @@ namespace Logica.Controles
 
         }
 
+
+        public List<Producto> ObtenerProductosBusqueda(string aBuscar)
+        {
+            return new Datos.Repositories.ProductoRepo().ObtenerProductosBusqueda(aBuscar);
+
+        }
+
         public bool EliminarProductoPorId(int id)
         {
             return new Datos.Repositories.ProductoRepo().EliminarProductoPorId(id);

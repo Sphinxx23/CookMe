@@ -18,10 +18,14 @@ namespace CookMe.Views.Landing.UserContUsuario
         private Button btnCarrito;
         private string email;
 
+        // idProducto----cantidad
+        public Dictionary<int, int> carrito;
+
         public ProductoBotonContenedor(string email)
         {
             this.email = email;
             InitializeComponents();
+            carrito = new Dictionary<int, int>();
             List<Datos.Modelos.Producto> productos = new Logica.Controles.ProductoControl().ObtenerTodosLosProductos();
             LoadProductos(productos);
         }
@@ -75,14 +79,24 @@ namespace CookMe.Views.Landing.UserContUsuario
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            // logica peruana para buscar
-            MessageBox.Show("buscando productos");
+            string aBuscar=txtBuscar.Text;
+
+            if (aBuscar!=null)
+            {
+                List<Datos.Modelos.Producto> productos = new Logica.Controles.ProductoControl().ObtenerProductosBusqueda(aBuscar);
+                LoadProductos(productos);
+            }
+            else if (aBuscar.Equals(""))
+            {
+                List<Datos.Modelos.Producto> productos = new Logica.Controles.ProductoControl().ObtenerTodosLosProductos();
+                LoadProductos(productos);
+            }
         }
 
         private void BtnCarrito_Click(object sender, EventArgs e)
         {
-            // Meter lo de ver carrito ya veré cómo hacerlo
-            MessageBox.Show("Ver carrooooo");
+            Views.VistasProducto.Carrito carro = new Views.VistasProducto.Carrito(carrito);
+            carro.ShowDialog();
         }
 
         public void LoadProductos(List<Datos.Modelos.Producto> productos)
@@ -128,14 +142,27 @@ namespace CookMe.Views.Landing.UserContUsuario
 
         private void AbrirVistaProducto(ProductoBoton producto)
         {
-            // Ver producto en grande
-            MessageBox.Show("Ver producto");
+            Views.VistasProducto.VerProducto ver = new Views.VistasProducto.VerProducto(producto.id);
+            ver.ShowDialog();
         }
 
         private void AñadirProductoAlCarrito(ProductoBoton producto)
         {
-            // Lógica para añadir al carrito
-            MessageBox.Show(" producto añadido ");
+
+            if (carrito.ContainsKey(producto.id))
+            {
+                carrito[producto.id] += 1;
+                MessageBox.Show("Producto añadido correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Hacer que se reste de stock para no poder añadir 200 si solo hay 2
+            }
+            else
+            {
+                carrito.Add(producto.id, 1);
+                MessageBox.Show("Producto añadido correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Hacer que se reste de stock para no poder añadir 200 si solo hay 2
+
+            }
+
         }
     }
 }

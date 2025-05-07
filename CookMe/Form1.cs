@@ -23,14 +23,14 @@ namespace CookMe
         private void btIS_Click_1(object sender, EventArgs e)
         {
             Views.Login.Login log = new Views.Login.Login(this);
-            log.Show();
+            log.ShowDialog();
             this.Visible = false;
         }
 
         private void btRG_Click_1(object sender, EventArgs e)
         {
             Views.Login.Register reg = new Views.Login.Register(this);
-            reg.Show();
+            reg.ShowDialog();
             this.Visible = false;
         }
     }
