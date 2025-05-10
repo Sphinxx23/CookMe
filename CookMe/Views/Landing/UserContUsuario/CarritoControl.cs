@@ -8,15 +8,19 @@ namespace CookMe.Views.Landing.UserContUsuario
     public partial class CarritoControl : UserControl
     {
         private Panel listaProductos;
-        private Label lblTotalTexto;
-        private Button btnIrAPago;
+        private Label lblTotalTexto;      
+
+        public Dictionary<int, int> carritoLleno;
+        public string userEm;
 
         public event EventHandler IrAPagoClick;
 
-        public CarritoControl(Dictionary<int, int> carrito)
+        public CarritoControl(Dictionary<int, int> carrito, string userEmail)
         {
             InicializarComponentes();
-            CargarCarrito(carrito);
+            this.carritoLleno = carrito;
+            this.userEm = userEmail;
+            CargarCarrito(carritoLleno);
         }
 
         private void InicializarComponentes()
@@ -28,7 +32,7 @@ namespace CookMe.Views.Landing.UserContUsuario
             listaProductos = new Panel()
             {
                 Location = new Point(10, 10),
-                Size = new Size(640, 300), 
+                Size = new Size(640, 290), 
                 AutoScroll = true,
                 BorderStyle = BorderStyle.FixedSingle
             };
@@ -37,24 +41,13 @@ namespace CookMe.Views.Landing.UserContUsuario
             lblTotalTexto = new Label()
             {
                 Text = "",
-                Location = new Point(100, listaProductos.Bottom + 25),
+                Location = new Point(100, listaProductos.Bottom + 10),
                 Font = new Font("Comic Sans MS", 14, FontStyle.Bold),
                 AutoSize = true
             };
 
-            
-            btnIrAPago = new Button()
-            {
-                Text = "Ir al pago",
-                Size = new Size(130, 40),
-                Location = new Point(500, 330),
-                BackColor = Color.LightSkyBlue
-            };
-            btnIrAPago.Click += BtnIrAlPago_Click;
-
             this.Controls.Add(listaProductos);
             this.Controls.Add(lblTotalTexto);
-            this.Controls.Add(btnIrAPago);
         }
 
         public void CargarCarrito(Dictionary<int, int> carrito)
@@ -79,10 +72,5 @@ namespace CookMe.Views.Landing.UserContUsuario
             lblTotalTexto.Text = $"Total a pagar: {total:0.00} €";
         }
 
-        private void BtnIrAlPago_Click(object sender, EventArgs e)
-        {
-            // a pagra a pagar
-            MessageBox.Show("A pagar a pagar");
-        }
     }
 }

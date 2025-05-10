@@ -206,5 +206,30 @@ namespace Datos.Repositories
                 return false;
             }
         }
+        public bool ActualizarStockProducto(int idProducto, int cantidadARestar)
+        {
+            try
+            {
+                using (var conexion = Conexion.Conexion.EstablecerConexion())
+                {
+                    using (var cmd = new NpgsqlCommand(@"
+                        UPDATE producto
+                        SET stock = stock - @CantidadARestar
+                        WHERE id = @IdProducto AND stock >= @CantidadARestar", conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@IdProducto", idProducto);
+                        cmd.Parameters.AddWithValue("@CantidadARestar", cantidadARestar);
+
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+                        return filasAfectadas > 0;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }

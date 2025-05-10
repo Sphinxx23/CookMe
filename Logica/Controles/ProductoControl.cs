@@ -47,7 +47,10 @@ namespace Logica.Controles
 
         }
 
-
+        public bool ActualizarStockProducto(int id, int cantidad)
+        {
+            return new Datos.Repositories.ProductoRepo().ActualizarStockProducto(id, cantidad);
+        }
 
     }
 }

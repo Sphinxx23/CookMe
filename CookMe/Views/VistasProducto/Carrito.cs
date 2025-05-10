@@ -1,4 +1,5 @@
 ﻿using CookMe.Views.Landing.UserContUsuario;
+using Datos.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,16 @@ namespace CookMe.Views.VistasProducto
 {
     public partial class Carrito : Form
     {
-        public Carrito(Dictionary<int, int> carrit)
+        public string userEm;
+        public Dictionary<int, int> carritLleno;
+        public Carrito(Dictionary<int, int> carrit, string user)
         {
             InitializeComponent();
-
-            LoadUserControl(new Landing.UserContUsuario.CarritoControl(carrit));
+            this.userEm = user;
+            this.carritLleno = carrit;
+            Usuario usuario= new Logica.Controles.UsuarioControl().ObtenerUsuarioPorEmail(this.userEm);
+            lb1.Text += " " + usuario.Nombre + " " + usuario.Apellido;
+            LoadUserControl(new Landing.UserContUsuario.CarritoControl(carrit, userEm));
 
         }
 
@@ -31,7 +37,46 @@ namespace CookMe.Views.VistasProducto
 
         private void botonImagen1_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void btnTienda_Click(object sender, EventArgs e)
+        {
+            bool control = false;   
+            foreach (var item in carritLleno)
+            {
+                bool correcto = new Logica.Controles.ProductoControl().ActualizarStockProducto(item.Key, item.Value);
+                control = correcto;
+                if (!correcto)
+                {
+                    MessageBox.Show("Error al actualizar el stock.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+                }
+            }
+
+
+            if (control)
+            {
+                // imprimir factura con hilo
+                MessageBox.Show("Pago Exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Aqui
+
+
+
+                carritLleno = new Dictionary<int, int>();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
+
+            
+        }
+   
     }
 }
+

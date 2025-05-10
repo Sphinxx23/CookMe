@@ -29,16 +29,44 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.botonImagen1 = new CookMe.ControlesPersonalizados.BotonImagen();
             this.lb1 = new System.Windows.Forms.Label();
+            this.btnTienda = new CustomButton();
+            this.botonImagen1 = new CookMe.ControlesPersonalizados.BotonImagen();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(1, 95);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(879, 479);
+            this.panel1.Size = new System.Drawing.Size(879, 420);
             this.panel1.TabIndex = 0;
+            // 
+            // lb1
+            // 
+            this.lb1.AutoSize = true;
+            this.lb1.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lb1.Location = new System.Drawing.Point(126, 29);
+            this.lb1.Name = "lb1";
+            this.lb1.Size = new System.Drawing.Size(168, 41);
+            this.lb1.TabIndex = 27;
+            this.lb1.Text = "Carrito de";
+            // 
+            // btnTienda
+            // 
+            this.btnTienda.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnTienda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTienda.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnTienda.FlatAppearance.BorderSize = 6;
+            this.btnTienda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTienda.ForeColor = System.Drawing.Color.Black;
+            this.btnTienda.Location = new System.Drawing.Point(582, 521);
+            this.btnTienda.Name = "btnTienda";
+            this.btnTienda.Size = new System.Drawing.Size(241, 42);
+            this.btnTienda.TabIndex = 28;
+            this.btnTienda.Text = "REALIZAR PAGO";
+            this.btnTienda.UseVisualStyleBackColor = false;
+            this.btnTienda.Click += new System.EventHandler(this.btnTienda_Click);
             // 
             // botonImagen1
             // 
@@ -51,28 +79,18 @@
             this.botonImagen1.UseVisualStyleBackColor = true;
             this.botonImagen1.Click += new System.EventHandler(this.botonImagen1_Click);
             // 
-            // lb1
-            // 
-            this.lb1.AutoSize = true;
-            this.lb1.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lb1.Location = new System.Drawing.Point(126, 26);
-            this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(225, 41);
-            this.lb1.TabIndex = 27;
-            this.lb1.Text = "Carrito Actual";
-            // 
             // Carrito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 528);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(881, 575);
+            this.Controls.Add(this.btnTienda);
             this.Controls.Add(this.lb1);
             this.Controls.Add(this.botonImagen1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(881, 575);
-            this.MinimumSize = new System.Drawing.Size(881, 575);
             this.Name = "Carrito";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carrito";
@@ -86,5 +104,6 @@
         private System.Windows.Forms.Panel panel1;
         private ControlesPersonalizados.BotonImagen botonImagen1;
         private System.Windows.Forms.Label lb1;
+        private CustomButton btnTienda;
     }
 }

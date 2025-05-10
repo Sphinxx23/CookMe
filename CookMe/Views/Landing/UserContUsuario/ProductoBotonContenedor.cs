@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,12 +22,14 @@ namespace CookMe.Views.Landing.UserContUsuario
         // idProducto----cantidad
         public Dictionary<int, int> carrito;
 
+        public List<Datos.Modelos.Producto> productos;
+
         public ProductoBotonContenedor(string email)
         {
             this.email = email;
             InitializeComponents();
             carrito = new Dictionary<int, int>();
-            List<Datos.Modelos.Producto> productos = new Logica.Controles.ProductoControl().ObtenerTodosLosProductos();
+            productos = new Logica.Controles.ProductoControl().ObtenerTodosLosProductos();
             LoadProductos(productos);
         }
 
@@ -79,24 +82,59 @@ namespace CookMe.Views.Landing.UserContUsuario
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            string aBuscar=txtBuscar.Text;
+            Busqueda();
+        }
 
-            if (aBuscar!=null)
+
+        public void Busqueda()
+        {
+            string aBuscar = txtBuscar.Text;
+
+            if (aBuscar != null)
             {
-                List<Datos.Modelos.Producto> productos = new Logica.Controles.ProductoControl().ObtenerProductosBusqueda(aBuscar);
-                LoadProductos(productos);
+                List<Datos.Modelos.Producto> pB = new Logica.Controles.ProductoControl().ObtenerProductosBusqueda(aBuscar);
+
+                foreach (Producto item in pB)
+                {
+                    foreach (var pCarro in carrito)
+                    {
+                        if (pCarro.Key == item.Id)
+                        {
+                            item.Stock -= pCarro.Value;
+                        }
+
+                    }
+                }
+
+                LoadProductos(pB);
             }
             else if (aBuscar.Equals(""))
             {
-                List<Datos.Modelos.Producto> productos = new Logica.Controles.ProductoControl().ObtenerTodosLosProductos();
+               
                 LoadProductos(productos);
             }
         }
 
         private void BtnCarrito_Click(object sender, EventArgs e)
         {
-            Views.VistasProducto.Carrito carro = new Views.VistasProducto.Carrito(carrito);
-            carro.ShowDialog();
+
+
+            if (carrito.Count>0)
+            {
+                Views.VistasProducto.Carrito carro = new Views.VistasProducto.Carrito(carrito, email);
+
+                var resultado = carro.ShowDialog();
+
+                if (resultado == DialogResult.OK)
+                {
+                    carrito = new Dictionary<int, int>();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Carrito Vacío, añade algún producto para ir ", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         public void LoadProductos(List<Datos.Modelos.Producto> productos)
@@ -153,16 +191,36 @@ namespace CookMe.Views.Landing.UserContUsuario
             {
                 carrito[producto.id] += 1;
                 MessageBox.Show("Producto añadido correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //Hacer que se reste de stock para no poder añadir 200 si solo hay 2
             }
             else
             {
                 carrito.Add(producto.id, 1);
                 MessageBox.Show("Producto añadido correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //Hacer que se reste de stock para no poder añadir 200 si solo hay 2
-
             }
 
+
+            foreach (Producto item in productos)
+            {
+                
+                if (producto.id == item.Id)
+                {
+                    item.Stock -= 1;
+                }
+
+                
+            }
+
+            if (txtBuscar.Text== null || txtBuscar.Text.Equals(""))
+            {
+                LoadProductos(productos);
+            }
+            else
+            {
+                Busqueda();
+            }
+
+            
         }
+
     }
 }
