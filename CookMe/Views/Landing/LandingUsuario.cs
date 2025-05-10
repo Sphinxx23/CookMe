@@ -39,7 +39,7 @@ namespace CookMe.Views.Landing
             CredentialsManager.DeleteCredentials();
 
             this.Close();
-            parent.ShowDialog();
+            parent.Show();
         }
 
         private void btnMisClases_Click(object sender, EventArgs e)
