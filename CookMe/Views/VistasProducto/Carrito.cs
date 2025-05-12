@@ -1,4 +1,5 @@
-﻿using CookMe.Views.Landing.UserContUsuario;
+﻿using CookMe.Facturacion;
+using CookMe.Views.Landing.UserContUsuario;
 using Datos.Modelos;
 using System;
 using System.Collections.Generic;
@@ -58,11 +59,12 @@ namespace CookMe.Views.VistasProducto
 
             if (control)
             {
-                // imprimir factura con hilo
+                
                 MessageBox.Show("Pago Exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // imprimir factura con hilo
                 //Aqui
 
-
+                Factura.GenerarTicket(userEm, carritLleno);
 
                 carritLleno = new Dictionary<int, int>();
                 this.DialogResult = DialogResult.OK;
