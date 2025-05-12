@@ -24,6 +24,10 @@ namespace CookMe.Views.Landing
             lbBienvenidaAdmin.Text = usuarioSesion.Nombre + " " + usuarioSesion.Apellido;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Image = CookMe.MetodosImages.MetImages.ConvertBytesToImage(usuarioSesion.Foto);
+
+
+            LoadUserControl(new UserContUsuario.ProductoBotonContenedor(usuarioSesion.Email));
+
         }
 
         private void LoadUserControl(UserControl userControl)

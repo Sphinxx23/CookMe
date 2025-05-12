@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -44,7 +45,7 @@ namespace CookMe.Views.VistasProducto
 
         private void btnTienda_Click(object sender, EventArgs e)
         {
-            bool control = false;   
+            bool control = false;
             foreach (var item in carritLleno)
             {
                 bool correcto = new Logica.Controles.ProductoControl().ActualizarStockProducto(item.Key, item.Value);
@@ -56,16 +57,23 @@ namespace CookMe.Views.VistasProducto
                 }
             }
 
-
             if (control)
             {
-                
-                MessageBox.Show("Pago Exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // imprimir factura con hilo
-                //Aqui
+              
+                Thread facturaThread = new Thread(() =>
+                {                 
+                    Factura.GenerarTicket(userEm, carritLleno);
+                });
 
-                Factura.GenerarTicket(userEm, carritLleno);
 
+                // single-threaded apartment puede acceder a objetos el solo, es lento y se puede usar con SaveFileDialog
+                // multi-threaded apartment pueden acceder varios hilos a los mismos objetos simultaneamente, es más rapido
+
+                facturaThread.SetApartmentState(ApartmentState.STA);  // Lo tengo que hacer como STA porque si es MTA no deja abrir el SaveFileDialog
+                facturaThread.Start();
+                facturaThread.Join(); // Espera a que termine el hilo 
+
+                MessageBox.Show("   Pago realizado con exito    ", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 carritLleno = new Dictionary<int, int>();
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -75,10 +83,10 @@ namespace CookMe.Views.VistasProducto
                 this.DialogResult = DialogResult.Cancel;
                 this.Close();
             }
-
-            
         }
-   
+
+
+
     }
 }
 
