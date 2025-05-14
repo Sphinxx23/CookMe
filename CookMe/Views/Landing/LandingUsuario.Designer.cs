@@ -51,7 +51,7 @@
             // 
             // panelIzq
             // 
-            this.panelIzq.BackColor = System.Drawing.Color.White;
+            this.panelIzq.BackColor = System.Drawing.Color.LightGray;
             this.panelIzq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelIzq.Controls.Add(this.lbEspacio);
             this.panelIzq.Controls.Add(this.btEliminarCuenta);
@@ -177,7 +177,7 @@
             // 
             // panelSup
             // 
-            this.panelSup.BackColor = System.Drawing.Color.White;
+            this.panelSup.BackColor = System.Drawing.Color.LightGray;
             this.panelSup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSup.Controls.Add(this.btnRecetas);
             this.panelSup.Controls.Add(this.btnClases);
