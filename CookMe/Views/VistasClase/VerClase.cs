@@ -14,7 +14,8 @@ namespace CookMe.Views.VistasClase
     public partial class VerClase : Form
     {
         private int idClase, idAccion;
-        private string email;
+        private string emailProfe;
+        private string miEmail;
 
         private void botonImagen1_Click(object sender, EventArgs e)
         {
@@ -23,14 +24,14 @@ namespace CookMe.Views.VistasClase
 
         private void btnValorar_Click(object sender, EventArgs e)
         {
-            Views.VistasClase.Valorar val = new Views.VistasClase.Valorar(this.idClase, this.email, this);
+            Views.VistasClase.Valorar val = new Views.VistasClase.Valorar(this.idClase, this.miEmail, this);
             val.ShowDialog();
         }
 
         private void btInscribir_Click(object sender, EventArgs e)
         {          
             Inscripcion inscApuntar = CrearInscripcion();
-            Inscripcion comprobarInsc = new Logica.Controles.InscripcionControl().ObtenerInscripcion(this.email, this.idClase);
+            Inscripcion comprobarInsc = new Logica.Controles.InscripcionControl().ObtenerInscripcion(this.miEmail, this.idClase);
 
             if (comprobarInsc == null)
             {
@@ -71,17 +72,18 @@ namespace CookMe.Views.VistasClase
         private Inscripcion CrearInscripcion()
         {
             Inscripcion insc = new Inscripcion();
-            insc.EmailUsuario = this.email;
+            insc.EmailUsuario = this.miEmail;
             insc.IdClase = this.idClase;
             insc.InscripcionActiva = true;
             insc.Valoracion = 0;
             return insc;
         }
 
-        public VerClase(int id, string email, int accion)
+        public VerClase(int id, string miEmail,string emailProf, int accion)
         {
             InitializeComponent();
-            this.email = email;
+            this.emailProfe = emailProf;
+            this.miEmail = miEmail;
             this.idClase=id;
             this.idAccion = accion;
 
@@ -94,8 +96,8 @@ namespace CookMe.Views.VistasClase
             pbTematica.SizeMode = PictureBoxSizeMode.StretchImage;
             pbTematica.Image = CookMe.MetodosImages.MetImages.ConvertBytesToImage(clase.FotoTematica);
 
-            Datos.Modelos.Usuario usu = new Logica.Controles.UsuarioControl().ObtenerUsuarioPorEmail(this.email);
-            lbProfesor.Text = this.email;
+            Datos.Modelos.Usuario usu = new Logica.Controles.UsuarioControl().ObtenerUsuarioPorEmail(this.emailProfe);
+            lbProfesor.Text = this.emailProfe;
             pbProfesor.SizeMode = PictureBoxSizeMode.StretchImage;
             pbProfesor.Image = CookMe.MetodosImages.MetImages.ConvertBytesToImage(usu.Foto);
 
