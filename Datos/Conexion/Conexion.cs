@@ -5,7 +5,7 @@ namespace Datos.Conexion
 {
     public static class Conexion
     {
-        private static string connectionString = "Host=ep-icy-poetry-a9l2uiid-pooler.gwc.azure.neon.tech;Database=cookme;Username=neondb_owner;Password=npg_0JLabDUQ5etN;SSL Mode=Require";
+        private static string connectionString = "Host=ep-calm-tree-a9nj4css-pooler.gwc.azure.neon.tech;Database=CookMe;Username=CookMe_owner;Password=npg_h6J5pxwgUViC;SSL Mode=Require";
 
 
         // Método para establecer la conexión 

@@ -149,6 +149,7 @@
             // 
             // tbFecha
             // 
+            this.tbFecha.BackColor = System.Drawing.SystemColors.HighlightText;
             this.tbFecha.Location = new System.Drawing.Point(825, 315);
             this.tbFecha.Mask = "0000-00-00 00:00:00";
             this.tbFecha.Name = "tbFecha";

@@ -31,7 +31,7 @@ namespace CookMe.Views.Landing.UserContUsuario
         {
             this.Size = new Size(200, 230);
             this.BorderStyle = BorderStyle.FixedSingle;
-            this.BackColor = Color.White;
+            this.BackColor = Color.LightSkyBlue;
             this.Cursor = Cursors.Hand;
 
             this.Click += ProductoBoton_Click;
@@ -115,12 +115,12 @@ namespace CookMe.Views.Landing.UserContUsuario
 
         private void Control_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.LightSkyBlue;
+            this.BackColor = Color.LightSteelBlue;
         }
 
         private void Control_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            this.BackColor = Color.LightSkyBlue;
         }
 
         public void AsignarDatosProducto(int id, string nombre, decimal precio, int stock, Image fotoProducto)

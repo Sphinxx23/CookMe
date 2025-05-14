@@ -20,6 +20,7 @@ namespace CookMe.Views.Landing.UserContUsuario
         private PictureBox picFotoProfesor;
         private Label lblEmailProfesor;
         public int id;
+        public string emailProfe;
 
         public event EventHandler ItemClicked;
 
@@ -142,6 +143,7 @@ namespace CookMe.Views.Landing.UserContUsuario
         public void AsignarDatosClase(int id, string titulo, string descripcion, string fecha, int plazas, string emailProfesor, Image fotoClase, Image fotoProfesor)
         {
             this.id = id;
+            this.emailProfe = emailProfesor;
             lblTitulo.Text = titulo;
             lblDescripcion.Text = descripcion;
             lblFecha.Text = "Fecha: " + fecha;

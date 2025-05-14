@@ -71,7 +71,7 @@ namespace CookMe.Views.Landing.UserContUsuario
 
             lblEmail = new Label()
             {
-                Location = new Point(550, 15),
+                Location = new Point(580, 15),
                 AutoSize = true,
                 Font = new Font("Arial", 9, FontStyle.Italic)
             };

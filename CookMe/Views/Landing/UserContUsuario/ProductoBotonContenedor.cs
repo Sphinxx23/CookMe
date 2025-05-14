@@ -41,7 +41,8 @@ namespace CookMe.Views.Landing.UserContUsuario
             {
                 Location = new Point(50, 23),
                 Size = new Size(450, 35),
-                Font = new Font("Arial", 9)
+                Font = new Font("Arial", 9),
+                BackColor = Color.LightSkyBlue
             };
 
             btnBuscar = new Button()

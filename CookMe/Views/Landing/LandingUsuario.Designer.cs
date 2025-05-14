@@ -51,7 +51,7 @@
             // 
             // panelIzq
             // 
-            this.panelIzq.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelIzq.BackColor = System.Drawing.Color.White;
             this.panelIzq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelIzq.Controls.Add(this.lbEspacio);
             this.panelIzq.Controls.Add(this.btEliminarCuenta);
@@ -177,7 +177,7 @@
             // 
             // panelSup
             // 
-            this.panelSup.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelSup.BackColor = System.Drawing.Color.White;
             this.panelSup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSup.Controls.Add(this.btnRecetas);
             this.panelSup.Controls.Add(this.btnClases);
@@ -237,7 +237,7 @@
             // 
             // panelCentral
             // 
-            this.panelCentral.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panelCentral.BackColor = System.Drawing.Color.White;
             this.panelCentral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelCentral.Location = new System.Drawing.Point(310, 81);
             this.panelCentral.Name = "panelCentral";

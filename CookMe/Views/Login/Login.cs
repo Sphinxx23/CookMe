@@ -27,14 +27,6 @@ namespace CookMe.Views.Login
             this.parent = parent;
         }
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-
-        //    string prueba = new Logica.Controles.UsuarioControl().ProbarConexion();
-        //    MessageBox.Show(prueba);
-        //}
-
-        
 
         private void botonImagen1_Click(object sender, EventArgs e)
         {
@@ -91,14 +83,14 @@ namespace CookMe.Views.Login
                         {
                             Views.Landing.LandingAdmin landingAdmin = new Views.Landing.LandingAdmin(parent, usu);
                             CredentialsManager.SaveCredentials(usu.Email, usu.Contrasena);
-                            landingAdmin.ShowDialog();
+                            landingAdmin.Show();
                             this.Close();
                         }
                         else
                         {
                             Views.Landing.LandingUsuario landingUsu = new Views.Landing.LandingUsuario(parent, usu);
                             CredentialsManager.SaveCredentials(usu.Email, usu.Contrasena);
-                            landingUsu.ShowDialog();
+                            landingUsu.Show();
                             this.Close();
                         }
                     }
