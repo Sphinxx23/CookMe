@@ -59,7 +59,7 @@
             this.lbEmailRegister.AutoSize = true;
             this.lbEmailRegister.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEmailRegister.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbEmailRegister.Location = new System.Drawing.Point(73, 303);
+            this.lbEmailRegister.Location = new System.Drawing.Point(48, 282);
             this.lbEmailRegister.Name = "lbEmailRegister";
             this.lbEmailRegister.Size = new System.Drawing.Size(59, 21);
             this.lbEmailRegister.TabIndex = 4;
@@ -70,7 +70,7 @@
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNombre.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbNombre.Location = new System.Drawing.Point(73, 356);
+            this.lbNombre.Location = new System.Drawing.Point(48, 335);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(75, 21);
             this.lbNombre.TabIndex = 5;
@@ -81,7 +81,7 @@
             this.lbApellidos.AutoSize = true;
             this.lbApellidos.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbApellidos.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbApellidos.Location = new System.Drawing.Point(73, 410);
+            this.lbApellidos.Location = new System.Drawing.Point(48, 389);
             this.lbApellidos.Name = "lbApellidos";
             this.lbApellidos.Size = new System.Drawing.Size(95, 21);
             this.lbApellidos.TabIndex = 6;
@@ -92,7 +92,7 @@
             this.lbDireccion.AutoSize = true;
             this.lbDireccion.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDireccion.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbDireccion.Location = new System.Drawing.Point(73, 465);
+            this.lbDireccion.Location = new System.Drawing.Point(48, 444);
             this.lbDireccion.Name = "lbDireccion";
             this.lbDireccion.Size = new System.Drawing.Size(98, 21);
             this.lbDireccion.TabIndex = 7;
@@ -103,7 +103,7 @@
             this.lbContra1.AutoSize = true;
             this.lbContra1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbContra1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbContra1.Location = new System.Drawing.Point(73, 517);
+            this.lbContra1.Location = new System.Drawing.Point(48, 496);
             this.lbContra1.Name = "lbContra1";
             this.lbContra1.Size = new System.Drawing.Size(116, 21);
             this.lbContra1.TabIndex = 8;
@@ -114,7 +114,7 @@
             this.lbContra2.AutoSize = true;
             this.lbContra2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbContra2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbContra2.Location = new System.Drawing.Point(30, 574);
+            this.lbContra2.Location = new System.Drawing.Point(5, 553);
             this.lbContra2.Name = "lbContra2";
             this.lbContra2.Size = new System.Drawing.Size(205, 21);
             this.lbContra2.TabIndex = 9;
@@ -125,7 +125,7 @@
             this.lbProfesor.AutoSize = true;
             this.lbProfesor.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbProfesor.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbProfesor.Location = new System.Drawing.Point(73, 612);
+            this.lbProfesor.Location = new System.Drawing.Point(48, 591);
             this.lbProfesor.Name = "lbProfesor";
             this.lbProfesor.Size = new System.Drawing.Size(151, 21);
             this.lbProfesor.TabIndex = 10;
@@ -134,7 +134,7 @@
             // chbProfesor
             // 
             this.chbProfesor.AutoSize = true;
-            this.chbProfesor.Location = new System.Drawing.Point(289, 617);
+            this.chbProfesor.Location = new System.Drawing.Point(289, 592);
             this.chbProfesor.Name = "chbProfesor";
             this.chbProfesor.Size = new System.Drawing.Size(18, 17);
             this.chbProfesor.TabIndex = 19;
@@ -143,14 +143,14 @@
             // lbError
             // 
             this.lbError.AutoSize = true;
-            this.lbError.Location = new System.Drawing.Point(148, 633);
+            this.lbError.Location = new System.Drawing.Point(70, 626);
             this.lbError.Name = "lbError";
             this.lbError.Size = new System.Drawing.Size(0, 16);
             this.lbError.TabIndex = 20;
             // 
             // pbFotoPerfil
             // 
-            this.pbFotoPerfil.Location = new System.Drawing.Point(179, 48);
+            this.pbFotoPerfil.Location = new System.Drawing.Point(179, 23);
             this.pbFotoPerfil.Name = "pbFotoPerfil";
             this.pbFotoPerfil.Size = new System.Drawing.Size(214, 188);
             this.pbFotoPerfil.TabIndex = 3;
@@ -161,7 +161,7 @@
             this.btRegistrar.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btRegistrar.ForeColor = System.Drawing.Color.Black;
-            this.btRegistrar.Location = new System.Drawing.Point(327, 661);
+            this.btRegistrar.Location = new System.Drawing.Point(327, 654);
             this.btRegistrar.Name = "btRegistrar";
             this.btRegistrar.Size = new System.Drawing.Size(132, 40);
             this.btRegistrar.TabIndex = 26;
@@ -174,7 +174,7 @@
             this.btVaciarCampos1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btVaciarCampos1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btVaciarCampos1.ForeColor = System.Drawing.Color.Black;
-            this.btVaciarCampos1.Location = new System.Drawing.Point(130, 661);
+            this.btVaciarCampos1.Location = new System.Drawing.Point(130, 654);
             this.btVaciarCampos1.Name = "btVaciarCampos1";
             this.btVaciarCampos1.Size = new System.Drawing.Size(135, 40);
             this.btVaciarCampos1.TabIndex = 25;
@@ -187,7 +187,7 @@
             this.btSeleccion.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btSeleccion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btSeleccion.ForeColor = System.Drawing.Color.Black;
-            this.btSeleccion.Location = new System.Drawing.Point(205, 242);
+            this.btSeleccion.Location = new System.Drawing.Point(205, 217);
             this.btSeleccion.Name = "btSeleccion";
             this.btSeleccion.Size = new System.Drawing.Size(161, 37);
             this.btSeleccion.TabIndex = 24;
@@ -199,7 +199,7 @@
             // 
             this.botonImagen3.ButtonImage = global::CookMe.Properties.Resources.ojo1;
             this.botonImagen3.CornerRadius = 20;
-            this.botonImagen3.Location = new System.Drawing.Point(472, 572);
+            this.botonImagen3.Location = new System.Drawing.Point(479, 554);
             this.botonImagen3.Name = "botonImagen3";
             this.botonImagen3.Size = new System.Drawing.Size(75, 23);
             this.botonImagen3.TabIndex = 22;
@@ -211,7 +211,7 @@
             // 
             this.botonImagen2.ButtonImage = global::CookMe.Properties.Resources.ojo1;
             this.botonImagen2.CornerRadius = 20;
-            this.botonImagen2.Location = new System.Drawing.Point(472, 515);
+            this.botonImagen2.Location = new System.Drawing.Point(479, 497);
             this.botonImagen2.Name = "botonImagen2";
             this.botonImagen2.Size = new System.Drawing.Size(75, 23);
             this.botonImagen2.TabIndex = 21;
@@ -223,7 +223,7 @@
             // 
             this.botonImagen1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("botonImagen1.ButtonImage")));
             this.botonImagen1.CornerRadius = 20;
-            this.botonImagen1.Location = new System.Drawing.Point(14, 30);
+            this.botonImagen1.Location = new System.Drawing.Point(14, 5);
             this.botonImagen1.Name = "botonImagen1";
             this.botonImagen1.Size = new System.Drawing.Size(61, 42);
             this.botonImagen1.TabIndex = 2;
@@ -234,72 +234,72 @@
             // 
             this.tbEmailRegis.BorderColor = System.Drawing.Color.Blue;
             this.tbEmailRegis.BorderRadius = 15;
-            this.tbEmailRegis.Location = new System.Drawing.Point(252, 294);
+            this.tbEmailRegis.Location = new System.Drawing.Point(227, 273);
             this.tbEmailRegis.Multiline = true;
             this.tbEmailRegis.Name = "tbEmailRegis";
             this.tbEmailRegis.Padding = new System.Windows.Forms.Padding(10);
             this.tbEmailRegis.PasswordChar = '\0';
-            this.tbEmailRegis.Size = new System.Drawing.Size(199, 41);
+            this.tbEmailRegis.Size = new System.Drawing.Size(232, 41);
             this.tbEmailRegis.TabIndex = 27;
             // 
             // tbNombreRegis
             // 
             this.tbNombreRegis.BorderColor = System.Drawing.Color.Blue;
             this.tbNombreRegis.BorderRadius = 15;
-            this.tbNombreRegis.Location = new System.Drawing.Point(252, 347);
+            this.tbNombreRegis.Location = new System.Drawing.Point(227, 326);
             this.tbNombreRegis.Multiline = true;
             this.tbNombreRegis.Name = "tbNombreRegis";
             this.tbNombreRegis.Padding = new System.Windows.Forms.Padding(10);
             this.tbNombreRegis.PasswordChar = '\0';
-            this.tbNombreRegis.Size = new System.Drawing.Size(199, 41);
+            this.tbNombreRegis.Size = new System.Drawing.Size(232, 41);
             this.tbNombreRegis.TabIndex = 28;
             // 
             // tbApellidosregis
             // 
             this.tbApellidosregis.BorderColor = System.Drawing.Color.Blue;
             this.tbApellidosregis.BorderRadius = 15;
-            this.tbApellidosregis.Location = new System.Drawing.Point(252, 401);
+            this.tbApellidosregis.Location = new System.Drawing.Point(227, 380);
             this.tbApellidosregis.Multiline = true;
             this.tbApellidosregis.Name = "tbApellidosregis";
             this.tbApellidosregis.Padding = new System.Windows.Forms.Padding(10);
             this.tbApellidosregis.PasswordChar = '\0';
-            this.tbApellidosregis.Size = new System.Drawing.Size(199, 42);
+            this.tbApellidosregis.Size = new System.Drawing.Size(232, 42);
             this.tbApellidosregis.TabIndex = 29;
             // 
             // tbDireccionRegis
             // 
             this.tbDireccionRegis.BorderColor = System.Drawing.Color.Blue;
             this.tbDireccionRegis.BorderRadius = 15;
-            this.tbDireccionRegis.Location = new System.Drawing.Point(252, 455);
+            this.tbDireccionRegis.Location = new System.Drawing.Point(227, 434);
             this.tbDireccionRegis.Multiline = true;
             this.tbDireccionRegis.Name = "tbDireccionRegis";
             this.tbDireccionRegis.Padding = new System.Windows.Forms.Padding(10);
             this.tbDireccionRegis.PasswordChar = '\0';
-            this.tbDireccionRegis.Size = new System.Drawing.Size(199, 42);
+            this.tbDireccionRegis.Size = new System.Drawing.Size(232, 42);
             this.tbDireccionRegis.TabIndex = 30;
             // 
             // tbCtraRegis1
             // 
             this.tbCtraRegis1.BorderColor = System.Drawing.Color.Blue;
             this.tbCtraRegis1.BorderRadius = 15;
-            this.tbCtraRegis1.Location = new System.Drawing.Point(252, 505);
+            this.tbCtraRegis1.Location = new System.Drawing.Point(227, 484);
             this.tbCtraRegis1.Multiline = true;
             this.tbCtraRegis1.Name = "tbCtraRegis1";
             this.tbCtraRegis1.Padding = new System.Windows.Forms.Padding(10);
             this.tbCtraRegis1.PasswordChar = '*';
-            this.tbCtraRegis1.Size = new System.Drawing.Size(199, 42);
+            this.tbCtraRegis1.Size = new System.Drawing.Size(232, 42);
             this.tbCtraRegis1.TabIndex = 31;
             // 
             // tbCtraRegis2
             // 
             this.tbCtraRegis2.BorderColor = System.Drawing.Color.Blue;
             this.tbCtraRegis2.BorderRadius = 15;
-            this.tbCtraRegis2.Location = new System.Drawing.Point(252, 564);
+            this.tbCtraRegis2.Location = new System.Drawing.Point(227, 543);
             this.tbCtraRegis2.Multiline = true;
             this.tbCtraRegis2.Name = "tbCtraRegis2";
             this.tbCtraRegis2.Padding = new System.Windows.Forms.Padding(10);
             this.tbCtraRegis2.PasswordChar = '*';
-            this.tbCtraRegis2.Size = new System.Drawing.Size(199, 42);
+            this.tbCtraRegis2.Size = new System.Drawing.Size(232, 42);
             this.tbCtraRegis2.TabIndex = 32;
             // 
             // Register

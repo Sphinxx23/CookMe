@@ -72,7 +72,7 @@ namespace CookMe.Views.VistaEliminacion
                 }
                 else
                 {
-                    lbErrorCredenciales.Text = "Contraseña incorrecta";
+                    lbErrorCredenciales.Text = "   Contraseña incorrecta";
                     lbErrorCredenciales.ForeColor = Color.Red;
                 }
 

@@ -34,15 +34,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbBienvenidaAdmin = new System.Windows.Forms.Label();
-            this.btnMisRecetas = new CustomButton();
-            this.btnEditarPerfil = new CustomButton();
-            this.btnMisClases = new CustomButton();
             this.btnCerrarSesionUsu = new System.Windows.Forms.Button();
             this.panelSup = new System.Windows.Forms.Panel();
+            this.panelCentral = new System.Windows.Forms.Panel();
             this.btnRecetas = new CustomButton();
             this.btnClases = new CustomButton();
             this.btnTienda = new CustomButton();
-            this.panelCentral = new System.Windows.Forms.Panel();
+            this.btnMisRecetas = new CustomButton();
+            this.btnEditarPerfil = new CustomButton();
+            this.btnMisClases = new CustomButton();
             this.panelIzq.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,7 +51,7 @@
             // 
             // panelIzq
             // 
-            this.panelIzq.BackColor = System.Drawing.Color.LightGray;
+            this.panelIzq.BackColor = System.Drawing.Color.Gainsboro;
             this.panelIzq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelIzq.Controls.Add(this.lbEspacio);
             this.panelIzq.Controls.Add(this.btEliminarCuenta);
@@ -116,54 +116,6 @@
             this.lbBienvenidaAdmin.Size = new System.Drawing.Size(0, 18);
             this.lbBienvenidaAdmin.TabIndex = 13;
             // 
-            // btnMisRecetas
-            // 
-            this.btnMisRecetas.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnMisRecetas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMisRecetas.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnMisRecetas.FlatAppearance.BorderSize = 6;
-            this.btnMisRecetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMisRecetas.ForeColor = System.Drawing.Color.Black;
-            this.btnMisRecetas.Location = new System.Drawing.Point(27, 659);
-            this.btnMisRecetas.Name = "btnMisRecetas";
-            this.btnMisRecetas.Size = new System.Drawing.Size(255, 62);
-            this.btnMisRecetas.TabIndex = 18;
-            this.btnMisRecetas.Text = "Mis Recetas";
-            this.btnMisRecetas.UseVisualStyleBackColor = false;
-            this.btnMisRecetas.Click += new System.EventHandler(this.btnMisRecetas_Click);
-            // 
-            // btnEditarPerfil
-            // 
-            this.btnEditarPerfil.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnEditarPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarPerfil.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnEditarPerfil.FlatAppearance.BorderSize = 6;
-            this.btnEditarPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarPerfil.ForeColor = System.Drawing.Color.Black;
-            this.btnEditarPerfil.Location = new System.Drawing.Point(27, 360);
-            this.btnEditarPerfil.Name = "btnEditarPerfil";
-            this.btnEditarPerfil.Size = new System.Drawing.Size(255, 62);
-            this.btnEditarPerfil.TabIndex = 15;
-            this.btnEditarPerfil.Text = "Editar Perfil";
-            this.btnEditarPerfil.UseVisualStyleBackColor = false;
-            this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
-            // 
-            // btnMisClases
-            // 
-            this.btnMisClases.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnMisClases.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMisClases.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnMisClases.FlatAppearance.BorderSize = 6;
-            this.btnMisClases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMisClases.ForeColor = System.Drawing.Color.Black;
-            this.btnMisClases.Location = new System.Drawing.Point(27, 578);
-            this.btnMisClases.Name = "btnMisClases";
-            this.btnMisClases.Size = new System.Drawing.Size(255, 62);
-            this.btnMisClases.TabIndex = 16;
-            this.btnMisClases.Text = "Mis Clases";
-            this.btnMisClases.UseVisualStyleBackColor = false;
-            this.btnMisClases.Click += new System.EventHandler(this.btnMisClases_Click);
-            // 
             // btnCerrarSesionUsu
             // 
             this.btnCerrarSesionUsu.BackColor = System.Drawing.Color.LightCoral;
@@ -177,7 +129,7 @@
             // 
             // panelSup
             // 
-            this.panelSup.BackColor = System.Drawing.Color.LightGray;
+            this.panelSup.BackColor = System.Drawing.Color.Gainsboro;
             this.panelSup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSup.Controls.Add(this.btnRecetas);
             this.panelSup.Controls.Add(this.btnClases);
@@ -186,6 +138,15 @@
             this.panelSup.Name = "panelSup";
             this.panelSup.Size = new System.Drawing.Size(1202, 84);
             this.panelSup.TabIndex = 1;
+            // 
+            // panelCentral
+            // 
+            this.panelCentral.BackColor = System.Drawing.Color.White;
+            this.panelCentral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCentral.Location = new System.Drawing.Point(310, 81);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(1202, 747);
+            this.panelCentral.TabIndex = 2;
             // 
             // btnRecetas
             // 
@@ -235,14 +196,53 @@
             this.btnTienda.UseVisualStyleBackColor = false;
             this.btnTienda.Click += new System.EventHandler(this.btnTienda_Click);
             // 
-            // panelCentral
+            // btnMisRecetas
             // 
-            this.panelCentral.BackColor = System.Drawing.Color.White;
-            this.panelCentral.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCentral.Location = new System.Drawing.Point(310, 81);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(1202, 747);
-            this.panelCentral.TabIndex = 2;
+            this.btnMisRecetas.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnMisRecetas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMisRecetas.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnMisRecetas.FlatAppearance.BorderSize = 6;
+            this.btnMisRecetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMisRecetas.ForeColor = System.Drawing.Color.Black;
+            this.btnMisRecetas.Location = new System.Drawing.Point(27, 659);
+            this.btnMisRecetas.Name = "btnMisRecetas";
+            this.btnMisRecetas.Size = new System.Drawing.Size(255, 62);
+            this.btnMisRecetas.TabIndex = 18;
+            this.btnMisRecetas.Text = "Mis Recetas";
+            this.btnMisRecetas.UseVisualStyleBackColor = false;
+            this.btnMisRecetas.Click += new System.EventHandler(this.btnMisRecetas_Click);
+            // 
+            // btnEditarPerfil
+            // 
+            this.btnEditarPerfil.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnEditarPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarPerfil.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnEditarPerfil.FlatAppearance.BorderSize = 6;
+            this.btnEditarPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarPerfil.ForeColor = System.Drawing.Color.Black;
+            this.btnEditarPerfil.Location = new System.Drawing.Point(27, 360);
+            this.btnEditarPerfil.Name = "btnEditarPerfil";
+            this.btnEditarPerfil.Size = new System.Drawing.Size(255, 62);
+            this.btnEditarPerfil.TabIndex = 15;
+            this.btnEditarPerfil.Text = "Editar Perfil";
+            this.btnEditarPerfil.UseVisualStyleBackColor = false;
+            this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
+            // 
+            // btnMisClases
+            // 
+            this.btnMisClases.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnMisClases.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMisClases.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnMisClases.FlatAppearance.BorderSize = 6;
+            this.btnMisClases.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMisClases.ForeColor = System.Drawing.Color.Black;
+            this.btnMisClases.Location = new System.Drawing.Point(27, 578);
+            this.btnMisClases.Name = "btnMisClases";
+            this.btnMisClases.Size = new System.Drawing.Size(255, 62);
+            this.btnMisClases.TabIndex = 16;
+            this.btnMisClases.Text = "Mis Clases";
+            this.btnMisClases.UseVisualStyleBackColor = false;
+            this.btnMisClases.Click += new System.EventHandler(this.btnMisClases_Click);
             // 
             // LandingUsuario
             // 
@@ -252,6 +252,9 @@
             this.Controls.Add(this.panelCentral);
             this.Controls.Add(this.panelSup);
             this.Controls.Add(this.panelIzq);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1530, 875);
+            this.MinimumSize = new System.Drawing.Size(1530, 875);
             this.Name = "LandingUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelIzq.ResumeLayout(false);

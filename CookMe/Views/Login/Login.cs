@@ -64,12 +64,12 @@ namespace CookMe.Views.Login
         {
             if (tbEmailLogin.Text.Equals("") || tbEmailLogin.Text == null)
             {
-                lbErrorCredenciales.Text = "El campo EMAIL no puede estar vacío";
+                lbErrorCredenciales.Text = "          El campo EMAIL no puede estar vacío";
                 lbErrorCredenciales.ForeColor = Color.Red;
             }
             else if (tbContrasenaLogin.Text.Equals("") || tbContrasenaLogin.Text == null)
             {
-                lbErrorCredenciales.Text = "El campo CONTRASEÑA no puede estar vacío";
+                lbErrorCredenciales.Text = "   El campo CONTRASEÑA no puede estar vacío";
                 lbErrorCredenciales.ForeColor = Color.Red;
             }
             else
@@ -96,14 +96,14 @@ namespace CookMe.Views.Login
                     }
                     else
                     {
-                        lbErrorCredenciales.Text = "Credenciales incorrectas";
+                        lbErrorCredenciales.Text = "                       Credenciales incorrectas";
                         lbErrorCredenciales.ForeColor = Color.Red;
                     }
 
                 }
                 else
                 {
-                    lbErrorCredenciales.Text = "Usuario no existe";
+                    lbErrorCredenciales.Text = "                       Credenciales incorrectas";
                     lbErrorCredenciales.ForeColor = Color.Red;
                 }
             }

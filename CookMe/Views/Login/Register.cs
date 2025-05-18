@@ -177,33 +177,33 @@ namespace CookMe.Views.Login
         {
             if (!ComprobarCampos())
             {
-                lbError.Text = " No puedes dejar campos sin rellenar";
-                lbError.BackColor = Color.Red;
+                lbError.Text = "                           No puedes dejar campos sin rellenar";
+                lbError.ForeColor = Color.Red;
             }
             else if (!ValidateGmail(tbEmailRegis.Text))
             {
 
-                lbError.Text = "Formato de GMAIL inválido, solo se acepta @gmail.com";
-                lbError.BackColor = Color.Red;
+                lbError.Text = "           Formato de GMAIL inválido, solo se acepta @gmail.com";
+                lbError.ForeColor = Color.Red;
 
             }
             else if (ComprobarExistenciaEmail())
             {
-                lbError.Text = " Ya existe una cuenta asociada a este Email, inicie sesión en ella";
-                lbError.BackColor = Color.Blue;
+                lbError.Text = "     Ya existe una cuenta asociada a este Email, inicie sesión en ella";
+                lbError.ForeColor = Color.Blue;
 
             }
             else if (!ValidatePassword(tbCtraRegis1.Text))
             {
-
-                lbError.Text = "Formato de Contraseña inválido, mínimo 6 caracteres y un número";
-                lbError.BackColor = Color.Red;
+                // , mínimo 6 caracteres y un número
+                lbError.Text = "                                Formato de Contraseña inválido";
+                lbError.ForeColor = Color.Red;
 
             }
             else if (!ComprobarConcordanciaContrasenas())
             {
-                lbError.Text = " Las contraseñas no coinciden";
-                lbError.BackColor = Color.Red;
+                lbError.Text = "                                  Las contraseñas no coinciden";
+                lbError.ForeColor = Color.Red;
             }
             else
             {
