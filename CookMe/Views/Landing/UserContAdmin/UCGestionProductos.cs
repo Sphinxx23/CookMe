@@ -1,4 +1,5 @@
 ﻿using CookMe.Properties;
+using CookMe.Views.VistasProducto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,8 +110,11 @@ namespace CookMe.Views.Landing.UserContAdmin
         {
             Views.VistasProducto.CrearEditarProducto editarProducto = new Views.VistasProducto.CrearEditarProducto(this, item.id);
             this.Visible = false;
-            editarProducto.ShowDialog();
-            //LoadProductos(new Logica.Controles.ProductoControl().ObtenerTodosLosProductos());
+            var resultado = editarProducto.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                LoadProductos(new Logica.Controles.ProductoControl().ObtenerTodosLosProductos());
+            }
 
         }
 
@@ -118,8 +122,11 @@ namespace CookMe.Views.Landing.UserContAdmin
         {
             Views.VistasProducto.CrearEditarProducto crearProducto = new Views.VistasProducto.CrearEditarProducto(this, -1);
             this.Visible = false;
-            crearProducto.ShowDialog();
-            //LoadProductos(new Logica.Controles.ProductoControl().ObtenerTodosLosProductos());
+            var resultado = crearProducto.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                LoadProductos(new Logica.Controles.ProductoControl().ObtenerTodosLosProductos());
+            }
         }
     }
 }

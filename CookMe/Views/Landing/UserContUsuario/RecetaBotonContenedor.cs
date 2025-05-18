@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CookMe.Views.VistasProducto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,7 +65,12 @@ namespace CookMe.Views.Landing.UserContUsuario
         {
             Views.VistasReceta.CrearEditarReceta nuevaReceta = new Views.VistasReceta.CrearEditarReceta(this, -1, this.email);
             this.Visible = false;
-            nuevaReceta.ShowDialog();
+            var resultado = nuevaReceta.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                List<Datos.Modelos.Receta> recetas = new Logica.Controles.RecetaControl().ObtenerTodasLasRecetas();
+                LoadRecetas(recetas);
+            }
         }
 
         public void LoadRecetas(List<Datos.Modelos.Receta> recetas)

@@ -1,4 +1,5 @@
 ﻿using CookMe.Properties;
+using CookMe.Views.VistasProducto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -109,17 +110,24 @@ namespace CookMe.Views.Landing.UserContAdmin
         {
             Views.VistasClase.CrearEditarClase crearClase = new Views.VistasClase.CrearEditarClase(this, claseControl.id);
             this.Visible = false;
-            crearClase.ShowDialog();
+            var resultado = crearClase.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                LoadClases(new Logica.Controles.ClaseControl().ObtenerTodasLasClases());
+            }
 
-            //Intentar encontrar la forma de recargar la pagina para que se muestren los cambios, como al eliminar uno
         }
 
         private void BtnAgregarClase_Click(object sender, EventArgs e)
         {
             Views.VistasClase.CrearEditarClase crearClase = new Views.VistasClase.CrearEditarClase(this, -1);
             this.Visible = false;
-            crearClase.ShowDialog();
-            //Intentar encontrar la forma de recargar la pagina para que se muestren los cambios, como al eliminar uno
+            var resultado = crearClase.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                LoadClases(new Logica.Controles.ClaseControl().ObtenerTodasLasClases());
+            }
+
         }
     }
 }

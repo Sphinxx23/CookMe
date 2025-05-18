@@ -19,6 +19,7 @@ namespace CookMe.Views.VistasClase
 
         private void botonImagen1_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
@@ -44,7 +45,8 @@ namespace CookMe.Views.VistasClase
                         bool creacion = new Logica.Controles.InscripcionControl().InsertarInscripcion(inscApuntar);
                         clas.PlazaOcupada += 1;
                         bool edicionClase = new Logica.Controles.ClaseControl().EditarClase(clas.Id, clas);
-                        MessageBox.Show("Inscrito correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);                        
+                        MessageBox.Show("Inscrito correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
                     }
                     else
                     {
@@ -65,6 +67,7 @@ namespace CookMe.Views.VistasClase
                 clas.PlazaOcupada -= 1;
                 bool edicionClase = new Logica.Controles.ClaseControl().EditarClase(clas.Id, clas);
                 MessageBox.Show("Borrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
             }
             this.Close();
         }

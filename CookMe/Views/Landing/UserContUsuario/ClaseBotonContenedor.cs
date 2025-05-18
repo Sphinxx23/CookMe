@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CookMe.Views.VistasProducto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -71,7 +72,19 @@ namespace CookMe.Views.Landing.UserContUsuario
         private void AbrirVistaClase(ClaseBoton item)
         {
             Views.VistasClase.VerClase verClase = new Views.VistasClase.VerClase(item.id, this.email,item.emailProfe, this.idAccion);
-            verClase.ShowDialog();
+            var resultado = verClase.ShowDialog();
+            List<Datos.Modelos.Clase> clases;
+            if (resultado == DialogResult.OK && this.idAccion == 1)
+            {
+                clases = new Logica.Controles.ClaseControl().ObtenerTodasLasClases();
+                LoadClases(clases);
+            }
+            else if(resultado == DialogResult.OK && this.idAccion != 1)
+            {
+                clases = new Logica.Controles.ClaseControl().ObtenerInscripcionesPorEmail(this.email);
+                LoadClases(clases);
+            }
+            
         }
     }
 }

@@ -37,6 +37,7 @@ namespace CookMe.Views.VistaUsuario
 
         private void botonImagen1_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
@@ -70,7 +71,7 @@ namespace CookMe.Views.VistaUsuario
                 if (cierto)
                 {
                     MessageBox.Show("Usuario editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else

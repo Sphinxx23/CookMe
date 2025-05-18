@@ -71,6 +71,7 @@ namespace CookMe.Views.VistasProducto
 
         private void botonImagen1_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
             this.parent.Visible = true;
         }
@@ -114,7 +115,7 @@ namespace CookMe.Views.VistasProducto
                     if (cierto)
                     {
                         MessageBox.Show("Producto creado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                         parent.Visible = true;
                     }
@@ -130,7 +131,7 @@ namespace CookMe.Views.VistasProducto
                     if (cierto)
                     {
                         MessageBox.Show("Producto editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                         parent.Visible = true;
                     }

@@ -1,4 +1,5 @@
-﻿using Datos.Security;
+﻿using Datos.Modelos;
+using Datos.Security;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,7 +61,11 @@ namespace CookMe.Views.Landing
         private void btnEditarPerfil_Click(object sender, EventArgs e)
         {
             Views.VistaUsuario.EditarUsuario edit = new Views.VistaUsuario.EditarUsuario(this, usuarioSesion.Email);
-            edit.ShowDialog();
+            var resultado = edit.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                recargarNombre(usuarioSesion.Email);
+            }
         }
 
         private void btnMisRecetas_Click(object sender, EventArgs e)
@@ -81,6 +86,14 @@ namespace CookMe.Views.Landing
         private void btnTienda_Click(object sender, EventArgs e)
         {
             LoadUserControl(new UserContUsuario.ProductoBotonContenedor(usuarioSesion.Email));
+        }
+
+        private void recargarNombre( string email)
+        {
+            Usuario usuRec = new Logica.Controles.UsuarioControl().ObtenerUsuarioPorEmail(email);
+            lbBienvenidaAdmin.Text = usuRec.Nombre + " " + usuRec.Apellido;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Image = CookMe.MetodosImages.MetImages.ConvertBytesToImage(usuRec.Foto);
         }
     }
 }

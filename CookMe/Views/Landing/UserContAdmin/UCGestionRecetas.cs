@@ -89,7 +89,14 @@ namespace CookMe.Views.Landing.UserContAdmin
         {
             Views.VistasReceta.CrearEditarReceta editarReceta = new Views.VistasReceta.CrearEditarReceta(this, item.id, "");
             this.Visible = false;
-            editarReceta.ShowDialog();
+            var resultado = editarReceta.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                List<Datos.Modelos.Receta> recetas = new Logica.Controles.RecetaControl().ObtenerTodasLasRecetas();
+                LoadRecipes(recetas);
+            }
+
 
         }
     }

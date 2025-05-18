@@ -95,7 +95,7 @@ namespace CookMe.Views.VistasReceta
                     if (cierto)
                     {
                         MessageBox.Show("Receta creada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                         parent.Visible = true;
                     }
@@ -111,6 +111,7 @@ namespace CookMe.Views.VistasReceta
                     if (cierto)
                     {
                         MessageBox.Show("Receta editada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                         parent.Visible = true;
                     }
@@ -173,6 +174,7 @@ namespace CookMe.Views.VistasReceta
 
         private void botonImagen2_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
             this.parent.Visible = true;
         }
