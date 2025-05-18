@@ -113,7 +113,7 @@ namespace CookMe.Views.Login
 
         private bool ValidatePassword(string password)
         {
-            string pattern = @"^(?=.*\d).{6,}$";
+            string pattern = @"^(?=.*[A-Za-z])(?=.*\d).{6,}$";
             return Regex.IsMatch(password, pattern);
         }
 
@@ -219,6 +219,50 @@ namespace CookMe.Views.Login
                 {
                     MessageBox.Show("Error de creación de usuario");
                 }
+            }
+        }
+
+        private void tbCtraRegis1_Leave(object sender, EventArgs e)
+        {
+            string password = tbCtraRegis1.Text;
+
+            if (Regex.IsMatch(password, @"^(?=.*[A-Za-z])(?=.*\d).{6,}$"))
+            {
+                tbCtraRegis1.BackColor = Color.White;
+            }
+            else
+            {
+                tbCtraRegis1.BackColor = Color.LightCoral;
+                MessageBox.Show("La contraseña debe tener al menos 6 caracteres, con letras y al menos un número.", "Contraseña inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+            }
+        }
+
+        private void tbCtraRegis2_Leave(object sender, EventArgs e)
+        {
+            if (!ComprobarConcordanciaContrasenas())
+            {
+                tbCtraRegis2.BackColor = Color.LightCoral;
+                MessageBox.Show("Las contraseñas no coinciden", "Contraseña inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                tbCtraRegis2.BackColor = Color.White;
+            }
+        }
+
+        private void tbEmailRegis_Leave(object sender, EventArgs e)
+        {
+
+            if (ValidateGmail(tbEmailRegis.Text))
+            {
+                tbEmailRegis.BackColor = Color.White;
+            }
+            else
+            {
+                tbEmailRegis.BackColor = Color.LightCoral;
+                MessageBox.Show("Introduce un correo válido que termine en @gmail.com", "Correo inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

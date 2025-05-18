@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.lbEmailRegister = new System.Windows.Forms.Label();
             this.lbNombre = new System.Windows.Forms.Label();
@@ -39,18 +40,19 @@
             this.chbProfesor = new System.Windows.Forms.CheckBox();
             this.lbError = new System.Windows.Forms.Label();
             this.pbFotoPerfil = new System.Windows.Forms.PictureBox();
+            this.toolTipContrasena = new System.Windows.Forms.ToolTip(this.components);
+            this.tbCtraRegis1 = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
+            this.tbEmailRegis = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
+            this.tbCtraRegis2 = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
+            this.tbDireccionRegis = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
+            this.tbApellidosregis = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
+            this.tbNombreRegis = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
             this.btRegistrar = new CustomButton();
             this.btVaciarCampos1 = new CustomButton();
             this.btSeleccion = new CustomButton();
             this.botonImagen3 = new CookMe.ControlesPersonalizados.BotonImagen();
             this.botonImagen2 = new CookMe.ControlesPersonalizados.BotonImagen();
             this.botonImagen1 = new CookMe.ControlesPersonalizados.BotonImagen();
-            this.tbEmailRegis = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
-            this.tbNombreRegis = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
-            this.tbApellidosregis = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
-            this.tbDireccionRegis = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
-            this.tbCtraRegis1 = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
-            this.tbCtraRegis2 = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
             ((System.ComponentModel.ISupportInitialize)(this.pbFotoPerfil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +66,7 @@
             this.lbEmailRegister.Size = new System.Drawing.Size(59, 21);
             this.lbEmailRegister.TabIndex = 4;
             this.lbEmailRegister.Text = "EMAIL";
+            this.toolTipContrasena.SetToolTip(this.lbEmailRegister, "El formato de email aceptado es: @gmail.com");
             // 
             // lbNombre
             // 
@@ -103,11 +106,13 @@
             this.lbContra1.AutoSize = true;
             this.lbContra1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbContra1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbContra1.Location = new System.Drawing.Point(48, 496);
+            this.lbContra1.Location = new System.Drawing.Point(48, 498);
             this.lbContra1.Name = "lbContra1";
             this.lbContra1.Size = new System.Drawing.Size(116, 21);
             this.lbContra1.TabIndex = 8;
             this.lbContra1.Text = "CONTRASEÑA";
+            this.toolTipContrasena.SetToolTip(this.lbContra1, "La contraseña debe tener al menos 6 caracteres y combinar al menos letras y númer" +
+        "os");
             // 
             // lbContra2
             // 
@@ -155,6 +160,88 @@
             this.pbFotoPerfil.Size = new System.Drawing.Size(214, 188);
             this.pbFotoPerfil.TabIndex = 3;
             this.pbFotoPerfil.TabStop = false;
+            // 
+            // toolTipContrasena
+            // 
+            this.toolTipContrasena.BackColor = System.Drawing.Color.LightSkyBlue;
+            // 
+            // tbCtraRegis1
+            // 
+            this.tbCtraRegis1.BorderColor = System.Drawing.Color.Blue;
+            this.tbCtraRegis1.BorderRadius = 15;
+            this.tbCtraRegis1.Location = new System.Drawing.Point(227, 488);
+            this.tbCtraRegis1.Multiline = true;
+            this.tbCtraRegis1.Name = "tbCtraRegis1";
+            this.tbCtraRegis1.Padding = new System.Windows.Forms.Padding(10);
+            this.tbCtraRegis1.PasswordChar = '*';
+            this.tbCtraRegis1.Size = new System.Drawing.Size(232, 42);
+            this.tbCtraRegis1.TabIndex = 31;
+            this.toolTipContrasena.SetToolTip(this.tbCtraRegis1, "La contraseña debe tener al menos 6 caracteres y combinar al menos letras y númer" +
+        "os");
+            this.tbCtraRegis1.Leave += new System.EventHandler(this.tbCtraRegis1_Leave);
+            // 
+            // tbEmailRegis
+            // 
+            this.tbEmailRegis.BorderColor = System.Drawing.Color.Blue;
+            this.tbEmailRegis.BorderRadius = 15;
+            this.tbEmailRegis.Location = new System.Drawing.Point(227, 273);
+            this.tbEmailRegis.Multiline = true;
+            this.tbEmailRegis.Name = "tbEmailRegis";
+            this.tbEmailRegis.Padding = new System.Windows.Forms.Padding(10);
+            this.tbEmailRegis.PasswordChar = '\0';
+            this.tbEmailRegis.Size = new System.Drawing.Size(232, 41);
+            this.tbEmailRegis.TabIndex = 27;
+            this.toolTipContrasena.SetToolTip(this.tbEmailRegis, "El formato de email aceptado es: @gmail.com");
+            this.tbEmailRegis.Leave += new System.EventHandler(this.tbEmailRegis_Leave);
+            // 
+            // tbCtraRegis2
+            // 
+            this.tbCtraRegis2.BorderColor = System.Drawing.Color.Blue;
+            this.tbCtraRegis2.BorderRadius = 15;
+            this.tbCtraRegis2.Location = new System.Drawing.Point(227, 543);
+            this.tbCtraRegis2.Multiline = true;
+            this.tbCtraRegis2.Name = "tbCtraRegis2";
+            this.tbCtraRegis2.Padding = new System.Windows.Forms.Padding(10);
+            this.tbCtraRegis2.PasswordChar = '*';
+            this.tbCtraRegis2.Size = new System.Drawing.Size(232, 42);
+            this.tbCtraRegis2.TabIndex = 32;
+            this.tbCtraRegis2.Leave += new System.EventHandler(this.tbCtraRegis2_Leave);
+            // 
+            // tbDireccionRegis
+            // 
+            this.tbDireccionRegis.BorderColor = System.Drawing.Color.Blue;
+            this.tbDireccionRegis.BorderRadius = 15;
+            this.tbDireccionRegis.Location = new System.Drawing.Point(227, 434);
+            this.tbDireccionRegis.Multiline = true;
+            this.tbDireccionRegis.Name = "tbDireccionRegis";
+            this.tbDireccionRegis.Padding = new System.Windows.Forms.Padding(10);
+            this.tbDireccionRegis.PasswordChar = '\0';
+            this.tbDireccionRegis.Size = new System.Drawing.Size(232, 42);
+            this.tbDireccionRegis.TabIndex = 30;
+            // 
+            // tbApellidosregis
+            // 
+            this.tbApellidosregis.BorderColor = System.Drawing.Color.Blue;
+            this.tbApellidosregis.BorderRadius = 15;
+            this.tbApellidosregis.Location = new System.Drawing.Point(227, 380);
+            this.tbApellidosregis.Multiline = true;
+            this.tbApellidosregis.Name = "tbApellidosregis";
+            this.tbApellidosregis.Padding = new System.Windows.Forms.Padding(10);
+            this.tbApellidosregis.PasswordChar = '\0';
+            this.tbApellidosregis.Size = new System.Drawing.Size(232, 42);
+            this.tbApellidosregis.TabIndex = 29;
+            // 
+            // tbNombreRegis
+            // 
+            this.tbNombreRegis.BorderColor = System.Drawing.Color.Blue;
+            this.tbNombreRegis.BorderRadius = 15;
+            this.tbNombreRegis.Location = new System.Drawing.Point(227, 326);
+            this.tbNombreRegis.Multiline = true;
+            this.tbNombreRegis.Name = "tbNombreRegis";
+            this.tbNombreRegis.Padding = new System.Windows.Forms.Padding(10);
+            this.tbNombreRegis.PasswordChar = '\0';
+            this.tbNombreRegis.Size = new System.Drawing.Size(232, 41);
+            this.tbNombreRegis.TabIndex = 28;
             // 
             // btRegistrar
             // 
@@ -230,78 +317,6 @@
             this.botonImagen1.UseVisualStyleBackColor = true;
             this.botonImagen1.Click += new System.EventHandler(this.botonImagen1_Click);
             // 
-            // tbEmailRegis
-            // 
-            this.tbEmailRegis.BorderColor = System.Drawing.Color.Blue;
-            this.tbEmailRegis.BorderRadius = 15;
-            this.tbEmailRegis.Location = new System.Drawing.Point(227, 273);
-            this.tbEmailRegis.Multiline = true;
-            this.tbEmailRegis.Name = "tbEmailRegis";
-            this.tbEmailRegis.Padding = new System.Windows.Forms.Padding(10);
-            this.tbEmailRegis.PasswordChar = '\0';
-            this.tbEmailRegis.Size = new System.Drawing.Size(232, 41);
-            this.tbEmailRegis.TabIndex = 27;
-            // 
-            // tbNombreRegis
-            // 
-            this.tbNombreRegis.BorderColor = System.Drawing.Color.Blue;
-            this.tbNombreRegis.BorderRadius = 15;
-            this.tbNombreRegis.Location = new System.Drawing.Point(227, 326);
-            this.tbNombreRegis.Multiline = true;
-            this.tbNombreRegis.Name = "tbNombreRegis";
-            this.tbNombreRegis.Padding = new System.Windows.Forms.Padding(10);
-            this.tbNombreRegis.PasswordChar = '\0';
-            this.tbNombreRegis.Size = new System.Drawing.Size(232, 41);
-            this.tbNombreRegis.TabIndex = 28;
-            // 
-            // tbApellidosregis
-            // 
-            this.tbApellidosregis.BorderColor = System.Drawing.Color.Blue;
-            this.tbApellidosregis.BorderRadius = 15;
-            this.tbApellidosregis.Location = new System.Drawing.Point(227, 380);
-            this.tbApellidosregis.Multiline = true;
-            this.tbApellidosregis.Name = "tbApellidosregis";
-            this.tbApellidosregis.Padding = new System.Windows.Forms.Padding(10);
-            this.tbApellidosregis.PasswordChar = '\0';
-            this.tbApellidosregis.Size = new System.Drawing.Size(232, 42);
-            this.tbApellidosregis.TabIndex = 29;
-            // 
-            // tbDireccionRegis
-            // 
-            this.tbDireccionRegis.BorderColor = System.Drawing.Color.Blue;
-            this.tbDireccionRegis.BorderRadius = 15;
-            this.tbDireccionRegis.Location = new System.Drawing.Point(227, 434);
-            this.tbDireccionRegis.Multiline = true;
-            this.tbDireccionRegis.Name = "tbDireccionRegis";
-            this.tbDireccionRegis.Padding = new System.Windows.Forms.Padding(10);
-            this.tbDireccionRegis.PasswordChar = '\0';
-            this.tbDireccionRegis.Size = new System.Drawing.Size(232, 42);
-            this.tbDireccionRegis.TabIndex = 30;
-            // 
-            // tbCtraRegis1
-            // 
-            this.tbCtraRegis1.BorderColor = System.Drawing.Color.Blue;
-            this.tbCtraRegis1.BorderRadius = 15;
-            this.tbCtraRegis1.Location = new System.Drawing.Point(227, 484);
-            this.tbCtraRegis1.Multiline = true;
-            this.tbCtraRegis1.Name = "tbCtraRegis1";
-            this.tbCtraRegis1.Padding = new System.Windows.Forms.Padding(10);
-            this.tbCtraRegis1.PasswordChar = '*';
-            this.tbCtraRegis1.Size = new System.Drawing.Size(232, 42);
-            this.tbCtraRegis1.TabIndex = 31;
-            // 
-            // tbCtraRegis2
-            // 
-            this.tbCtraRegis2.BorderColor = System.Drawing.Color.Blue;
-            this.tbCtraRegis2.BorderRadius = 15;
-            this.tbCtraRegis2.Location = new System.Drawing.Point(227, 543);
-            this.tbCtraRegis2.Multiline = true;
-            this.tbCtraRegis2.Name = "tbCtraRegis2";
-            this.tbCtraRegis2.Padding = new System.Windows.Forms.Padding(10);
-            this.tbCtraRegis2.PasswordChar = '*';
-            this.tbCtraRegis2.Size = new System.Drawing.Size(232, 42);
-            this.tbCtraRegis2.TabIndex = 32;
-            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -364,5 +379,6 @@
         private ControlesPersonalizados.TextBoxRedondeado tbDireccionRegis;
         private ControlesPersonalizados.TextBoxRedondeado tbCtraRegis1;
         private ControlesPersonalizados.TextBoxRedondeado tbCtraRegis2;
+        private System.Windows.Forms.ToolTip toolTipContrasena;
     }
 }

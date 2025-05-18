@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearEditarProducto));
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbDescripcion = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.pbSecundaria = new System.Windows.Forms.PictureBox();
             this.pbPrincipal = new System.Windows.Forms.PictureBox();
             this.tbDescripcion = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSecundaria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrincipal)).BeginInit();
@@ -85,6 +87,7 @@
             this.lbStock.Size = new System.Drawing.Size(68, 24);
             this.lbStock.TabIndex = 5;
             this.lbStock.Text = "STOCK";
+            this.toolTip1.SetToolTip(this.lbStock, "Tiene que haber al menos 1 producto en Stock");
             // 
             // lbPrecio
             // 
@@ -96,6 +99,7 @@
             this.lbPrecio.Size = new System.Drawing.Size(74, 24);
             this.lbPrecio.TabIndex = 6;
             this.lbPrecio.Text = "PRECIO";
+            this.toolTip1.SetToolTip(this.lbPrecio, "Formato aceptado: 17,99");
             // 
             // lbCategoria
             // 
@@ -159,7 +163,7 @@
             this.tbNombre.BorderColor = System.Drawing.Color.Blue;
             this.tbNombre.BorderRadius = 15;
             this.tbNombre.Location = new System.Drawing.Point(244, 66);
-            this.tbNombre.Multiline = false;
+            this.tbNombre.Multiline = true;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Padding = new System.Windows.Forms.Padding(10);
             this.tbNombre.PasswordChar = '\0';
@@ -182,25 +186,28 @@
             this.numStock.Name = "numStock";
             this.numStock.Size = new System.Drawing.Size(203, 22);
             this.numStock.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.numStock, "Tiene que haber al menos 1 producto en Stock");
             // 
             // tbPrecio
             // 
             this.tbPrecio.BorderColor = System.Drawing.Color.Blue;
             this.tbPrecio.BorderRadius = 15;
             this.tbPrecio.Location = new System.Drawing.Point(244, 332);
-            this.tbPrecio.Multiline = false;
+            this.tbPrecio.Multiline = true;
             this.tbPrecio.Name = "tbPrecio";
             this.tbPrecio.Padding = new System.Windows.Forms.Padding(10);
             this.tbPrecio.PasswordChar = '\0';
             this.tbPrecio.Size = new System.Drawing.Size(203, 45);
             this.tbPrecio.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.tbPrecio, "Formato aceptado: 17,99");
+            this.tbPrecio.Leave += new System.EventHandler(this.tbPrecio_Leave);
             // 
             // tbCategoria
             // 
             this.tbCategoria.BorderColor = System.Drawing.Color.Blue;
             this.tbCategoria.BorderRadius = 15;
             this.tbCategoria.Location = new System.Drawing.Point(244, 420);
-            this.tbCategoria.Multiline = false;
+            this.tbCategoria.Multiline = true;
             this.tbCategoria.Name = "tbCategoria";
             this.tbCategoria.Padding = new System.Windows.Forms.Padding(10);
             this.tbCategoria.PasswordChar = '\0';
@@ -328,5 +335,6 @@
         private ControlesPersonalizados.BotonImagen btImgSecundaria;
         private ControlesPersonalizados.BotonImagen botonImagen1;
         private ControlesPersonalizados.TextBoxRedondeado tbDescripcion;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

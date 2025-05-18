@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -231,6 +232,25 @@ namespace CookMe.Views.VistasClase
 
             return true;
 
+        }
+
+        private void tbFecha_Leave(object sender, EventArgs e)
+        {
+            string texto = tbFecha.Text;
+
+            if (DateTime.TryParseExact(texto, "dd-MM-yyyy HH:mm",
+                CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaHora))
+            {
+                
+                tbFecha.BackColor = Color.White;
+            }
+            else
+            {
+                
+                tbFecha.BackColor = Color.LightCoral;
+                MessageBox.Show("Fecha y hora no válidas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+            }
         }
     }
 }

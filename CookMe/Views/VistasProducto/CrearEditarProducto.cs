@@ -141,11 +141,15 @@ namespace CookMe.Views.VistasProducto
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Campos Incorrectos, revise sus datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private bool ComprobarCampos()
         {
-            string patronPrecio = @"^\d{1,3}(\,\d{1,2})?$";
+            string patronPrecio = @"^\d+(,\d{1,2})?$";
 
             if (tbNombre.Text == null || tbNombre.Text.Equals(""))
             {
@@ -157,10 +161,11 @@ namespace CookMe.Views.VistasProducto
             }
             if (tbPrecio.Text == null || tbPrecio.Text.Equals(""))
             {
-                if (!Regex.IsMatch(tbPrecio.Text, patronPrecio))
-                {
-                    return false;
-                }
+                return false;
+            }
+            if (!Regex.IsMatch(tbPrecio.Text, patronPrecio))
+            {
+                return false;
             }
             if (numStock.Value <= 0 || numStock.Value > 1000)
             {
@@ -195,6 +200,22 @@ namespace CookMe.Views.VistasProducto
             }
 
             return prodd;
+        }
+
+        private void tbPrecio_Leave(object sender, EventArgs e)
+        {
+            string texto = tbPrecio.Text;
+
+            if (Regex.IsMatch(texto, @"^\d+(,\d{1,2})?$"))
+            {
+                tbPrecio.BackColor = Color.White;
+            }
+            else
+            {
+                tbPrecio.BackColor = Color.LightCoral;
+                MessageBox.Show("Precio inválido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+            }
         }
     }
 }
