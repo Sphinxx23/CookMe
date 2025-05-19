@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Datos.Modelos
 {
+    // Modelo de Producto con dos constructores y el ToString()
     public class Producto
     {
         public Producto() { }

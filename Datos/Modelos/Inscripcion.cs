@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos.Modelos
 {
+    // Modelo de Inscripción con dos constructores y el ToString()
     public class Inscripcion
     {
         public Inscripcion() { }

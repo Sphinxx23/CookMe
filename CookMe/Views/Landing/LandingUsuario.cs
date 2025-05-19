@@ -31,6 +31,7 @@ namespace CookMe.Views.Landing
 
         }
 
+        //Método para cargar el control de usuario correspondiente
         private void LoadUserControl(UserControl userControl)
         {
 
@@ -52,12 +53,16 @@ namespace CookMe.Views.Landing
             LoadUserControl(new UserContUsuario.ClaseBotonContenedor(usuarioSesion.Email, -2));
         }
 
+
+        //Abrir vista de eliminación de cuenta
         private void btEliminarCuenta_Click(object sender, EventArgs e)
         {
             Views.VistaEliminacion.Eliminacion elim = new Views.VistaEliminacion.Eliminacion(this, usuarioSesion);
             elim.ShowDialog();
         }
 
+
+        //Abrir vista de editar perfil, en caso de devolver OK recarga página para actualizar datos
         private void btnEditarPerfil_Click(object sender, EventArgs e)
         {
             Views.VistaUsuario.EditarUsuario edit = new Views.VistaUsuario.EditarUsuario(this, usuarioSesion.Email);
@@ -88,6 +93,7 @@ namespace CookMe.Views.Landing
             LoadUserControl(new UserContUsuario.ProductoBotonContenedor(usuarioSesion.Email));
         }
 
+        //Cambio de datos al editar usuario
         private void recargarNombre( string email)
         {
             Usuario usuRec = new Logica.Controles.UsuarioControl().ObtenerUsuarioPorEmail(email);

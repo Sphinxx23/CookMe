@@ -26,6 +26,8 @@ namespace CookMe.Views.VistasClase
             pbStar5.Visible = false;
         }
 
+
+        // Edita la inscripción en bbdd, cambiando la valoración por una nueva (1-5)
         private void btnValorarFinal_Click(object sender, EventArgs e)
         { 
             double valoracNueva = tBValoracion.Value;
@@ -54,6 +56,8 @@ namespace CookMe.Views.VistasClase
             this.parent.Close();
         }
 
+
+        //Lógica para mostrar u ocultar las estrellas según la barra slider
         private void tBValoracion_ValueChanged(object sender, EventArgs e)
         {
             PictureBox[] values = { pbStar1, pbStar2, pbStar3, pbStar4, pbStar5 };

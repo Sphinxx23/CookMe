@@ -27,32 +27,31 @@ namespace CookMe.Views.Login
             this.parent = parent;
         }
 
-
+        //Volver atrás
         private void botonImagen1_Click(object sender, EventArgs e)
         {
             this.Close();
             this.parent.Visible = true;
         }
 
-
+        //Visualiza/esconde la contraseña
         private void botonImagen2_Click(object sender, EventArgs e)
         {
             
+            if (tbContrasenaLogin.PasswordChar == '*')
+            {
+            tbContrasenaLogin.PasswordChar = '\0';
+                botonImagen2.ButtonImage = Properties.Resources.invisible;
 
-                if (tbContrasenaLogin.PasswordChar == '*')
-                {
-                tbContrasenaLogin.PasswordChar = '\0';
-                    botonImagen2.ButtonImage = Properties.Resources.invisible;
-
-                }
-                else
-                {
-                tbContrasenaLogin.PasswordChar = '*';
-                    botonImagen2.ButtonImage = Properties.Resources.ojo1;
-                }
+            }
+            else
+            {
+            tbContrasenaLogin.PasswordChar = '*';
+                botonImagen2.ButtonImage = Properties.Resources.ojo1;
+            }
             
         }
-
+        //VAcia los campos
         private void btBorrarCamposLogin1_Click(object sender, EventArgs e)
         {
             tbEmailLogin.ResetText();
@@ -60,6 +59,7 @@ namespace CookMe.Views.Login
             lbErrorCredenciales.ResetText();
         }
 
+        //Comprueba las credenciales en bbdd y abre el landing correspondiente
         private void btAccederLogin1_Click(object sender, EventArgs e)
         {
             if (tbEmailLogin.Text.Equals("") || tbEmailLogin.Text == null)

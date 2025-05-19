@@ -13,6 +13,11 @@ namespace Datos.Repositories
 {
     public class UsuarioRepo
     {
+        /// <summary>
+        /// Obtener el usuario por email si existe.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns></returns>
         public Usuario ObtenerUsuarioPorEmail(string email)
         {
             try
@@ -59,6 +64,11 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Insertar el usuario si no existe.
+        /// </summary>
+        /// <param name="usuario">The usuario.</param>
+        /// <returns></returns>
         public bool InsertarUsuario(Usuario usuario)
         {
             try
@@ -93,6 +103,10 @@ namespace Datos.Repositories
         }
 
 
+        /// <summary>
+        /// Obtener todos usuarios.
+        /// </summary>
+        /// <returns></returns>
         public List<Usuario> ObtenerTodosUsuarios()
         {
             try
@@ -128,6 +142,11 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Eliminar wl usuario por email si existe.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns></returns>
         public bool EliminarUsuarioPorEmail(string email)
         {
             try
@@ -153,6 +172,10 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Obtener los profesores.
+        /// </summary>
+        /// <returns></returns>
         public List<Usuario> ObtenerProfesores()
         {
             try
@@ -188,6 +211,12 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Editar un usuario existente.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <param name="usuario">The usuario.</param>
+        /// <returns></returns>
         public bool EditarUsuario(string email, Usuario usuario)
         {
             try

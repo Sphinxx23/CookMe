@@ -11,6 +11,12 @@ namespace CookMe.MetodosImages
 {
     public class MetImages
     {
+
+        /// <summary>
+        /// Convertir la imagen a array para poder guardar en bbdd
+        /// </summary>
+        /// <param name="image"> imagen</param>
+        /// <returns></returns>
         public static byte[] ConvertImageToBytes(Image image)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -21,6 +27,11 @@ namespace CookMe.MetodosImages
             }
         }
 
+        /// <summary>
+        /// Convertir el array en la imagen para poder mostrarla al usuario
+        /// </summary>
+        /// <param name="byteArray"> array.</param>
+        /// <returns></returns>
         public static Image ConvertBytesToImage(byte[] byteArray)
         {
             try

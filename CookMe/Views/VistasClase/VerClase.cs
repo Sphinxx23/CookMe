@@ -17,18 +17,61 @@ namespace CookMe.Views.VistasClase
         private string emailProfe;
         private string miEmail;
 
+
+        public VerClase(int id, string miEmail, string emailProf, int accion)
+        {
+            InitializeComponent();
+            this.emailProfe = emailProf;
+            this.miEmail = miEmail;
+            this.idClase = id;
+            this.idAccion = accion;
+
+            Datos.Modelos.Clase clase = new Logica.Controles.ClaseControl().ObtenerClasePorID(this.idClase);
+            lbTitulo.Text = clase.Titulo;
+            lbDescripcion.Text = clase.Descripcion;
+            lbFecha.Text = clase.Fecha;
+            lbPlazas.Text = clase.PlazaOcupada + "/" + clase.PlazaTotal;
+            lbValoracion.Text = clase.ValoracionMedia.ToString();
+            pbTematica.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbTematica.Image = CookMe.MetodosImages.MetImages.ConvertBytesToImage(clase.FotoTematica);
+
+            Datos.Modelos.Usuario usu = new Logica.Controles.UsuarioControl().ObtenerUsuarioPorEmail(this.emailProfe);
+            lbProfesor.Text = this.emailProfe;
+            pbProfesor.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbProfesor.Image = CookMe.MetodosImages.MetImages.ConvertBytesToImage(usu.Foto);
+
+
+            if (this.idAccion == 1)
+            {
+                btInscribir.BackColor = Color.LightSkyBlue;
+                btInscribir.Text = "Inscribirse";
+                btnValorar.Visible = false;
+            }
+            else
+            {
+                btInscribir.BackColor = Color.LightCoral;
+                btInscribir.Text = "Borrarse";
+                btnValorar.Visible = true;
+            }
+        }
+
+        //Volver atrás
         private void botonImagen1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
+
+        //Abrir vista de valoración
         private void btnValorar_Click(object sender, EventArgs e)
         {
             Views.VistasClase.Valorar val = new Views.VistasClase.Valorar(this.idClase, this.miEmail, this);
             val.ShowDialog();
         }
 
+
+        //Inscribirse o borrarse, dependiendo del id que llegue
         private void btInscribir_Click(object sender, EventArgs e)
         {          
             Inscripcion inscApuntar = CrearInscripcion();
@@ -72,6 +115,7 @@ namespace CookMe.Views.VistasClase
             this.Close();
         }
 
+        //Crear una inscripción
         private Inscripcion CrearInscripcion()
         {
             Inscripcion insc = new Inscripcion();
@@ -82,42 +126,7 @@ namespace CookMe.Views.VistasClase
             return insc;
         }
 
-        public VerClase(int id, string miEmail,string emailProf, int accion)
-        {
-            InitializeComponent();
-            this.emailProfe = emailProf;
-            this.miEmail = miEmail;
-            this.idClase=id;
-            this.idAccion = accion;
-
-            Datos.Modelos.Clase clase = new Logica.Controles.ClaseControl().ObtenerClasePorID(this.idClase);
-            lbTitulo.Text = clase.Titulo;
-            lbDescripcion.Text = clase.Descripcion;
-            lbFecha.Text = clase.Fecha;
-            lbPlazas.Text = clase.PlazaOcupada + "/" + clase.PlazaTotal;
-            lbValoracion.Text = clase.ValoracionMedia.ToString();
-            pbTematica.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbTematica.Image = CookMe.MetodosImages.MetImages.ConvertBytesToImage(clase.FotoTematica);
-
-            Datos.Modelos.Usuario usu = new Logica.Controles.UsuarioControl().ObtenerUsuarioPorEmail(this.emailProfe);
-            lbProfesor.Text = this.emailProfe;
-            pbProfesor.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbProfesor.Image = CookMe.MetodosImages.MetImages.ConvertBytesToImage(usu.Foto);
-
-
-            if (this.idAccion==1)
-            {
-                btInscribir.BackColor = Color.LightSkyBlue;
-                btInscribir.Text = "Inscribirse";
-                btnValorar.Visible = false;
-            }
-            else
-            {
-                btInscribir.BackColor = Color.LightCoral;
-                btInscribir.Text = "Borrarse";
-                btnValorar.Visible = true;
-            }
-        }
+       
 
 
 

@@ -13,6 +13,7 @@ using TextBox = System.Windows.Forms.TextBox;
 
 namespace CookMe.ControlesPersonalizados
 {
+    //Clase sacada de otros proyectos realizados durante el curso
     public partial class TextBoxRedondeado : UserControl
     {
         private Color borderColor = Color.Blue;

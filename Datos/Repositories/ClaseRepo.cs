@@ -10,6 +10,12 @@ namespace Datos.Repositories
 {
     public class ClaseRepo
     {
+
+        /// <summary>
+        /// Obteners clase por ID.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public Clase ObtenerClasePorId(int id)
         {
             try
@@ -55,6 +61,11 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Insertar nueva clase.
+        /// </summary>
+        /// <param name="clase">The clase.</param>
+        /// <returns></returns>
         public bool InsertarClase(Clase clase)
         {
             try
@@ -89,6 +100,11 @@ namespace Datos.Repositories
             }
         }
 
+
+        /// <summary>
+        /// Obtener todas las clases.
+        /// </summary>
+        /// <returns></returns>
         public List<Clase> ObtenerTodasLasClases()
         {
             try
@@ -129,6 +145,11 @@ namespace Datos.Repositories
         }
 
 
+        /// <summary>
+        /// Eliminar clase por ID.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public bool EliminarClasePorId(int id)
         {
             try
@@ -150,6 +171,12 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Editar clase existente.
+        /// </summary>
+        /// <param name="idClase">The identifier clase.</param>
+        /// <param name="clase">The clase.</param>
+        /// <returns></returns>
         public bool EditarClase(int idClase, Clase clase)
         {
             try
@@ -195,7 +222,11 @@ namespace Datos.Repositories
         }
 
 
-
+        /// <summary>
+        /// Obtener inscripciones por email.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns></returns>
         public List<Clase> ObtenerInscripcionesPorEmail(string email)
         {
             try

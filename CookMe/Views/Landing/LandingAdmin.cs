@@ -27,9 +27,10 @@ namespace CookMe.Views.Landing
             pictureBox1.Image= CookMe.MetodosImages.MetImages.ConvertBytesToImage(usuarioSesion.Foto);    
         }
 
+
+        //Método para cargar el control de usuario correspondiente
         private void LoadUserControl(UserControl userControl)
-        {
-           
+        {        
             panel2.Controls.Clear();
             userControl.Dock = DockStyle.Fill; 
             panel2.Controls.Add(userControl);

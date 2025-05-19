@@ -25,14 +25,14 @@ namespace CookMe.Views.Login
             this.parent = parent;
         }
 
-               
+        //Volver atrás
         private void botonImagen1_Click(object sender, EventArgs e)
         {
             this.Close();
             this.parent.Visible = true;
         }
 
-        
+        //Creación de un uusuario
         private Usuario CrearUsuario()
         {
             Datos.Modelos.Usuario usuu = new Datos.Modelos.Usuario();
@@ -54,6 +54,7 @@ namespace CookMe.Views.Login
             return usuu;
         }
 
+        //Comprobar que coincidan las passwords
         private bool ComprobarConcordanciaContrasenas()
         {
             bool concuerdanContrasenas = tbCtraRegis1.Text.Equals(tbCtraRegis2.Text) ? true : false;
@@ -61,7 +62,7 @@ namespace CookMe.Views.Login
         }
 
 
-      //Devuelve true si ya existe en bbdd  
+      //Devuelve true si ya existe el usuario en bbdd  
         private bool ComprobarExistenciaEmail()
         {
             Datos.Modelos.Usuario usu = new Logica.Controles.UsuarioControl().ObtenerUsuarioPorEmail(tbEmailRegis.Text);
@@ -70,6 +71,7 @@ namespace CookMe.Views.Login
             return existeUsuario;
         }
 
+        //Comprobación de los diferentes campos
         private bool ComprobarCampos()
         {
             if (tbEmailRegis.Text.Equals("")||tbEmailRegis.Text == null)
@@ -105,18 +107,21 @@ namespace CookMe.Views.Login
             return true;
         }
 
+        //Máscara para comprobación de gmail
         private bool ValidateGmail(string email)
         {
             string pattern = @"^[a-zA-Z0-9._%+-]+@gmail\.com$";
             return Regex.IsMatch(email, pattern);
         }
 
+        //Máscara para comprobación de password
         private bool ValidatePassword(string password)
         {
             string pattern = @"^(?=.*[A-Za-z])(?=.*\d).{6,}$";
             return Regex.IsMatch(password, pattern);
         }
 
+        //Visualiza/esconde la contraseña
         private void botonImagen2_Click(object sender, EventArgs e)
         {
 
@@ -133,6 +138,7 @@ namespace CookMe.Views.Login
             }
         }
 
+        //Visualiza/esconde la contraseña
         private void botonImagen3_Click(object sender, EventArgs e)
         {
             if (tbCtraRegis2.PasswordChar == '*')
@@ -149,7 +155,7 @@ namespace CookMe.Views.Login
         }
 
         
-
+        // Abre un cuadro de diálogo para seleccionar foto
         private void btSeleccion_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog(); ;
@@ -161,6 +167,7 @@ namespace CookMe.Views.Login
             }
         }
 
+        //Vacia todos los campos
         private void btVaciarCampos1_Click(object sender, EventArgs e)
         {
             tbEmailRegis.ResetText();
@@ -173,6 +180,7 @@ namespace CookMe.Views.Login
             lbError.ResetText();
         }
 
+        //Realiza el registro de un usuario
         private void btRegistrar_Click(object sender, EventArgs e)
         {
             if (!ComprobarCampos())
@@ -195,7 +203,7 @@ namespace CookMe.Views.Login
             }
             else if (!ValidatePassword(tbCtraRegis1.Text))
             {
-                // , mínimo 6 caracteres y un número
+                //  mínimo 6 caracteres y un número
                 lbError.Text = "                                Formato de Contraseña inválido";
                 lbError.ForeColor = Color.Red;
 
@@ -222,6 +230,7 @@ namespace CookMe.Views.Login
             }
         }
 
+        //Comprueba si la contraseña es válida, si no lo es cambia el color del textbox
         private void tbCtraRegis1_Leave(object sender, EventArgs e)
         {
             string password = tbCtraRegis1.Text;
@@ -238,6 +247,8 @@ namespace CookMe.Views.Login
             }
         }
 
+        //Comprueba si la contraseña coincide con la otra, si no  cambia el color del textbox
+
         private void tbCtraRegis2_Leave(object sender, EventArgs e)
         {
             if (!ComprobarConcordanciaContrasenas())
@@ -252,6 +263,8 @@ namespace CookMe.Views.Login
             }
         }
 
+
+        //Comprueba si el gmail es válido, si no lo es cambia el color del textbox
         private void tbEmailRegis_Leave(object sender, EventArgs e)
         {
 
