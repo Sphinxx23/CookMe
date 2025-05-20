@@ -23,6 +23,7 @@ namespace CookMe.Views.Landing.UserContUsuario
             CargarCarrito(carritoLleno);
         }
 
+        //Creación manual de los elementos que contendrá el "item", darles formato y asignarles los diferentes eventos
         private void InicializarComponentes()
         {
             this.Dock = DockStyle.Fill;
@@ -50,6 +51,7 @@ namespace CookMe.Views.Landing.UserContUsuario
             this.Controls.Add(lblTotalTexto);
         }
 
+        //Carga del carrito de compra del usuario (diccionario), cálculo del precio total
         public void CargarCarrito(Dictionary<int, int> carrito)
         {
             listaProductos.Controls.Clear();

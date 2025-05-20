@@ -24,6 +24,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             LoadClases(clases);
         }
 
+        //Creación manual de los elementos que contendrá el "item", darles formato y asignarles los diferentes eventos
         private void InitializeComponents()
         {
             this.Size = new Size(750, 600);
@@ -52,6 +53,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             this.Controls.Add(panelClases);
         }
 
+        // Carga de todos los registros disponibles en bbdd, controlando distancia entre ellos
         public void LoadClases(List<Datos.Modelos.Clase> clases)
         {
             panelClases.Controls.Clear();
@@ -73,6 +75,7 @@ namespace CookMe.Views.Landing.UserContAdmin
                     imgProfe
                 );
                 claseControl.Location = new Point(5, distanciaVertical);
+                //Asignamos eventos a cada item que se carga
                 claseControl.DeleteClicked += (s, e) => RemoveClase(claseControl);
                 claseControl.EditClicked += (s, e) => EditClase(claseControl);
 
@@ -81,6 +84,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             }
         }
 
+        //Borrado de item y de registro en bbdd
         private void RemoveClase(ClaseItemControl claseControl)
         {
             DialogResult result = MessageBox.Show(
@@ -106,6 +110,8 @@ namespace CookMe.Views.Landing.UserContAdmin
             }
         }
 
+
+        // Edición de item y de registro en bbdd
         private void EditClase(ClaseItemControl claseControl)
         {
             Views.VistasClase.CrearEditarClase crearClase = new Views.VistasClase.CrearEditarClase(this, claseControl.id);
@@ -118,6 +124,7 @@ namespace CookMe.Views.Landing.UserContAdmin
 
         }
 
+        //Inserción de nuevo item y registro en bbdd
         private void BtnAgregarClase_Click(object sender, EventArgs e)
         {
             Views.VistasClase.CrearEditarClase crearClase = new Views.VistasClase.CrearEditarClase(this, -1);

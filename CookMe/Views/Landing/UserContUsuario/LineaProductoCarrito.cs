@@ -16,6 +16,7 @@ namespace CookMe.Views.Landing.UserContUsuario
         private Label lblPrecio;
         private Label lblCantidad;
 
+        //Creación manual de los elementos que contendrá el "item", darles formato 
         public LineaProductoCarrito(string nombre, decimal precio, int cantidad)
         {
             Height = 40;

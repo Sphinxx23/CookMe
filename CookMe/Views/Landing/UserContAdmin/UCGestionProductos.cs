@@ -24,6 +24,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             LoadProductos(productos);
         }
 
+        //Creación manual de los elementos que contendrá el "item", darles formato y asignarles los diferentes eventos
         private void InitializeComponents()
         {
             this.Size = new Size(750, 600);
@@ -52,6 +53,9 @@ namespace CookMe.Views.Landing.UserContAdmin
             this.Controls.Add(panelProductos);
         }
 
+
+        //Carga de todos los registros de bbdd en los "items", control de espaciado entre ellos y en este caso, cantidad de 
+        // items por fila (3)
         public void LoadProductos(List<Datos.Modelos.Producto> productos)
         {
             panelProductos.Controls.Clear();
@@ -69,6 +73,10 @@ namespace CookMe.Views.Landing.UserContAdmin
 
                 panelProductos.Controls.Add(item);
 
+                
+                
+                // Cuando llegue la fila a 3 items vuelve a la posicion inicial del eje x pero 
+                // más bajo de altura en el eje y
                 contador++;
                 if (contador % columnas == 0)
                 {
@@ -82,6 +90,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             }
         }
 
+        //Eliminación de item y de registro en bbdd
         private void EliminarProducto(ProductoItemControl item)
         {
             DialogResult result = MessageBox.Show(
@@ -106,6 +115,8 @@ namespace CookMe.Views.Landing.UserContAdmin
             }
         }
 
+
+        //Edición de item y de registro en bbdd
         private void EditarProducto(ProductoItemControl item)
         {
             Views.VistasProducto.CrearEditarProducto editarProducto = new Views.VistasProducto.CrearEditarProducto(this, item.id);
@@ -118,6 +129,7 @@ namespace CookMe.Views.Landing.UserContAdmin
 
         }
 
+        //Inserción de nuevo item y registro en bbdd
         private void BtnAgregarProducto_Click(object sender, EventArgs e)
         {
             Views.VistasProducto.CrearEditarProducto crearProducto = new Views.VistasProducto.CrearEditarProducto(this, -1);

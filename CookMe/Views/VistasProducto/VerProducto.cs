@@ -13,6 +13,8 @@ namespace CookMe.Views.VistasProducto
     public partial class VerProducto : Form
     {
         private int idProd;
+
+        // Carga de todos los datos del producto según su id
         public VerProducto(int idProducto)
         {
             InitializeComponent();
@@ -32,6 +34,8 @@ namespace CookMe.Views.VistasProducto
 
         }
 
+
+        // Volver atrás
         private void botonImagen1_Click(object sender, EventArgs e)
         {
             this.Close();

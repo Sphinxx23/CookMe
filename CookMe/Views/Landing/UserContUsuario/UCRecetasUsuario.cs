@@ -28,6 +28,7 @@ namespace CookMe.Views.Landing.UserContUsuario
             LoadRecetas(recetas);
         }
 
+        //Creación manual de los elementos que contendrá el "item", darles formato y asignarles los diferentes eventos
         private void InitializeComponents()
         {
             this.Size = new Size(195, 500);
@@ -63,6 +64,7 @@ namespace CookMe.Views.Landing.UserContUsuario
             this.Controls.Add(panelContenedor);
         }
 
+        // Abrir vista para crear receta y recarga de registros al crearla
         private void BtnAgregarReceta_Click(object sender, EventArgs e)
         {
             Views.VistasReceta.CrearEditarReceta nuevaReceta = new Views.VistasReceta.CrearEditarReceta(this, -1, email);
@@ -75,6 +77,7 @@ namespace CookMe.Views.Landing.UserContUsuario
             }
         }
 
+        //Cargar los registros de bbdd controlando su espaciado vertical y asignando eventos
         public void LoadRecetas(List<Datos.Modelos.Receta> recetas)
         {
             panelRecetas.Controls.Clear();
@@ -94,6 +97,8 @@ namespace CookMe.Views.Landing.UserContUsuario
             }
         }
 
+
+        //Eliminación de item y de registro en bbdd
         private void BorrarReceta(UCRecetaItem recetaControl)
         {
             DialogResult result = MessageBox.Show(
@@ -120,6 +125,7 @@ namespace CookMe.Views.Landing.UserContUsuario
             }
         }
 
+        //Edición de item y de registro en bbdd
         private void EditarReceta(UCRecetaItem item)
         {
             Views.VistasReceta.CrearEditarReceta editarReceta = new Views.VistasReceta.CrearEditarReceta(this, item.id, "");

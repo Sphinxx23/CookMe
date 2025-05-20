@@ -27,6 +27,8 @@ namespace CookMe.Views.Landing.UserContUsuario
             InitializeComponents();
         }
 
+
+        //Creación manual de los elementos que contendrá el "item", darles formato y asignarles los diferentes eventos
         private void InitializeComponents()
         {
             this.Size = new Size(200, 230);
@@ -103,26 +105,30 @@ namespace CookMe.Views.Landing.UserContUsuario
         }
 
 
+        //Evento que se controla en el control de usuario CONTENEDOR
         private void ProductoBoton_Click(object sender, EventArgs e)
         {
             ItemClicked?.Invoke(this, EventArgs.Empty);
         }
 
+        //Evento que se controla en el control de usuario CONTENEDOR
         private void BtnAgregarCarrito_Click(object sender, EventArgs e)
         {
             AgregarAlCarritoClicked?.Invoke(this, EventArgs.Empty);
         }
 
+        //Al entrar el ratón hace un cambio de color
         private void Control_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.LightSteelBlue;
         }
-
+        //Al salir con el ratón hace un cambio de color
         private void Control_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.LightSkyBlue;
         }
 
+        //Asignar datos reales al item
         public void AsignarDatosProducto(int id, string nombre, decimal precio, int stock, Image fotoProducto)
         {
             this.id = id;

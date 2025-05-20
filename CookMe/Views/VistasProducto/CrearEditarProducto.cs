@@ -47,6 +47,7 @@ namespace CookMe.Views.VistasProducto
             }
         }
 
+        // Abre cuadro de diálogo para seleccionar foto
         private void butImgPrincipal_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog(); ;
@@ -58,6 +59,7 @@ namespace CookMe.Views.VistasProducto
             }
         }
 
+        // Abre cuadro de diálogo para seleccionar foto
         private void btImgSecundaria_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog(); ;
@@ -69,6 +71,7 @@ namespace CookMe.Views.VistasProducto
             }
         }
 
+        //Volver atrás
         private void botonImagen1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -76,6 +79,7 @@ namespace CookMe.Views.VistasProducto
             this.parent.Visible = true;
         }
 
+        // Dependiendo del ID que le venga, vaciará todos los campos o los dejará con los datos iniciales del producto
         private void btBorrar_Click(object sender, EventArgs e)
         {
             if (idProd != -1)
@@ -102,6 +106,7 @@ namespace CookMe.Views.VistasProducto
             }
         }
 
+        // Guarda un producto nuevo o edita uno existente dependiendo del ID que le llegue
         private void btGuardar_Click(object sender, EventArgs e)
         {
             if (ComprobarCampos())
@@ -147,6 +152,8 @@ namespace CookMe.Views.VistasProducto
             }
         }
 
+
+        //Comprobación de campos del producto 
         private bool ComprobarCampos()
         {
             string patronPrecio = @"^\d+(,\d{1,2})?$";
@@ -179,6 +186,8 @@ namespace CookMe.Views.VistasProducto
             return true;
         }
 
+
+        //Creación de un producto
         private Producto CrearProducto()
         {
             Datos.Modelos.Producto prodd = new Datos.Modelos.Producto();
@@ -202,6 +211,8 @@ namespace CookMe.Views.VistasProducto
             return prodd;
         }
 
+
+        // Comprobar formato del precio y marcar el textbox en rojo si es incorrecto
         private void tbPrecio_Leave(object sender, EventArgs e)
         {
             string texto = tbPrecio.Text;
