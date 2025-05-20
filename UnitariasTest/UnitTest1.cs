@@ -14,18 +14,18 @@ namespace UnitariasTest
         {
             var nuevoUsuario = new Usuario
             {
-                Email = "testemail@gmail.com",
+                Email = "testemailll@gmail.com",
                 Nombre = "Test",
                 Apellido = "User",
                 Direccion = "Calle Falsa 123",
                 Contrasena = "1234",
-                Foto = new byte[0],
+                Foto = null,
                 Rol = "usuario",
                 Profesor = false
             };
 
             var resultado = new Datos.Repositories.UsuarioRepo().InsertarUsuario(nuevoUsuario);
-            Assert.IsFalse(resultado, "No se pudo insertar el usuario");
+            Assert.IsTrue(resultado, "No se pudo insertar el usuario");
         }
 
         [TestMethod]
@@ -44,14 +44,14 @@ namespace UnitariasTest
             };
 
             var resultado = new Datos.Repositories.UsuarioRepo().EditarUsuario("peditar@gmail.com", usuarioModificado);
-            Assert.IsFalse(resultado, "No se pudo editar el usuario");
+            Assert.IsTrue(resultado, "No se pudo editar el usuario");
         }
 
         [TestMethod]
         public void EliminarUsuarioExistente()
         {
             var resultado = new Datos.Repositories.UsuarioRepo().EliminarUsuarioPorEmail("piripi@gmail.com");
-            Assert.IsFalse(resultado, "No se pudo eliminar el usuario");
+            Assert.IsTrue(resultado, "No se pudo eliminar el usuario");
         }
 
 
@@ -71,7 +71,7 @@ namespace UnitariasTest
             };
 
             var resultado = new Datos.Repositories.ProductoRepo().InsertarProducto(producto);
-            Assert.IsFalse(resultado, "No se pudo insertar el producto");
+            Assert.IsTrue(resultado, "No se pudo insertar el producto");
         }
 
         [TestMethod]
@@ -89,14 +89,14 @@ namespace UnitariasTest
             };
 
             var resultado = new Datos.Repositories.ProductoRepo().EditarProducto(  10   , productoModificado); 
-            Assert.IsFalse(resultado, "No se pudo editar el producto");
+            Assert.IsTrue(resultado, "No se pudo editar el producto");
         }
 
         [TestMethod]
         public void EliminarProductooExistente()
         {
             var resultado = new Datos.Repositories.ProductoRepo().EliminarProductoPorId(   7   );
-            Assert.IsFalse(resultado, "No se pudo eliminar el producto");
+            Assert.IsTrue(resultado, "No se pudo eliminar el producto");
         }
 
         //Receta
@@ -114,7 +114,7 @@ namespace UnitariasTest
             };
 
             var resultado = new Datos.Repositories.RecetaRepo().InsertarReceta(receta);
-            Assert.IsFalse(resultado, "No se pudo insertar la receta");
+            Assert.IsTrue(resultado, "No se pudo insertar la receta");
         }
 
         [TestMethod]
@@ -131,14 +131,14 @@ namespace UnitariasTest
             };
 
             var resultado = new Datos.Repositories.RecetaRepo().EditarReceta( 9   , recetaModificada);
-            Assert.IsFalse(resultado, "No se pudo editar la receta");
+            Assert.IsTrue(resultado, "No se pudo editar la receta");
         }
 
         [TestMethod]
         public void EliminarRecetaExistente()
         {
             var resultado = new Datos.Repositories.RecetaRepo().EliminarRecetaPorId(   7   );
-            Assert.IsFalse(resultado, "No se pudo eliminar la receta");
+            Assert.IsTrue(resultado, "No se pudo eliminar la receta");
         }
 
 
@@ -160,7 +160,7 @@ namespace UnitariasTest
             };
 
             var resultado = new Datos.Repositories.ClaseRepo().InsertarClase(clase);
-            Assert.IsFalse(resultado, "No se pudo insertar la clase");
+            Assert.IsTrue(resultado, "No se pudo insertar la clase");
         }
 
         [TestMethod]
@@ -180,14 +180,14 @@ namespace UnitariasTest
             };
 
             var resultado = new Datos.Repositories.ClaseRepo().EditarClase(  6  , claseModificada);
-            Assert.IsFalse(resultado, "No se pudo editar la clase");
+            Assert.IsTrue(resultado, "No se pudo editar la clase");
         }
 
         [TestMethod]
         public void EliminarClaseExistente()
         {
             var resultado = new Datos.Repositories.ClaseRepo().EliminarClasePorId(  8 );
-            Assert.IsFalse(resultado, "No se pudo eliminar la clase");
+            Assert.IsTrue(resultado, "No se pudo eliminar la clase");
         }
 
 
@@ -204,7 +204,7 @@ namespace UnitariasTest
             };
 
             var resultado = new Datos.Repositories.InscripcionRepo().InsertarInscripcion(inscripcion);
-            Assert.IsFalse(resultado, "No se pudo insertar la inscripción");
+            Assert.IsTrue(resultado, "No se pudo insertar la inscripción");
         }
 
         [TestMethod]
@@ -218,7 +218,7 @@ namespace UnitariasTest
                 InscripcionActiva = false
             };
             var resultado = new Datos.Repositories.InscripcionRepo().BorrarInscripcion( inscripcionModificada);
-            Assert.IsFalse(resultado, "No se pudo editar la inscripción");
+            Assert.IsTrue(resultado, "No se pudo editar la inscripción");
         }
 
 

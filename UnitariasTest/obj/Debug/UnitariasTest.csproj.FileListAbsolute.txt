@@ -40,3 +40,10 @@ C:\Users\PcBox\Desktop\CookMe\UnitariasTest\obj\Debug\UnitariasTest.csproj.CoreC
 C:\Users\PcBox\Desktop\CookMe\UnitariasTest\obj\Debug\Unitaria.FF3105D8.Up2Date
 C:\Users\PcBox\Desktop\CookMe\UnitariasTest\obj\Debug\UnitariasTest.dll
 C:\Users\PcBox\Desktop\CookMe\UnitariasTest\obj\Debug\UnitariasTest.pdb
+C:\Users\PcBox\Desktop\CookMe\UnitariasTest\bin\Debug\UnitariasTest.dll.config
+C:\Users\PcBox\Desktop\CookMe\UnitariasTest\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\PcBox\Desktop\CookMe\UnitariasTest\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\PcBox\Desktop\CookMe\UnitariasTest\bin\Debug\System.ValueTuple.dll
+C:\Users\PcBox\Desktop\CookMe\UnitariasTest\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\PcBox\Desktop\CookMe\UnitariasTest\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\PcBox\Desktop\CookMe\UnitariasTest\bin\Debug\System.ValueTuple.xml
