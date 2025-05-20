@@ -259,6 +259,7 @@
             this.MinimumSize = new System.Drawing.Size(1530, 875);
             this.Name = "LandingUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CookMe";
             this.panelIzq.ResumeLayout(false);
             this.panelIzq.PerformLayout();
             this.panel3.ResumeLayout(false);
