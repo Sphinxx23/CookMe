@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CookMe.Views.VistasProducto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace CookMe.Views.Landing.UserContUsuario
         private string email;
         private int idAccion;
 
+        //Dependiendo del id que llegue, carga todas las clases o solo las clases en las que este apuntado el usuario
         public ClaseBotonContenedor(string email, int id )
         {
             InitializeComponents();
@@ -35,6 +37,7 @@ namespace CookMe.Views.Landing.UserContUsuario
             LoadClases(clases);
         }
 
+        //Creación manual de los elementos que contendrá el "item"
         private void InitializeComponents()
         {
             this.Size = new Size(195, 500);
@@ -49,6 +52,7 @@ namespace CookMe.Views.Landing.UserContUsuario
             this.Controls.Add(panelContenedor);
         }
 
+        //Carga de registros de bbdd controlando su espaciado vertical
         public void LoadClases(List<Datos.Modelos.Clase> clases)
         {
             panelContenedor.Controls.Clear();
@@ -68,10 +72,24 @@ namespace CookMe.Views.Landing.UserContUsuario
             }
         }
 
+        //Abrir formulario para ver las clases, dependiendo del id que le llegue buscará todas
+        // o únicamente en las que está apuntado actualmente el usuario
         private void AbrirVistaClase(ClaseBoton item)
         {
             Views.VistasClase.VerClase verClase = new Views.VistasClase.VerClase(item.id, this.email,item.emailProfe, this.idAccion);
-            verClase.ShowDialog();
+            var resultado = verClase.ShowDialog();
+            List<Datos.Modelos.Clase> clases;
+            if (resultado == DialogResult.OK && this.idAccion == 1)
+            {
+                clases = new Logica.Controles.ClaseControl().ObtenerTodasLasClases();
+                LoadClases(clases);
+            }
+            else if(resultado == DialogResult.OK && this.idAccion != 1)
+            {
+                clases = new Logica.Controles.ClaseControl().ObtenerInscripcionesPorEmail(this.email);
+                LoadClases(clases);
+            }
+            
         }
     }
 }

@@ -17,21 +17,26 @@ namespace CookMe.Facturacion
 {
     public static class Factura
     {
+        /// <summary>
+        /// Generar la factura y guardarla con los datos de la empresa, cliente y los productos
+        /// </summary>
+        /// <param name="compradorEmail"> email.</param>
+        /// <param name="compra"> compra.</param>
         public static void GenerarTicket(string compradorEmail, Dictionary<int, int> compra)
         {
-            // 🔁 Obtén los datos reales con tus métodos
+            
             Datos.Modelos.Usuario usuCliente = new Logica.Controles.UsuarioControl().ObtenerUsuarioPorEmail(compradorEmail);
             var nombre= usuCliente.Nombre;
             var apellido = usuCliente.Apellido;
 
-            // Muestra el SaveFileDialog para elegir la ruta de guardado
+            // elegir la ruta de guardado
             using (var saveDialog = new SaveFileDialog())
             {
                 saveDialog.Filter = "PDF files (*.pdf)|*.pdf";
                 saveDialog.Title = "Guardar factura como...";
                 saveDialog.FileName = "ticket.pdf";
 
-                // Si el usuario selecciona una ruta
+                
                 if (saveDialog.ShowDialog() == DialogResult.OK)
                 {
                     string rutaArchivo = saveDialog.FileName;
@@ -39,20 +44,20 @@ namespace CookMe.Facturacion
                     // Generar el PDF y guardarlo en la ruta elegida
                     var writer = new PdfWriter(rutaArchivo);
                     var pdf = new PdfDocument(writer);
-                    var pageSize = new PageSize(226, 600);  // Tamaño de ticket
+                    var pageSize = new PageSize(226, 600);
 
                     var document = new Document(pdf, pageSize);
                     document.SetMargins(10, 10, 10, 10);
 
                     PdfFont font = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
 
-                    // Empresa
+                    
                     document.Add(new Paragraph("COOKME")
                         .SetFont(font)
                         .SetFontSize(14)
                         .SetTextAlignment(TextAlignment.CENTER));
 
-                    document.Add(new Paragraph("CIF: X12345678\nCalle Falsa 123\nMadrid, España\nTel: +34 600 123 456")
+                    document.Add(new Paragraph("CIF: X12345678\nGran Vía 123\nMadrid, España\nTel: +34 600 123 456")
                         .SetFont(font)
                         .SetFontSize(8)
                         .SetTextAlignment(TextAlignment.CENTER));
@@ -62,14 +67,23 @@ namespace CookMe.Facturacion
 
                     document.Add(new Paragraph(new string('-', 50)));
 
-                    // Cliente
+                    
+
+
+
+
                     document.Add(new Paragraph($"Cliente: {nombre} {apellido}\nEmail: {compradorEmail}")
                         .SetFontSize(9)
                         .SetTextAlignment(TextAlignment.LEFT));
 
                     document.Add(new Paragraph(new string('-', 50)));
 
-                    // Tabla de productos
+                    
+
+
+
+
+
                     var table = new Table(new float[] { 4, 1, 2 }).UseAllAvailableWidth();
                     table.SetFontSize(9);
                     table.SetBorder(Border.NO_BORDER);
@@ -108,7 +122,10 @@ namespace CookMe.Facturacion
 
                     document.Add(new Paragraph(new string('-', 50)));
 
-                    // Mensajes de agradecimiento y condiciones
+                    
+
+
+
                     document.Add(new Paragraph("Gracias por su compra")
                         .SetFontSize(9)
                         .SetTextAlignment(TextAlignment.CENTER)

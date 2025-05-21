@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace CookMe.ControlesPersonalizados
 {
+    //Clase sacada de otro proyecto realizado durante el curso
     public partial class BotonImagen : Button
     {
         public Image ButtonImage { get; set; }
@@ -22,7 +23,7 @@ namespace CookMe.ControlesPersonalizados
             set
             {
                 _cornerRadius = value;
-                this.Invalidate(); // Redibujar el botón cuando cambie el radio
+                this.Invalidate(); 
             }
         }
 
@@ -30,7 +31,7 @@ namespace CookMe.ControlesPersonalizados
         {
             base.OnPaint(pevent);
 
-            // Crear ruta gráfica con esquinas redondeadas
+            
             GraphicsPath path = new GraphicsPath();
             path.AddArc(new Rectangle(0, 0, CornerRadius, CornerRadius), 180, 90);
             path.AddArc(new Rectangle(this.Width - CornerRadius, 0, CornerRadius, CornerRadius), 270, 90);
@@ -38,14 +39,14 @@ namespace CookMe.ControlesPersonalizados
             path.AddArc(new Rectangle(0, this.Height - CornerRadius, CornerRadius, CornerRadius), 90, 90);
             path.CloseFigure();
 
-            // Establece la región del botón
+           
             this.Region = new Region(path);
 
-            // Dibujar el fondo del botón
+            
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             pevent.Graphics.FillPath(new SolidBrush(this.BackColor), path);
 
-            // Dibujar la imagen en el centro del botón, si se ha establecido
+           
             if (ButtonImage != null)
             {
                 int imageX = (this.Width - ButtonImage.Width) / 2;

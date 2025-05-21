@@ -13,6 +13,8 @@ namespace CookMe.Views.VistasReceta
     public partial class VerReceta : Form
     {
         private int idReceta;
+
+        //CArga los datos de la receta que queremos visualizar según su id
         public VerReceta(int id)
         {
             InitializeComponent();
@@ -27,6 +29,7 @@ namespace CookMe.Views.VistasReceta
             pictureBox1.Image = CookMe.MetodosImages.MetImages.ConvertBytesToImage(receta.Foto);
         }
 
+        //Volver atrás
         private void botonImagen1_Click(object sender, EventArgs e)
         {
             this.Close();

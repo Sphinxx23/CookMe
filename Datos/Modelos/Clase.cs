@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos.Modelos
 {
+    // Modelo de Clase con dos constructores y el ToString()
     public class Clase
     {
         public Clase() { }

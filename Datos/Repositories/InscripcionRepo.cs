@@ -11,6 +11,11 @@ namespace Datos.Repositories
     public class InscripcionRepo
     {
 
+        /// <summary>
+        /// Insertar  inscripcion.
+        /// </summary>
+        /// <param name="insc">The insc.</param>
+        /// <returns></returns>
         public bool InsertarInscripcion(Inscripcion insc)
         {
             try
@@ -37,6 +42,12 @@ namespace Datos.Repositories
             }
         }
 
+
+        /// <summary>
+        /// Cambia el flag de activo a false para simular el eliminado
+        /// </summary>
+        /// <param name="insc">The insc.</param>
+        /// <returns></returns>
         public bool BorrarInscripcion(Inscripcion insc)
         {
             try
@@ -62,6 +73,11 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Obtener media valoracion de una clase.
+        /// </summary>
+        /// <param name="idClase">The identifier clase.</param>
+        /// <returns></returns>
         public double ObtenerMediaValoracionClase(int idClase)
         {
             try
@@ -91,6 +107,14 @@ namespace Datos.Repositories
             }
         }
 
+
+        /// <summary>
+        /// Editar valoracion ed una inscripcion.
+        /// </summary>
+        /// <param name="emailUsuario">The email usuario.</param>
+        /// <param name="idClase">The identifier clase.</param>
+        /// <param name="nuevaVal">The nueva value.</param>
+        /// <returns></returns>
         public bool EditarValoracionInscripcion(string emailUsuario, int idClase, double nuevaVal)
         {
             try
@@ -117,6 +141,13 @@ namespace Datos.Repositories
             }
         }
 
+
+        /// <summary>
+        /// Obtener inscripcion.
+        /// </summary>
+        /// <param name="emailUsuario">The email usuario.</param>
+        /// <param name="idClase">The identifier clase.</param>
+        /// <returns></returns>
         public Inscripcion ObtenerInscripcion(string emailUsuario, int idClase)
         {
             try

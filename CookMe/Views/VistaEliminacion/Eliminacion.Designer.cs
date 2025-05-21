@@ -66,7 +66,7 @@
             // lbErrorCredenciales
             // 
             this.lbErrorCredenciales.AutoSize = true;
-            this.lbErrorCredenciales.Location = new System.Drawing.Point(145, 333);
+            this.lbErrorCredenciales.Location = new System.Drawing.Point(159, 333);
             this.lbErrorCredenciales.Name = "lbErrorCredenciales";
             this.lbErrorCredenciales.Size = new System.Drawing.Size(0, 16);
             this.lbErrorCredenciales.TabIndex = 27;
@@ -115,6 +115,7 @@
             // 
             // Eliminacion
             // 
+            this.AcceptButton = this.btEliminarSi;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

@@ -46,7 +46,7 @@
             this.lbInfoEmail.AutoSize = true;
             this.lbInfoEmail.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoEmail.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbInfoEmail.Location = new System.Drawing.Point(71, 290);
+            this.lbInfoEmail.Location = new System.Drawing.Point(39, 288);
             this.lbInfoEmail.Name = "lbInfoEmail";
             this.lbInfoEmail.Size = new System.Drawing.Size(59, 21);
             this.lbInfoEmail.TabIndex = 4;
@@ -57,7 +57,7 @@
             this.lbInfoContrasena.AutoSize = true;
             this.lbInfoContrasena.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoContrasena.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbInfoContrasena.Location = new System.Drawing.Point(51, 352);
+            this.lbInfoContrasena.Location = new System.Drawing.Point(19, 350);
             this.lbInfoContrasena.Name = "lbInfoContrasena";
             this.lbInfoContrasena.Size = new System.Drawing.Size(116, 21);
             this.lbInfoContrasena.TabIndex = 5;
@@ -66,7 +66,7 @@
             // lbErrorCredenciales
             // 
             this.lbErrorCredenciales.AutoSize = true;
-            this.lbErrorCredenciales.Location = new System.Drawing.Point(130, 385);
+            this.lbErrorCredenciales.Location = new System.Drawing.Point(98, 390);
             this.lbErrorCredenciales.Name = "lbErrorCredenciales";
             this.lbErrorCredenciales.Size = new System.Drawing.Size(0, 16);
             this.lbErrorCredenciales.TabIndex = 6;
@@ -109,7 +109,7 @@
             // 
             this.botonImagen2.ButtonImage = global::CookMe.Properties.Resources.ojo1;
             this.botonImagen2.CornerRadius = 20;
-            this.botonImagen2.Location = new System.Drawing.Point(397, 343);
+            this.botonImagen2.Location = new System.Drawing.Point(412, 347);
             this.botonImagen2.Name = "botonImagen2";
             this.botonImagen2.Size = new System.Drawing.Size(77, 30);
             this.botonImagen2.TabIndex = 10;
@@ -132,28 +132,29 @@
             // 
             this.tbEmailLogin.BorderColor = System.Drawing.Color.Blue;
             this.tbEmailLogin.BorderRadius = 15;
-            this.tbEmailLogin.Location = new System.Drawing.Point(186, 280);
+            this.tbEmailLogin.Location = new System.Drawing.Point(154, 278);
             this.tbEmailLogin.Multiline = true;
             this.tbEmailLogin.Name = "tbEmailLogin";
             this.tbEmailLogin.Padding = new System.Windows.Forms.Padding(10);
             this.tbEmailLogin.PasswordChar = '\0';
-            this.tbEmailLogin.Size = new System.Drawing.Size(183, 45);
+            this.tbEmailLogin.Size = new System.Drawing.Size(225, 45);
             this.tbEmailLogin.TabIndex = 23;
             // 
             // tbContrasenaLogin
             // 
             this.tbContrasenaLogin.BorderColor = System.Drawing.Color.Blue;
             this.tbContrasenaLogin.BorderRadius = 15;
-            this.tbContrasenaLogin.Location = new System.Drawing.Point(186, 343);
+            this.tbContrasenaLogin.Location = new System.Drawing.Point(154, 341);
             this.tbContrasenaLogin.Multiline = true;
             this.tbContrasenaLogin.Name = "tbContrasenaLogin";
             this.tbContrasenaLogin.Padding = new System.Windows.Forms.Padding(10);
             this.tbContrasenaLogin.PasswordChar = '*';
-            this.tbContrasenaLogin.Size = new System.Drawing.Size(183, 43);
+            this.tbContrasenaLogin.Size = new System.Drawing.Size(225, 43);
             this.tbContrasenaLogin.TabIndex = 24;
             // 
             // Login
             // 
+            this.AcceptButton = this.btAccederLogin1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

@@ -20,6 +20,7 @@ namespace CookMe
             pictureBox1.Image = CookMe.Properties.Resources.CookMeG;
         }
 
+        //Abre el formulario de inicio de sesión y este se esconde
         private void btIS_Click_1(object sender, EventArgs e)
         {
             Views.Login.Login log = new Views.Login.Login(this);
@@ -27,6 +28,7 @@ namespace CookMe
             this.Visible = false;
         }
 
+        //Abre el formulario de registro y este se esconde
         private void btRG_Click_1(object sender, EventArgs e)
         {
             Views.Login.Register reg = new Views.Login.Register(this);

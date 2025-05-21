@@ -33,6 +33,7 @@ namespace CookMe.Views.Landing.UserContUsuario
             LoadProductos(productos);
         }
 
+        //Creación manual de los elementos que contendrá el "item", darles formato y asignarles los diferentes eventos
         private void InitializeComponents()
         {
             this.Size = new Size(195, 500);
@@ -87,6 +88,8 @@ namespace CookMe.Views.Landing.UserContUsuario
         }
 
 
+        //Realiza búsqueda en bbdd del texto recogido en el textbox de búsqueda
+        // si está vacío muestra todos los resultados
         public void Busqueda()
         {
             string aBuscar = txtBuscar.Text;
@@ -116,6 +119,7 @@ namespace CookMe.Views.Landing.UserContUsuario
             }
         }
 
+        // Abre el carrito si has añadido productos, sino salta un popup de aviso
         private void BtnCarrito_Click(object sender, EventArgs e)
         {
 
@@ -138,6 +142,8 @@ namespace CookMe.Views.Landing.UserContUsuario
 
         }
 
+        //Carga de los registros de bbdd de la búsqueda realizada, controlando espaciado vertical, horizontal y cantidad de 
+        // items por fila, en este caso 4
         public void LoadProductos(List<Datos.Modelos.Producto> productos)
         {
             panelContenedor.Controls.Clear();
@@ -166,6 +172,8 @@ namespace CookMe.Views.Landing.UserContUsuario
 
                 panelContenedor.Controls.Add(productoControl);
 
+
+                // Si la fila llega a 4 items hace cambio de fila
                 contador++;
                 if (contador % columnas == 0)
                 {
@@ -178,13 +186,14 @@ namespace CookMe.Views.Landing.UserContUsuario
                 }
             }
         }
-
+        //Abrir formulario para ver más datos del producto
         private void AbrirVistaProducto(ProductoBoton producto)
         {
             Views.VistasProducto.VerProducto ver = new Views.VistasProducto.VerProducto(producto.id);
             ver.ShowDialog();
         }
 
+        // Añadir producto al diccionario que funciona como carrito y control previo de stock (sin restar en bbdd)
         private void AñadirProductoAlCarrito(ProductoBoton producto)
         {
 

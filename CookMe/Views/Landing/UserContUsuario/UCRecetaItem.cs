@@ -28,7 +28,7 @@ namespace CookMe.Views.Landing.UserContUsuario
         {
             InitializeComponents();
         }
-
+        //Creación manual de los elementos que contendrá el "item", darles formato y asignarles los diferentes eventos
         private void InitializeComponents()
         {
             this.Size = new Size(849, 120);
@@ -94,16 +94,19 @@ namespace CookMe.Views.Landing.UserContUsuario
             this.Controls.Add(btnEditar);
         }
 
+        //Evento que se controla en el control de usuario CONTENEDOR
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             DeleteClicked?.Invoke(this, EventArgs.Empty);
         }
 
+        //Evento que se controla en el control de usuario CONTENEDOR
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             EditClicked?.Invoke(this, EventArgs.Empty);
         }
 
+        //Asignar datos reales al item
         public void AsignarDatosReceta(int id, string titulo, string descripcion, string email, Image foto)
         {
             lblTitulo.Text = titulo;

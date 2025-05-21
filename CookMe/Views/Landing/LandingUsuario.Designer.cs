@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LandingUsuario));
             this.panelIzq = new System.Windows.Forms.Panel();
             this.lbEspacio = new System.Windows.Forms.Label();
             this.btEliminarCuenta = new System.Windows.Forms.Button();
@@ -51,7 +52,7 @@
             // 
             // panelIzq
             // 
-            this.panelIzq.BackColor = System.Drawing.Color.LightGray;
+            this.panelIzq.BackColor = System.Drawing.Color.Gainsboro;
             this.panelIzq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelIzq.Controls.Add(this.lbEspacio);
             this.panelIzq.Controls.Add(this.btEliminarCuenta);
@@ -177,7 +178,7 @@
             // 
             // panelSup
             // 
-            this.panelSup.BackColor = System.Drawing.Color.LightGray;
+            this.panelSup.BackColor = System.Drawing.Color.Gainsboro;
             this.panelSup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelSup.Controls.Add(this.btnRecetas);
             this.panelSup.Controls.Add(this.btnClases);
@@ -252,8 +253,13 @@
             this.Controls.Add(this.panelCentral);
             this.Controls.Add(this.panelSup);
             this.Controls.Add(this.panelIzq);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1530, 875);
+            this.MinimumSize = new System.Drawing.Size(1530, 875);
             this.Name = "LandingUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CookMe";
             this.panelIzq.ResumeLayout(false);
             this.panelIzq.PerformLayout();
             this.panel3.ResumeLayout(false);

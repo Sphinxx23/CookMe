@@ -29,6 +29,7 @@ namespace CookMe.Views.VistasProducto
 
         }
 
+        // Carga el control de usuario ál panel
         private void LoadUserControl(UserControl userControl)
         {
 
@@ -37,12 +38,15 @@ namespace CookMe.Views.VistasProducto
             panel1.Controls.Add(userControl);
         }
 
+
+        // Volver atrás
         private void botonImagen1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
+        // Realiza el pago ficticio, actualiza el stock de los productos en bbdd y crea y guarda la factura
         private void btnTienda_Click(object sender, EventArgs e)
         {
             bool control = false;
@@ -71,7 +75,7 @@ namespace CookMe.Views.VistasProducto
 
                 facturaThread.SetApartmentState(ApartmentState.STA);  // Lo tengo que hacer como STA porque si es MTA no deja abrir el SaveFileDialog
                 facturaThread.Start();
-                facturaThread.Join(); // Espera a que termine el hilo 
+                facturaThread.Join(); 
 
                 MessageBox.Show("   Pago realizado con exito    ", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 carritLleno = new Dictionary<int, int>();

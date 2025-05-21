@@ -27,12 +27,14 @@ namespace CookMe.Views.VistaEliminacion
             this.usuarioSesion = usu;
         }
 
+        //Volver atrás
         private void botonImagen1_Click(object sender, EventArgs e)
         {
             this.Close();
             this.parent.Visible = true;
         }
 
+        // Comprobación de campos con la bbdd y pregunta de confirmación
         private void btEliminarSi_Click(object sender, EventArgs e)
         {
             if (tbContrasenaLogin.Text.Equals("") || tbContrasenaLogin.Text == null)
@@ -72,13 +74,14 @@ namespace CookMe.Views.VistaEliminacion
                 }
                 else
                 {
-                    lbErrorCredenciales.Text = "Contraseña incorrecta";
+                    lbErrorCredenciales.Text = "   Contraseña incorrecta";
                     lbErrorCredenciales.ForeColor = Color.Red;
                 }
 
             }
         }
 
+        //Visualiza/esconde la contraseña
         private void botonImagen2_Click(object sender, EventArgs e)
         {
 

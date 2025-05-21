@@ -10,6 +10,11 @@ namespace Datos.Repositories
 {
     public class ProductoRepo
     {
+        /// <summary>
+        /// Obtener producto por ID.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public Producto ObtenerProductoPorId(int id)
         {
             try
@@ -48,6 +53,11 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Insertar producto nuevo.
+        /// </summary>
+        /// <param name="producto"> producto.</param>
+        /// <returns></returns>
         public bool InsertarProducto(Producto producto)
         {
             try
@@ -77,6 +87,10 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Obtener todos los productos.
+        /// </summary>
+        /// <returns></returns>
         public List<Producto> ObtenerTodosLosProductos()
         {
             try
@@ -109,6 +123,12 @@ namespace Datos.Repositories
             }
         }
 
+
+        /// <summary>
+        /// Obtener productos de textbox de búsqueda.
+        /// </summary>
+        /// <param name="aBuscar">a buscar.</param>
+        /// <returns></returns>
         public List<Producto> ObtenerProductosBusqueda(string aBuscar)
         {
             try
@@ -149,6 +169,11 @@ namespace Datos.Repositories
         }
 
 
+        /// <summary>
+        /// Eliminar  producto por ID.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public bool EliminarProductoPorId(int id)
         {
             try
@@ -170,6 +195,12 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Editar producto existente.
+        /// </summary>
+        /// <param name="idProducto">The identifier producto.</param>
+        /// <param name="producto">The producto.</param>
+        /// <returns></returns>
         public bool EditarProducto(int idProducto, Producto producto)
         {
             try
@@ -206,6 +237,13 @@ namespace Datos.Repositories
                 return false;
             }
         }
+
+        /// <summary>
+        /// Actualizar el stock de un producto.
+        /// </summary>
+        /// <param name="idProducto">The identifier .</param>
+        /// <param name="cantidadARestar">La cantidad a restar.</param>
+        /// <returns></returns>
         public bool ActualizarStockProducto(int idProducto, int cantidadARestar)
         {
             try

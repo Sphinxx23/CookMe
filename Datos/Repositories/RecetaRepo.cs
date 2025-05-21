@@ -11,6 +11,11 @@ namespace Datos.Repositories
     public class RecetaRepo
     {
 
+        /// <summary>
+        /// Obtener la receta por ID.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public Receta ObtenerRecetaPorId(int id)
         {
             try
@@ -54,6 +59,10 @@ namespace Datos.Repositories
         }
 
 
+        /// <summary>
+        /// Obtener todas las recetas.
+        /// </summary>
+        /// <returns></returns>
         public List<Receta> ObtenerTodasLasRecetas()
         {
             try
@@ -92,6 +101,11 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Eliminar la receta por ID si existe.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public bool EliminarRecetaPorId(int id)
         {
             try
@@ -116,6 +130,11 @@ namespace Datos.Repositories
         }
 
 
+        /// <summary>
+        /// Insertar receta nueva.
+        /// </summary>
+        /// <param name="receta">The receta.</param>
+        /// <returns></returns>
         public bool InsertarReceta(Receta receta)
         {
             try
@@ -142,6 +161,13 @@ namespace Datos.Repositories
                 return false;
             }
         }
+
+        /// <summary>
+        /// Editar receta existente.
+        /// </summary>
+        /// <param name="idReceta">The identifier receta.</param>
+        /// <param name="receta">The receta.</param>
+        /// <returns></returns>
         public bool EditarReceta(int idReceta, Receta receta)
         {
             try
@@ -177,6 +203,11 @@ namespace Datos.Repositories
             }
         }
 
+        /// <summary>
+        /// Obtener mis recetas publicadas.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns></returns>
         public List<Receta> ObtenerMisRecetas(string email)
         {
             try

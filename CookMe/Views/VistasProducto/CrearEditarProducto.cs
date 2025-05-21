@@ -47,6 +47,7 @@ namespace CookMe.Views.VistasProducto
             }
         }
 
+        // Abre cuadro de diálogo para seleccionar foto
         private void butImgPrincipal_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog(); ;
@@ -58,6 +59,7 @@ namespace CookMe.Views.VistasProducto
             }
         }
 
+        // Abre cuadro de diálogo para seleccionar foto
         private void btImgSecundaria_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog(); ;
@@ -69,12 +71,15 @@ namespace CookMe.Views.VistasProducto
             }
         }
 
+        //Volver atrás
         private void botonImagen1_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
             this.parent.Visible = true;
         }
 
+        // Dependiendo del ID que le venga, vaciará todos los campos o los dejará con los datos iniciales del producto
         private void btBorrar_Click(object sender, EventArgs e)
         {
             if (idProd != -1)
@@ -101,6 +106,7 @@ namespace CookMe.Views.VistasProducto
             }
         }
 
+        // Guarda un producto nuevo o edita uno existente dependiendo del ID que le llegue
         private void btGuardar_Click(object sender, EventArgs e)
         {
             if (ComprobarCampos())
@@ -114,7 +120,7 @@ namespace CookMe.Views.VistasProducto
                     if (cierto)
                     {
                         MessageBox.Show("Producto creado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                         parent.Visible = true;
                     }
@@ -130,7 +136,7 @@ namespace CookMe.Views.VistasProducto
                     if (cierto)
                     {
                         MessageBox.Show("Producto editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                         parent.Visible = true;
                     }
@@ -140,11 +146,17 @@ namespace CookMe.Views.VistasProducto
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Campos Incorrectos, revise sus datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+
+        //Comprobación de campos del producto 
         private bool ComprobarCampos()
         {
-            string patronPrecio = @"^\d{1,3}(\,\d{1,2})?$";
+            string patronPrecio = @"^\d+(,\d{1,2})?$";
 
             if (tbNombre.Text == null || tbNombre.Text.Equals(""))
             {
@@ -156,10 +168,11 @@ namespace CookMe.Views.VistasProducto
             }
             if (tbPrecio.Text == null || tbPrecio.Text.Equals(""))
             {
-                if (!Regex.IsMatch(tbPrecio.Text, patronPrecio))
-                {
-                    return false;
-                }
+                return false;
+            }
+            if (!Regex.IsMatch(tbPrecio.Text, patronPrecio))
+            {
+                return false;
             }
             if (numStock.Value <= 0 || numStock.Value > 1000)
             {
@@ -173,6 +186,8 @@ namespace CookMe.Views.VistasProducto
             return true;
         }
 
+
+        //Creación de un producto
         private Producto CrearProducto()
         {
             Datos.Modelos.Producto prodd = new Datos.Modelos.Producto();
@@ -194,6 +209,24 @@ namespace CookMe.Views.VistasProducto
             }
 
             return prodd;
+        }
+
+
+        // Comprobar formato del precio y marcar el textbox en rojo si es incorrecto
+        private void tbPrecio_Leave(object sender, EventArgs e)
+        {
+            string texto = tbPrecio.Text;
+
+            if (Regex.IsMatch(texto, @"^\d+(,\d{1,2})?$"))
+            {
+                tbPrecio.BackColor = Color.White;
+            }
+            else
+            {
+                tbPrecio.BackColor = Color.LightCoral;
+                MessageBox.Show("Precio inválido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+            }
         }
     }
 }

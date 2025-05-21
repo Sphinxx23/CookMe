@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,9 @@ namespace CookMe.Views.VistasClase
         private UserControl parent;
         private int idClase;
         List<Datos.Modelos.Usuario> profesoresGeneral;
+
+        // Depende del idClase que llegue, abre el crear clase con los campos vacíos o el editar una existente 
+        // con los campos rellenados con los actuales de esa clase
         public CrearEditarClase(UserControl parent, int idClase)
         {
             this.FormBorderStyle = FormBorderStyle.None;
@@ -40,13 +44,14 @@ namespace CookMe.Views.VistasClase
                 tbDescripcion.Text = clase.Descripcion;
                 tbFecha.Text = clase.Fecha.ToString();
                 numPlaza.Value=clase.PlazaTotal;
-                cboxProfesor.SelectedIndex = ObtenerSelectedIndexCbox(clase);
+                cboxProfesor.SelectedIndex = ObtenerIndiceSeleccionado(clase);
 
             }
 
             
         }
 
+        // Abre diálogo para seleccionar foto
         private void btSeleccionTematica_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog(); ;
@@ -58,12 +63,15 @@ namespace CookMe.Views.VistasClase
             }
         }
 
+        //Volver atrás
         private void botonImagen1_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
             this.parent.Visible = true;
         }
 
+        //Si estás en editar, vuelve a los datos iniciales, si estás en crear, vacía todos 
         private void btBorrarTodo_Click(object sender, EventArgs e)
         {
             if (idClase!=-1)
@@ -74,7 +82,7 @@ namespace CookMe.Views.VistasClase
                 tbDescripcion.Text = clase.Descripcion;
                 tbFecha.Text = clase.Fecha.ToString();
                 numPlaza.Value = clase.PlazaTotal;
-                cboxProfesor.SelectedIndex = ObtenerSelectedIndexCbox(clase);
+                cboxProfesor.SelectedIndex = ObtenerIndiceSeleccionado(clase);
             }
             else
             {
@@ -87,6 +95,8 @@ namespace CookMe.Views.VistasClase
             }
 
         }
+
+        //Carga con los profesores existentes, siempre mete por defecto "Sin profesor" aunque no se pueda seleccionar
         private void CargarComboBoxProfesor()
         {
             List<Datos.Modelos.Usuario> profesores = new Logica.Controles.UsuarioControl().ObtenerProfesores();
@@ -101,7 +111,9 @@ namespace CookMe.Views.VistasClase
             cboxProfesor.DataSource = nombresProfesores;
         }
 
-        private int ObtenerSelectedIndexCbox(Datos.Modelos.Clase clase)
+
+        //Obtener el índice
+        private int ObtenerIndiceSeleccionado(Datos.Modelos.Clase clase)
         {
             int indice = 0;
             int indFinal = 0;
@@ -122,6 +134,7 @@ namespace CookMe.Views.VistasClase
             return indFinal+1;
         }
 
+        // Crear o editar la clase según corresponda y devolver OK
         private void btCrearClase_Click(object sender, EventArgs e)
         {
             if (ComprobarCampos())
@@ -135,7 +148,7 @@ namespace CookMe.Views.VistasClase
                     if (cierto)
                     {
                         MessageBox.Show("Clase creada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                         parent.Visible = true;
                     }
@@ -151,7 +164,7 @@ namespace CookMe.Views.VistasClase
                     if (cierto)
                     {
                         MessageBox.Show("Clase editada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                         parent.Visible = true;
                     }
@@ -164,6 +177,7 @@ namespace CookMe.Views.VistasClase
             
         }
 
+        //Creación de clase para inserción/edición
         private Clase CrearClase()
         {
             Datos.Modelos.Clase clase = new Datos.Modelos.Clase();
@@ -196,6 +210,7 @@ namespace CookMe.Views.VistasClase
             return clase;
         }
 
+        // Busqueda de email en el combobox
         private string BuscarEmailProfesor()
         {
             int indice = cboxProfesor.SelectedIndex-1;
@@ -205,6 +220,8 @@ namespace CookMe.Views.VistasClase
             return usu.Email;
         }
 
+
+        //Comprobar todos los campos para poder crear/editar clase
         private bool ComprobarCampos()
         {
             if (tbTitulo.Text==null || tbTitulo.Text.Equals(""))
@@ -230,6 +247,26 @@ namespace CookMe.Views.VistasClase
 
             return true;
 
+        }
+
+        //Comprueba el formato de la fecha y si existe, si no lo cumple marca el textbox en rojo
+        private void tbFecha_Leave(object sender, EventArgs e)
+        {
+            string texto = tbFecha.Text;
+
+            if (DateTime.TryParseExact(texto, "dd-MM-yyyy HH:mm",
+                CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fechaHora))
+            {
+                
+                tbFecha.BackColor = Color.White;
+            }
+            else
+            {
+                
+                tbFecha.BackColor = Color.LightCoral;
+                MessageBox.Show("Fecha y hora no válidas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+            }
         }
     }
 }

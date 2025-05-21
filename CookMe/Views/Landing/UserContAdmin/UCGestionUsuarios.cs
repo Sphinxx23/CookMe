@@ -24,6 +24,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             LoadUsers(usuarios);
         }
 
+        //Creación manual de los elementos que contendrá el "item", darles formato y asignarles los diferentes eventos
         private void InitializeComponents()
         {
             this.Size = new Size(450, 600);
@@ -38,6 +39,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             this.Controls.Add(panelUsuarios);
         }
 
+        //Carga de todos los registros de bbdd y control del espaciado vertical
         public void LoadUsers(List<Datos.Modelos.Usuario> usuarios)
         {
             panelUsuarios.Controls.Clear();
@@ -56,6 +58,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             }
         }
 
+        //Eliminación de item y de registro en bbdd
         private void EliminarUser(UserItemControl userControl)
         {
             

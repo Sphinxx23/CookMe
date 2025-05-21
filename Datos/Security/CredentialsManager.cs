@@ -15,6 +15,12 @@ namespace Datos.Security
     {
         private static readonly string configFilePath = "credentials.json";
 
+
+        /// <summary>
+        /// Guarda el json con las credenciales
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <param name="password">The password.</param>
         public static void SaveCredentials(string email, string password)
         {
             try
@@ -29,6 +35,10 @@ namespace Datos.Security
             }
         }
 
+        /// <summary>
+        /// Carga las credenciales de acceso.
+        /// </summary>
+        /// <returns></returns>
         public static Credentials LoadCredentials()
         {
             try
@@ -46,6 +56,9 @@ namespace Datos.Security
             return null;
         }
 
+        /// <summary>
+        /// Elimina credenciales
+        /// </summary>
         public static void DeleteCredentials()
         {
             try
@@ -62,6 +75,7 @@ namespace Datos.Security
         }
     }
 
+    //Modelo básicode las credenciales
     public class Credentials
     {
         public string Email { get; set; }

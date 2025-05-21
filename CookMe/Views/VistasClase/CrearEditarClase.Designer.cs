@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearEditarClase));
             this.btBorrarTodo = new System.Windows.Forms.Button();
             this.lbTitulo = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             this.tbDescripcion = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
             this.tbTitulo = new CookMe.ControlesPersonalizados.TextBoxRedondeado();
             this.btCrearClase = new CustomButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numPlaza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenTematica)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +93,7 @@
             this.lbFecha.Size = new System.Drawing.Size(66, 24);
             this.lbFecha.TabIndex = 4;
             this.lbFecha.Text = "FECHA";
+            this.toolTip1.SetToolTip(this.lbFecha, "Formato de fecha: DD-MM-AAAA HH:MM");
             // 
             // lbPlazas
             // 
@@ -102,6 +105,7 @@
             this.lbPlazas.Size = new System.Drawing.Size(163, 24);
             this.lbPlazas.TabIndex = 5;
             this.lbPlazas.Text = "PLAZAS TOTALES";
+            this.toolTip1.SetToolTip(this.lbPlazas, "Tiene que haber al menos 1 plaza");
             // 
             // lbProfesor
             // 
@@ -113,6 +117,7 @@
             this.lbProfesor.Size = new System.Drawing.Size(102, 24);
             this.lbProfesor.TabIndex = 6;
             this.lbProfesor.Text = "PROFESOR";
+            this.toolTip1.SetToolTip(this.lbProfesor, "Es obligatorio asignar un profesor");
             // 
             // numPlaza
             // 
@@ -130,6 +135,7 @@
             this.numPlaza.Name = "numPlaza";
             this.numPlaza.Size = new System.Drawing.Size(152, 22);
             this.numPlaza.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.numPlaza, "Tiene que haber al menos 1 plaza");
             // 
             // pbImagenTematica
             // 
@@ -146,15 +152,18 @@
             this.cboxProfesor.Name = "cboxProfesor";
             this.cboxProfesor.Size = new System.Drawing.Size(231, 24);
             this.cboxProfesor.TabIndex = 28;
+            this.toolTip1.SetToolTip(this.cboxProfesor, "Es obligatorio asignar un profesor");
             // 
             // tbFecha
             // 
             this.tbFecha.BackColor = System.Drawing.SystemColors.HighlightText;
             this.tbFecha.Location = new System.Drawing.Point(825, 315);
-            this.tbFecha.Mask = "0000-00-00 00:00:00";
+            this.tbFecha.Mask = "00-00-0000 00:00";
             this.tbFecha.Name = "tbFecha";
             this.tbFecha.Size = new System.Drawing.Size(152, 22);
             this.tbFecha.TabIndex = 29;
+            this.toolTip1.SetToolTip(this.tbFecha, "Formato de fecha: DD-MM-AAAA HH:MM");
+            this.tbFecha.Leave += new System.EventHandler(this.tbFecha_Leave);
             // 
             // botonImagen1
             // 
@@ -219,6 +228,7 @@
             // 
             // CrearEditarClase
             // 
+            this.AcceptButton = this.btCrearClase;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -267,5 +277,6 @@
         private ControlesPersonalizados.BotonImagen botonImagen1;
         private System.Windows.Forms.ComboBox cboxProfesor;
         private System.Windows.Forms.MaskedTextBox tbFecha;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

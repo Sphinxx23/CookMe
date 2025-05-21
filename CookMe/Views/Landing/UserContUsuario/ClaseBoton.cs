@@ -29,6 +29,7 @@ namespace CookMe.Views.Landing.UserContUsuario
             InitializeComponents();
         }
 
+        //Creación manual de los elementos que contendrá el "item", darles formato y asignarles los diferentes eventos
         private void InitializeComponents()
         {
             this.Size = new Size(870, 150);
@@ -125,21 +126,25 @@ namespace CookMe.Views.Landing.UserContUsuario
 
         }
 
+        //Evento que se controla en el control de usuario CONTENEDOR
         private void ClaseBoton_Click(object sender, EventArgs e)
         {
             ItemClicked?.Invoke(this, EventArgs.Empty);
         }
 
+        //Al entrar con el ratón hace un cambio de color
         private void Control_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.LightSkyBlue;
         }
 
+        //Al salir con el ratón hace un cambio de color
         private void Control_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
         }
 
+        //Asignar datos reales al item
         public void AsignarDatosClase(int id, string titulo, string descripcion, string fecha, int plazas, string emailProfesor, Image fotoClase, Image fotoProfesor)
         {
             this.id = id;

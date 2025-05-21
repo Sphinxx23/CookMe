@@ -16,6 +16,7 @@ namespace CookMe.Views.VistaUsuario
         private Form parent;
         private string email;
         Datos.Modelos.Usuario usu;
+        //Llenar los campos con los datos del usuario existente
         public EditarUsuario(Form parent, string email)
         {
             InitializeComponent();
@@ -35,11 +36,14 @@ namespace CookMe.Views.VistaUsuario
             }
         }
 
+        //Volver atrás
         private void botonImagen1_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
+        //Volver a dejar los campos con los datos antiguos del usuario
         private void btVaciarCampos1_Click(object sender, EventArgs e)
         {
             tbNombreRegis.Text = usu.Nombre;
@@ -50,6 +54,7 @@ namespace CookMe.Views.VistaUsuario
             chbProfesor.Checked = usu.Profesor;
         }
 
+        // Abre cuadro de diálogo para seleccionar foto
         private void btSeleccion_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog(); ;
@@ -61,6 +66,7 @@ namespace CookMe.Views.VistaUsuario
             }
         }
 
+        // Guarda los cambios de los campos de usuario
         private void btRegistrar_Click(object sender, EventArgs e)
         {
             if (ComprobarCampos())
@@ -70,7 +76,7 @@ namespace CookMe.Views.VistaUsuario
                 if (cierto)
                 {
                     MessageBox.Show("Usuario editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
@@ -81,10 +87,11 @@ namespace CookMe.Views.VistaUsuario
             else
             {
                 lbErrorEditar.Text = "No puedes dejar campos vacios";
-                lbErrorEditar.ForeColor = Color.RoyalBlue;
+                lbErrorEditar.ForeColor = Color.Red;
             }
         }
 
+        //Comprobación de los datos introducidos
         private bool ComprobarCampos()
         {
 
@@ -105,6 +112,7 @@ namespace CookMe.Views.VistaUsuario
             return true;
         }
 
+        //Crea un usuario
         private Usuario CrearUsuario()
         {
             Datos.Modelos.Usuario usuu = new Datos.Modelos.Usuario();

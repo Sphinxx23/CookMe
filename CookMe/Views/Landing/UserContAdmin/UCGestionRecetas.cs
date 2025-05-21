@@ -22,6 +22,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             LoadRecipes(recetas);
         }
 
+        //Creación manual de los elementos que contendrá el "item", darles formato y asignarles los diferentes eventos
         private void InitializeComponents()
         {
             this.Size = new Size(750, 600);
@@ -36,6 +37,8 @@ namespace CookMe.Views.Landing.UserContAdmin
             this.Controls.Add(panelRecetas);
         }
 
+
+        //Carga de todos los registros de bbdd, controlando el espaciado vertical entre ellos
         public void LoadRecipes(List<Datos.Modelos.Receta> recetas)
         {
             panelRecetas.Controls.Clear();
@@ -55,6 +58,7 @@ namespace CookMe.Views.Landing.UserContAdmin
             }
         }
 
+        //Eliminación de item y de registro en bbdd
         private void RemoveRecipe(RecetaItemControl recetaControl)
         {
 
@@ -85,11 +89,20 @@ namespace CookMe.Views.Landing.UserContAdmin
             }
         }
 
+
+        //edición de item y de registro en bbdd
         private void EditRecipe(RecetaItemControl item)
         {
             Views.VistasReceta.CrearEditarReceta editarReceta = new Views.VistasReceta.CrearEditarReceta(this, item.id, "");
             this.Visible = false;
-            editarReceta.ShowDialog();
+            var resultado = editarReceta.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                List<Datos.Modelos.Receta> recetas = new Logica.Controles.RecetaControl().ObtenerTodasLasRecetas();
+                LoadRecipes(recetas);
+            }
+
 
         }
     }

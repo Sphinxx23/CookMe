@@ -20,7 +20,7 @@ namespace CookMe.Views.VistasReceta
         private int idRec;
         private string emailUs;
 
-
+        // Crea el form con los campos vacíos o llenos con los datos de una receta dependiendo del id
         public CrearEditarReceta(UserControl parent, int idRec, string emailUs)
         {
             this.FormBorderStyle = FormBorderStyle.None;
@@ -49,6 +49,7 @@ namespace CookMe.Views.VistasReceta
             }
         }
 
+        // Abre cuadro de diálogo para seleccionar foto
         private void botonImagen1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog(); ;
@@ -60,6 +61,7 @@ namespace CookMe.Views.VistasReceta
             }
         }
 
+        // Vacía los campos o los deja con los datos iniciales dependiendo del id 
         private void btBorrarR_Click(object sender, EventArgs e)
         {
             if (idRec != -1)
@@ -82,6 +84,7 @@ namespace CookMe.Views.VistasReceta
             }
         }
 
+        // Guarda y crea una nueva receta o edita una existente dependiendo del ID
         private void btGuardarR_Click(object sender, EventArgs e)
         {
             if (ComprobarCampos())
@@ -95,7 +98,7 @@ namespace CookMe.Views.VistasReceta
                     if (cierto)
                     {
                         MessageBox.Show("Receta creada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                         parent.Visible = true;
                     }
@@ -111,6 +114,7 @@ namespace CookMe.Views.VistasReceta
                     if (cierto)
                     {
                         MessageBox.Show("Receta editada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
                         this.Close();
                         parent.Visible = true;
                     }
@@ -122,6 +126,7 @@ namespace CookMe.Views.VistasReceta
             }
         }
 
+        //Crear una receta
         private Receta CrearReceta()
         {
             Datos.Modelos.Receta rece = new Datos.Modelos.Receta();
@@ -150,6 +155,7 @@ namespace CookMe.Views.VistasReceta
             return rece;
         }
 
+        //Comprobacion de campos del form
         private bool ComprobarCampos()
         {
             if (tbTitulo.Text == null || tbTitulo.Text.Equals(""))
@@ -171,8 +177,11 @@ namespace CookMe.Views.VistasReceta
             return true;
         }
 
+
+        //Volver atrás
         private void botonImagen2_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
             this.parent.Visible = true;
         }
